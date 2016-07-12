@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		307205D91D33C1CD0011A262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205D81D33C1CD0011A262 /* main.m */; };
+		307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DB1D33C1CD0011A262 /* AppDelegate.m */; };
+		307205DF1D33C1CD0011A262 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DE1D33C1CD0011A262 /* ViewController.m */; };
+		307205E21D33C1CD0011A262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307205E01D33C1CD0011A262 /* Main.storyboard */; };
+		307205E41D33C1CD0011A262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307205E31D33C1CD0011A262 /* Assets.xcassets */; };
+		307205E71D33C1CD0011A262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */; };
+		307205F21D33C1CD0011A262 /* TYSnapshotScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205F11D33C1CD0011A262 /* TYSnapshotScrollTests.m */; };
+		307205FD1D33C1CD0011A262 /* TYSnapshotScrollUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205FC1D33C1CD0011A262 /* TYSnapshotScrollUITests.m */; };
+		3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */; };
+		307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		307205EE1D33C1CD0011A262 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 307205CC1D33C1CD0011A262 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 307205D31D33C1CD0011A262;
+			remoteInfo = TYSnapshotScroll;
+		};
+		307205F91D33C1CD0011A262 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 307205CC1D33C1CD0011A262 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 307205D31D33C1CD0011A262;
+			remoteInfo = TYSnapshotScroll;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		307205D41D33C1CD0011A262 /* TYSnapshotScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSnapshotScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		307205D81D33C1CD0011A262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		307205DA1D33C1CD0011A262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		307205DB1D33C1CD0011A262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		307205DD1D33C1CD0011A262 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		307205DE1D33C1CD0011A262 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		307205E11D33C1CD0011A262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		307205E31D33C1CD0011A262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		307205E61D33C1CD0011A262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		307205E81D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		307205ED1D33C1CD0011A262 /* TYSnapshotScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSnapshotScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		307205F11D33C1CD0011A262 /* TYSnapshotScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScrollTests.m; sourceTree = "<group>"; };
+		307205F31D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		307205F81D33C1CD0011A262 /* TYSnapshotScrollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSnapshotScrollUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		307205FC1D33C1CD0011A262 /* TYSnapshotScrollUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScrollUITests.m; sourceTree = "<group>"; };
+		307205FE1D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3072060B1D33C2020011A262 /* UIImage+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYSnapshot.h"; sourceTree = "<group>"; };
+		3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYSnapshot.m"; sourceTree = "<group>"; };
+		3072060D1D33C2020011A262 /* UIScrollView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSnapshot.h"; sourceTree = "<group>"; };
+		3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshot.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		307205D11D33C1CD0011A262 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		307205EA1D33C1CD0011A262 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		307205F51D33C1CD0011A262 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		307205CB1D33C1CD0011A262 = {
+			isa = PBXGroup;
+			children = (
+				307205D61D33C1CD0011A262 /* TYSnapshotScroll */,
+				307205F01D33C1CD0011A262 /* TYSnapshotScrollTests */,
+				307205FB1D33C1CD0011A262 /* TYSnapshotScrollUITests */,
+				307205D51D33C1CD0011A262 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		307205D51D33C1CD0011A262 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				307205D41D33C1CD0011A262 /* TYSnapshotScroll.app */,
+				307205ED1D33C1CD0011A262 /* TYSnapshotScrollTests.xctest */,
+				307205F81D33C1CD0011A262 /* TYSnapshotScrollUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		307205D61D33C1CD0011A262 /* TYSnapshotScroll */ = {
+			isa = PBXGroup;
+			children = (
+				3072060A1D33C2020011A262 /* TYSnapshot */,
+				307205DA1D33C1CD0011A262 /* AppDelegate.h */,
+				307205DB1D33C1CD0011A262 /* AppDelegate.m */,
+				307205DD1D33C1CD0011A262 /* ViewController.h */,
+				307205DE1D33C1CD0011A262 /* ViewController.m */,
+				307205E01D33C1CD0011A262 /* Main.storyboard */,
+				307205E31D33C1CD0011A262 /* Assets.xcassets */,
+				307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */,
+				307205E81D33C1CD0011A262 /* Info.plist */,
+				307205D71D33C1CD0011A262 /* Supporting Files */,
+			);
+			path = TYSnapshotScroll;
+			sourceTree = "<group>";
+		};
+		307205D71D33C1CD0011A262 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				307205D81D33C1CD0011A262 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		307205F01D33C1CD0011A262 /* TYSnapshotScrollTests */ = {
+			isa = PBXGroup;
+			children = (
+				307205F11D33C1CD0011A262 /* TYSnapshotScrollTests.m */,
+				307205F31D33C1CD0011A262 /* Info.plist */,
+			);
+			path = TYSnapshotScrollTests;
+			sourceTree = "<group>";
+		};
+		307205FB1D33C1CD0011A262 /* TYSnapshotScrollUITests */ = {
+			isa = PBXGroup;
+			children = (
+				307205FC1D33C1CD0011A262 /* TYSnapshotScrollUITests.m */,
+				307205FE1D33C1CD0011A262 /* Info.plist */,
+			);
+			path = TYSnapshotScrollUITests;
+			sourceTree = "<group>";
+		};
+		3072060A1D33C2020011A262 /* TYSnapshot */ = {
+			isa = PBXGroup;
+			children = (
+				3072060B1D33C2020011A262 /* UIImage+TYSnapshot.h */,
+				3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */,
+				3072060D1D33C2020011A262 /* UIScrollView+TYSnapshot.h */,
+				3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */,
+			);
+			path = TYSnapshot;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		307205D31D33C1CD0011A262 /* TYSnapshotScroll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 307206011D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScroll" */;
+			buildPhases = (
+				307205D01D33C1CD0011A262 /* Sources */,
+				307205D11D33C1CD0011A262 /* Frameworks */,
+				307205D21D33C1CD0011A262 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TYSnapshotScroll;
+			productName = TYSnapshotScroll;
+			productReference = 307205D41D33C1CD0011A262 /* TYSnapshotScroll.app */;
+			productType = "com.apple.product-type.application";
+		};
+		307205EC1D33C1CD0011A262 /* TYSnapshotScrollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 307206041D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollTests" */;
+			buildPhases = (
+				307205E91D33C1CD0011A262 /* Sources */,
+				307205EA1D33C1CD0011A262 /* Frameworks */,
+				307205EB1D33C1CD0011A262 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				307205EF1D33C1CD0011A262 /* PBXTargetDependency */,
+			);
+			name = TYSnapshotScrollTests;
+			productName = TYSnapshotScrollTests;
+			productReference = 307205ED1D33C1CD0011A262 /* TYSnapshotScrollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		307205F71D33C1CD0011A262 /* TYSnapshotScrollUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 307206071D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollUITests" */;
+			buildPhases = (
+				307205F41D33C1CD0011A262 /* Sources */,
+				307205F51D33C1CD0011A262 /* Frameworks */,
+				307205F61D33C1CD0011A262 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				307205FA1D33C1CD0011A262 /* PBXTargetDependency */,
+			);
+			name = TYSnapshotScrollUITests;
+			productName = TYSnapshotScrollUITests;
+			productReference = 307205F81D33C1CD0011A262 /* TYSnapshotScrollUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		307205CC1D33C1CD0011A262 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = TonyReet;
+				TargetAttributes = {
+					307205D31D33C1CD0011A262 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					307205EC1D33C1CD0011A262 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 307205D31D33C1CD0011A262;
+					};
+					307205F71D33C1CD0011A262 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 307205D31D33C1CD0011A262;
+					};
+				};
+			};
+			buildConfigurationList = 307205CF1D33C1CD0011A262 /* Build configuration list for PBXProject "TYSnapshotScroll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 307205CB1D33C1CD0011A262;
+			productRefGroup = 307205D51D33C1CD0011A262 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				307205D31D33C1CD0011A262 /* TYSnapshotScroll */,
+				307205EC1D33C1CD0011A262 /* TYSnapshotScrollTests */,
+				307205F71D33C1CD0011A262 /* TYSnapshotScrollUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		307205D21D33C1CD0011A262 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				307205E71D33C1CD0011A262 /* LaunchScreen.storyboard in Resources */,
+				307205E41D33C1CD0011A262 /* Assets.xcassets in Resources */,
+				307205E21D33C1CD0011A262 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		307205EB1D33C1CD0011A262 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		307205F61D33C1CD0011A262 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		307205D01D33C1CD0011A262 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */,
+				307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */,
+				307205DF1D33C1CD0011A262 /* ViewController.m in Sources */,
+				307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */,
+				307205D91D33C1CD0011A262 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		307205E91D33C1CD0011A262 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				307205F21D33C1CD0011A262 /* TYSnapshotScrollTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		307205F41D33C1CD0011A262 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				307205FD1D33C1CD0011A262 /* TYSnapshotScrollUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		307205EF1D33C1CD0011A262 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 307205D31D33C1CD0011A262 /* TYSnapshotScroll */;
+			targetProxy = 307205EE1D33C1CD0011A262 /* PBXContainerItemProxy */;
+		};
+		307205FA1D33C1CD0011A262 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 307205D31D33C1CD0011A262 /* TYSnapshotScroll */;
+			targetProxy = 307205F91D33C1CD0011A262 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		307205E01D33C1CD0011A262 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				307205E11D33C1CD0011A262 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				307205E61D33C1CD0011A262 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		307205FF1D33C1CD0011A262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		307206001D33C1CD0011A262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		307206021D33C1CD0011A262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScroll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		307206031D33C1CD0011A262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScroll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		307206051D33C1CD0011A262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TYSnapshotScrollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYSnapshotScroll.app/TYSnapshotScroll";
+			};
+			name = Debug;
+		};
+		307206061D33C1CD0011A262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TYSnapshotScrollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYSnapshotScroll.app/TYSnapshotScroll";
+			};
+			name = Release;
+		};
+		307206081D33C1CD0011A262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TYSnapshotScrollUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TYSnapshotScroll;
+			};
+			name = Debug;
+		};
+		307206091D33C1CD0011A262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TYSnapshotScrollUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TYSnapshotScroll;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		307205CF1D33C1CD0011A262 /* Build configuration list for PBXProject "TYSnapshotScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				307205FF1D33C1CD0011A262 /* Debug */,
+				307206001D33C1CD0011A262 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		307206011D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				307206021D33C1CD0011A262 /* Debug */,
+				307206031D33C1CD0011A262 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		307206041D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				307206051D33C1CD0011A262 /* Debug */,
+				307206061D33C1CD0011A262 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		307206071D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				307206081D33C1CD0011A262 /* Debug */,
+				307206091D33C1CD0011A262 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 307205CC1D33C1CD0011A262 /* Project object */;
+}
