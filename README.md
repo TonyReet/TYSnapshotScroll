@@ -1,0 +1,2 @@
+# TYSnapshotScroll
+将scrollView的页面保存为图片
