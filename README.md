@@ -5,6 +5,7 @@
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
 **<mark>更新:</mark>**
+
 ------------------- 2016.12.8更新 -------------
 
 1、修改iOS10权限问题
