@@ -19,8 +19,9 @@ UIImage * snapshotImg = [UIScrollView getSnapshotImage:self.webView.scrollView];
 ```
 
 **<mark>注意:</mark>**
+1、demo里面使用的地址是美团的，美团每页都有个标签，可以换其他网页试试效果更佳
 
-方法
+2、方法
 ```objc
 +(UIImage *)getSnapshotImage:(UIScrollView *)scrollView;
 ```
