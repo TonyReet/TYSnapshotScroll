@@ -105,11 +105,19 @@ static BOOL kTYSnapshotDebugLog = NO;
         shotSize = shotView.bounds.size;
     }
     
-    UIGraphicsBeginImageContext(shotSize);
+    //创建
+    UIGraphicsBeginImageContextWithOptions(shotSize,NO,0.0);
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
     [shotView.layer renderInContext:context];
+    
+    //获取图片
     UIImage *snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //关闭
     UIGraphicsEndImageContext();
+    
     return snapshotImg;
 }
 @end
