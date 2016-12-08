@@ -4,9 +4,9 @@
 [![](https://img.shields.io/badge/Supported-iOS7-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
-**<mark>更新:</mark>**
+**<mark>更新内容:</mark>**
 
-------------------- 2016.12.8更新 -------------
+----------------- 2016.12.8更新 -------------
 
 1、修改iOS10权限问题
 
