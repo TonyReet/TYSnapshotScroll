@@ -4,6 +4,13 @@
 [![](https://img.shields.io/badge/Supported-iOS7-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
+**<mark>更新:</mark>**
+2016.12.8更新:
+
+1、修改iOS10权限问题
+
+2、修改截图的清晰度，demo地址使用简书地址
+
 
 ###使用方法
 - 1、引入头文件:
@@ -19,9 +26,7 @@ UIImage * snapshotImg = [UIScrollView getSnapshotImage:self.webView.scrollView];
 ```
 
 **<mark>注意:</mark>**
-1、demo里面使用的地址是美团的，美团每页都有个标签，可以换其他网页试试效果更佳
-
-2、方法
+1、方法
 ```objc
 +(UIImage *)getSnapshotImage:(UIScrollView *)scrollView;
 ```
