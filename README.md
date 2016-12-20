@@ -38,14 +38,23 @@ scrollView为对应的scrollView,比如UIWebView传入webView.scrollView
 ![TYSnapshotScroll] (https://github.com/TonyReet/TYSnapshotScroll/blob/master/Snapshot.gif)
 
 ----------------- 增加长度 -------------
+
                      |
+                     
                      |
+                     
                      |
+                     
 1
+
                      |
+                     
                      |
+                     
                      |
+                     
 2
+
                      |
                      |
                      |
@@ -134,3 +143,4 @@ scrollView为对应的scrollView,比如UIWebView传入webView.scrollView
                      |
                      |
 24
+----------------- 增加长度 -------------
