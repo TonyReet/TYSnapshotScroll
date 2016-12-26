@@ -5,6 +5,11 @@
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
 **<mark>更新内容:</mark>**
+----------------- 2016.12.26更新 -------------
+
+1、tableView的图片保存会有问题，最后参考了![ZFBest/UITableViewSnapshot] (https://github.com/ZFBest/UITableViewSnapshot)
+对tableview的处理办法暂时解决了，后面有空的话还是会统一逻辑的
+
 
 ----------------- 2016.12.8更新 -------------
 
