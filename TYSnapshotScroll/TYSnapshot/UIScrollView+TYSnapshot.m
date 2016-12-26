@@ -3,11 +3,12 @@
 //  UITableViewSnapshotTest
 //
 //  Created by Tony on 2016/7/11.
-//  Copyright © 2016年 com.9188. All rights reserved.
+//  Copyright © 2016年 TonyReet. All rights reserved.
 //
 
 #import "UIScrollView+TYSnapshot.h"
 #import "UIImage+TYSnapshot.h"
+#import "UITableView+TYSnapshot.h"
 
 //打印调试，默认为不打开
 static BOOL kTYSnapshotDebugLog = NO;
@@ -37,8 +38,16 @@ static BOOL kTYSnapshotDebugLog = NO;
     return snapshotImg;
 }
 
-
 + (UIImage *)screenshot:(UIScrollView *)scrollView{
+    if ([scrollView isKindOfClass:[UITableView class]]) {
+        UITableView *tableView = (UITableView *)scrollView;
+        return [tableView screenshot];
+    }else{
+        return [self getWebViewImage:scrollView];
+    }
+}
+
++ (UIImage *)getWebViewImage:(UIScrollView *)scrollView{
     CGSize oldContentSize = scrollView.contentSize;
     
     //截取的快照数组

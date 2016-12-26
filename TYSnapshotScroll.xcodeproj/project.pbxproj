@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */; };
+		1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */; };
+		1802B4681E11569200A6A2D1 /* UITableView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802B4671E11569200A6A2D1 /* UITableView+TYSnapshot.m */; };
 		307205D91D33C1CD0011A262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205D81D33C1CD0011A262 /* main.m */; };
 		307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DB1D33C1CD0011A262 /* AppDelegate.m */; };
 		307205DF1D33C1CD0011A262 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DE1D33C1CD0011A262 /* ViewController.m */; };
@@ -37,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1802B4571E10D34C00A6A2D1 /* TYWebViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYWebViewVc.h; sourceTree = "<group>"; };
+		1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYWebViewVc.m; sourceTree = "<group>"; };
+		1802B45A1E10D3A300A6A2D1 /* TYTableViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTableViewVc.h; sourceTree = "<group>"; };
+		1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTableViewVc.m; sourceTree = "<group>"; };
+		1802B4661E11569200A6A2D1 /* UITableView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TYSnapshot.h"; sourceTree = "<group>"; };
+		1802B4671E11569200A6A2D1 /* UITableView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TYSnapshot.m"; sourceTree = "<group>"; };
 		307205D41D33C1CD0011A262 /* TYSnapshotScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSnapshotScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307205D81D33C1CD0011A262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		307205DA1D33C1CD0011A262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1802B4561E10D2F900A6A2D1 /* SubViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1802B4571E10D34C00A6A2D1 /* TYWebViewVc.h */,
+				1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */,
+				1802B45A1E10D3A300A6A2D1 /* TYTableViewVc.h */,
+				1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */,
+			);
+			path = SubViewControllers;
+			sourceTree = "<group>";
+		};
 		307205CB1D33C1CD0011A262 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +132,7 @@
 				307205DB1D33C1CD0011A262 /* AppDelegate.m */,
 				307205DD1D33C1CD0011A262 /* ViewController.h */,
 				307205DE1D33C1CD0011A262 /* ViewController.m */,
+				1802B4561E10D2F900A6A2D1 /* SubViewControllers */,
 				307205E01D33C1CD0011A262 /* Main.storyboard */,
 				307205E31D33C1CD0011A262 /* Assets.xcassets */,
 				307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */,
@@ -154,6 +175,8 @@
 				3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */,
 				3072060D1D33C2020011A262 /* UIScrollView+TYSnapshot.h */,
 				3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */,
+				1802B4661E11569200A6A2D1 /* UITableView+TYSnapshot.h */,
+				1802B4671E11569200A6A2D1 /* UITableView+TYSnapshot.m */,
 			);
 			path = TYSnapshot;
 			sourceTree = "<group>";
@@ -289,10 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */,
+				1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */,
 				307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */,
 				307205DF1D33C1CD0011A262 /* ViewController.m in Sources */,
 				307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */,
+				1802B4681E11569200A6A2D1 /* UITableView+TYSnapshot.m in Sources */,
 				307205D91D33C1CD0011A262 /* main.m in Sources */,
+				1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

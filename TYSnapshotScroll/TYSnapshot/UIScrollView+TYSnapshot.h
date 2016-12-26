@@ -3,7 +3,7 @@
 //  UITableViewSnapshotTest
 //
 //  Created by Tony on 2016/7/11.
-//  Copyright © 2016年 com.9188. All rights reserved.
+//  Copyright © 2016年 TonyReet. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -39,4 +39,10 @@
  */
 +(UIImage *)getSnapshotImage:(UIScrollView *)scrollView;
 
+/**
+ *  传入view,返回对应的图片
+ *
+ *
+ */
++(UIImage *)screenShotWithShotView:(UIView *)shotView;
 @end
