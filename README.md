@@ -1,5 +1,5 @@
 # TYSnapshotScroll
-##将scrollView相关的页面保存为图片,支持UITableView,WKWebView。
+##将scrollView相关的页面保存为图片,支持UIWebView,UITableView。
 
 [![](https://img.shields.io/badge/Supported-iOS7-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
