@@ -78,6 +78,9 @@
         
     }
     
+    
     [self.navigationController pushViewController:nextVc animated:YES];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end
