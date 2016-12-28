@@ -5,6 +5,12 @@
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
 **<mark>更新内容:</mark>**
+----------------- 2016.12.28更新 -------------
+
+1、修改WKWebView不能截图的问题
+
+2、几种View的布局层次不一致,将各种情况分开处理
+
 
 ----------------- 2016.12.26更新 -------------
 
