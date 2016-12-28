@@ -30,13 +30,15 @@
 - 1、引入头文件:
 
 ```objc
-#import "UIScrollView+TYSnapshot.h"
+#import "TYSnapshot.h"
 ```
 - 2、使用以下方法
 
 ```objc
-[UIScrollView setTYSnapshotDebugLog:YES];
-UIImage * snapshotImg = [UIScrollView getSnapshotImage:self.webView.scrollView];
+[TYSnapshot screenSnapshot:yourView finishBlock:^(UIImage *snapShotImage) {
+        doSomeThing
+    }];
+
 ```
 
 **<mark>注意:</mark>**
