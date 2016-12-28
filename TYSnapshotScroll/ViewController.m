@@ -22,9 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self tableViewInit];
+
+    self.dataSourceArr = @[@"WebView保存为图片",@"tableView保存为图片",@"WKWebView保存为图片"];
     
-    self.dataSourceArr = @[@"网页保存为图片",@"tableView保存为图片"];
+    [self tableViewInit];
 }
 
 
@@ -43,7 +44,7 @@
 
 #pragma mark - delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.dataSourceArr.count;
 }
 
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -71,6 +72,10 @@
         
     }else if(indexPath.row == 1){
         nextVc = [NSClassFromString(@"TYTableViewVc") new];
+        
+    }else if(indexPath.row == 2){
+        nextVc = [NSClassFromString(@"TYWKWebView") new];
+        
     }
     
     [self.navigationController pushViewController:nextVc animated:YES];

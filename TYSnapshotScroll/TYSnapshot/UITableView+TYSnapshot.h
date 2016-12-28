@@ -11,9 +11,6 @@
 
 @interface UITableView (TYSnapshot)
 
-/**
- *  最后的截图
- */
-- (UIImage *)screenshot;
+- (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock;
 
 @end

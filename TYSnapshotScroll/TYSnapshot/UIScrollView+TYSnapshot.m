@@ -8,118 +8,58 @@
 
 #import "UIScrollView+TYSnapshot.h"
 #import "UIImage+TYSnapshot.h"
-#import "UITableView+TYSnapshot.h"
-
-//打印调试，默认为不打开
-static BOOL kTYSnapshotDebugLog = NO;
 
 @implementation UIScrollView (TYSnapshot)
 
-#pragma mark - 设置调试打印
-+(void)setTYSnapshotDebugLog:(BOOL )TYSnapshotDebugLog{
-    kTYSnapshotDebugLog = TYSnapshotDebugLog;
-}
-
-#pragma mark 获取调试打印状态
-+(BOOL )getTYSnapshotDebugLog{
-    return kTYSnapshotDebugLog;
-}
-
-#pragma mark 获取最终拼接完成的图片
-+(UIImage *)getSnapshotImage:(UIScrollView *)scrollView{
-    //保存截取之前的contentOffset
-    CGPoint oldContentOffset = scrollView.contentOffset;
-
-    //截取的图片
-    UIImage * snapshotImg = [self screenshot:scrollView];
+- (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
+    UIImage* snapshotImage = nil;
     
-    //还原截取之前的contentOffset
-    scrollView.contentOffset = oldContentOffset;
-    return snapshotImg;
-}
-
-+ (UIImage *)screenshot:(UIScrollView *)scrollView{
-    if ([scrollView isKindOfClass:[UITableView class]]) {
-        UITableView *tableView = (UITableView *)scrollView;
-        return [tableView screenshot];
-    }else{
-        return [self getWebViewImage:scrollView];
+    UIGraphicsBeginImageContextWithOptions(self.contentSize,NO,0.0);
+    
+    //保存offset
+    CGPoint oldContentOffset = self.contentOffset;
+    
+    //保存frame
+    CGRect oldFrame = self.frame;
+    
+    self.contentOffset = CGPointZero;
+    
+    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    
+    [self.layer renderInContext: UIGraphicsGetCurrentContext()];
+    
+    snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //还原
+    self.contentOffset = oldContentOffset;
+    
+    self.frame = oldFrame;
+    
+    UIGraphicsEndImageContext();
+    
+    if (snapshotImage != nil && finishBlock) {
+        finishBlock(snapshotImage);
     }
-}
-
-+ (UIImage *)getWebViewImage:(UIScrollView *)scrollView{
-    CGSize oldContentSize = scrollView.contentSize;
-    
-    //截取的快照数组
-    NSMutableArray *snapshotList = [NSMutableArray array];
-    
-    //是否有余数，如果有余数需要增加一个屏幕数
-    NSUInteger isRemainder = ((NSUInteger)scrollView.contentSize.height % (NSUInteger)scrollView.bounds.size.height)?1:0;
-    
-    //计算快照屏幕数
-    NSUInteger snapshotScreenCount = scrollView.contentSize.height / scrollView.bounds.size.height + isRemainder;
-    
-    //先将内容扩大，最后还原
-    scrollView.contentSize = CGSizeMake(scrollView.bounds.size.width, snapshotScreenCount * scrollView.bounds.size.height);
-    
-    //获取所有快照
-    for (NSUInteger idx=0; idx< snapshotScreenCount; idx++) {
-        UIImage *viewScreenshot;
-        CGFloat snapshotHegith = idx*scrollView.bounds.size.height;
-        if (idx + 1 == snapshotScreenCount) {
-            //最后一屏,需要进行判断，只获取需要的内容
-            CGFloat shotSizeHeight = scrollView.bounds.size.height - (scrollView.contentSize.height - oldContentSize.height);
-            viewScreenshot = [self screenshotOfViewHeight:snapshotHegith scrollView:scrollView shotSize:CGSizeMake(scrollView.bounds.size.width, shotSizeHeight)];
-        }else{
-            viewScreenshot = [self screenshotOfViewHeight:snapshotHegith scrollView:scrollView];
-        }
-        
-        if (viewScreenshot) [snapshotList addObject:viewScreenshot];
-    }
-
-    scrollView.contentSize = oldContentSize;
-    return [UIImage getImageFromImagesArray:snapshotList];
-}
-
-#pragma mark - 滑动屏幕并且获取快照
-+(UIImage *)screenshotOfViewHeight:(CGFloat )height scrollView:(UIScrollView *)scrollView
-{
-    if (kTYSnapshotDebugLog) {
-        NSLog(@"height  = %@",@(height));
-    }
-    
-    scrollView.contentOffset = CGPointMake(0, height);
-    return [self screenShotWithShotView:[scrollView superview]];
-}
-
-+(UIImage *)screenshotOfViewHeight:(CGFloat )height scrollView:(UIScrollView *)scrollView shotSize:(CGSize )shotSize
-{
-    if (kTYSnapshotDebugLog) {
-        NSLog(@"height  = %@,shotSize = %@",@(height),NSStringFromCGSize(shotSize));
-    }
-
-    scrollView.contentOffset = CGPointMake(0, height);
-    return [self screenShotWithShotView:[scrollView superview] shotSize:shotSize];
 }
 
 #pragma mark - 获取屏幕快照
-+(UIImage *)screenShotWithShotView:(UIView *)shotView
++(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView
 {
-    return [self screenShotWithShotView:shotView shotSize:CGSizeZero];
+    return [self screenSnapshotWithSnapshotView:snapshotView snapshotSize:CGSizeZero];
 }
 
-+(UIImage *)screenShotWithShotView:(UIView *)shotView shotSize:(CGSize )shotSize
++(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize
 {
-    if (shotSize.height == 0|| shotSize.width == 0) {//宽高为0的时候没有意义
-        shotSize = shotView.bounds.size;
+    if (snapshotSize.height == 0|| snapshotSize.width == 0) {//宽高为0的时候没有意义
+        snapshotSize = snapshotView.bounds.size;
     }
     
     //创建
-    UIGraphicsBeginImageContextWithOptions(shotSize,NO,0.0);
+    UIGraphicsBeginImageContextWithOptions(snapshotSize,NO,0.0);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    [shotView.layer renderInContext:context];
+    [snapshotView.layer renderInContext:context];
     
     //获取图片
     UIImage *snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
@@ -129,4 +69,61 @@ static BOOL kTYSnapshotDebugLog = NO;
     
     return snapshotImg;
 }
+
+- (void )screenWebViewSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
+    
+    CGPoint oldContentOffset = self.contentOffset;
+    CGSize oldContentSize = self.contentSize;
+    
+    //截取的快照数组
+    NSMutableArray *snapshotList = [NSMutableArray array];
+    
+    //是否有余数，如果有余数需要增加一个屏幕数
+    NSUInteger isRemainder = ((NSUInteger)self.contentSize.height % (NSUInteger)self.bounds.size.height)?1:0;
+    
+    //计算快照屏幕数
+    NSUInteger snapshotScreenCount = self.contentSize.height / self.bounds.size.height + isRemainder;
+    
+    //先将内容扩大，最后还原
+    self.contentSize = CGSizeMake(self.bounds.size.width, snapshotScreenCount * self.bounds.size.height);
+    
+    //获取所有快照
+    for (NSUInteger idx=0; idx< snapshotScreenCount; idx++) {
+        UIImage *viewScreenshot;
+        CGFloat snapshotHegith = idx*self.bounds.size.height;
+        if (idx + 1 == snapshotScreenCount) {
+            //最后一屏,需要进行判断，只获取需要的内容
+            CGFloat shotSizeHeight = self.bounds.size.height - (self.contentSize.height - oldContentSize.height);
+            viewScreenshot = [UIScrollView screenSnapshotOfViewHeight:snapshotHegith scrollView:self snapshotSize:CGSizeMake(self.bounds.size.width, shotSizeHeight)];
+        }else{
+            viewScreenshot = [UIScrollView screenSnapshotOfViewHeight:snapshotHegith scrollView:self];
+        }
+        
+        if (viewScreenshot) [snapshotList addObject:viewScreenshot];
+    }
+    
+    self.contentOffset = oldContentOffset;
+    self.contentSize = oldContentSize;
+    
+    UIImage *snapshotImage = [UIImage getImageFromImagesArray:snapshotList];
+    if (snapshotImage != nil && finishBlock) {
+        finishBlock(snapshotImage);
+    }
+}
+
+#pragma mark - 滑动屏幕并且获取快照
++(UIImage *)screenSnapshotOfViewHeight:(CGFloat )height scrollView:(UIScrollView *)scrollView
+{
+    scrollView.contentOffset = CGPointMake(0, height);
+    
+    return [self screenSnapshotWithSnapshotView:[scrollView superview]];
+}
+
++(UIImage *)screenSnapshotOfViewHeight:(CGFloat )height scrollView:(UIScrollView *)scrollView snapshotSize:(CGSize )snapshotSize
+{
+    scrollView.contentOffset = CGPointMake(0, height);
+    
+    return [self screenSnapshotWithSnapshotView:[scrollView superview] snapshotSize:snapshotSize];
+}
+
 @end

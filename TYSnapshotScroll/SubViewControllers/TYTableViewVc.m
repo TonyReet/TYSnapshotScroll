@@ -7,7 +7,7 @@
 //
 
 #import "TYTableViewVc.h"
-#import "UIScrollView+TYSnapshot.h"
+#import "TYSnapshot.h"
 
 
 @interface TYTableViewVc ()
@@ -44,7 +44,7 @@
 - (void )buttonInit
 {
     if (!self.button) {
-        CGFloat buttonW = 120;
+        CGFloat buttonW = 150;
         CGFloat buttonH = 50;
         CGFloat buttonX = (TYSnapshotMainScreenBounds.size.width - buttonW)/2;
         CGFloat buttonY = TYSnapshotMainScreenBounds.size.height - 2*buttonH;
@@ -69,33 +69,24 @@
 - (void)snapshotBtn:(UIButton *)sender
 {
     
-    [UIScrollView setTYSnapshotDebugLog:YES];
-    UIImage * snapshotImg = [UIScrollView getSnapshotImage:self.tableView];
-    
-    //保存相册
-    UIImageWriteToSavedPhotosAlbum(snapshotImg, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    
-    [self.button setTitle:@"保存到相册,请稍后" forState:UIControlStateNormal];
-    
-    //打印
-    if ([UIScrollView getTYSnapshotDebugLog]) {
-        NSLog(@"-------保存相册---------");
-    }
+    [TYSnapshot screenSnapshot:self.tableView finishBlock:^(UIImage *snapShotImage) {
+        //保存相册
+        UIImageWriteToSavedPhotosAlbum(snapShotImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        
+        [self.button setTitle:@"保存到相册,请稍后" forState:UIControlStateNormal];
+    }];
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
-    [self.button setTitle:@"保存网页为图片" forState:UIControlStateNormal];
+    [self.button setTitle:@"保存tableview为图片" forState:UIControlStateNormal];
     
     //打印
-    if ([UIScrollView getTYSnapshotDebugLog]) {
-        if (error == nil) {
-            NSLog(@"-------保存成功---------");
-        }else{
-            NSLog(@"-------保存失败---------");
-        }
+    if (error == nil) {
+        NSLog(@"-------保存成功---------");
+    }else{
+        NSLog(@"-------保存失败---------");
     }
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

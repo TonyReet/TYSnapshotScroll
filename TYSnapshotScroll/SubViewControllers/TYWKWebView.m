@@ -1,27 +1,31 @@
 //
-//  TYWebViewVc.m
+//  TYWKWebView.m
 //  TYSnapshotScroll
 //
-//  Created by apple on 16/12/26.
+//  Created by apple on 16/12/27.
 //  Copyright © 2016年 TonyReet. All rights reserved.
 //
 
-#import "TYWebViewVc.h"
+#import "TYWKWebView.h"
 #import "TYSnapshot.h"
 
-@interface TYWebViewVc ()
-
-@property (nonatomic,strong) UIWebView *webView;
+@interface TYWKWebView ()
+<
+    UIScrollViewDelegate
+>
+@property (nonatomic,strong) WKWebView *webView;
 @property (nonatomic,strong) UIButton *button;
+
 @end
 
-@implementation TYWebViewVc
--(UIWebView*)webView{
+@implementation TYWKWebView
+
+-(WKWebView* )webView{
     if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-        
-        _webView.scalesPageToFit = YES;
+        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+
         _webView.scrollView.bounces = NO;
+        _webView.scrollView.delegate = self;
         _webView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_webView];
     }
@@ -82,7 +86,7 @@
 {
     [self.button setTitle:@"保存网页为图片" forState:UIControlStateNormal];
     
-    //打印
+   
     if (error == nil) {
         NSLog(@"-------保存成功---------");
     }else{

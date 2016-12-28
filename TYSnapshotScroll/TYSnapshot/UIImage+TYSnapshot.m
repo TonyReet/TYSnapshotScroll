@@ -8,7 +8,7 @@
 
 #import "UIImage+TYSnapshot.h"
 
-@implementation UIImage (ImagesArr)
+@implementation UIImage (TYSnapshot)
 
 #pragma mark 拼接快照
 + (UIImage *)getImageFromImagesArray:(NSArray *)imagesArr
