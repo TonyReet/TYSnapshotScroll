@@ -65,7 +65,7 @@
 }
 
 - (void)loadWebView{
-    NSString *urlStr = @"http://www.jianshu.com/p/2398363b2aa1";//@"https://github.com/TonyReet/TYSnapshotScroll/blob/master/README.md";
+    NSString *urlStr = @"https://github.com/TonyReet/TYSnapshotScroll/blob/master/README.md";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:5];//超时时间5秒
     
     //加载地址数据
