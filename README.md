@@ -41,14 +41,6 @@
 
 ```
 
-**<mark>注意:</mark>**
-1、方法
-```objc
-+(UIImage *)getSnapshotImage:(UIScrollView *)scrollView;
-```
-
-scrollView为对应的scrollView,比如UIWebView传入webView.scrollView
-
 
 ![TYSnapshotScroll] (https://github.com/TonyReet/TYSnapshotScroll/blob/master/Snapshot.gif)
 
