@@ -10,9 +10,7 @@
 #import "TYSnapshot.h"
 
 @interface TYWKWebView ()
-<
-    UIScrollViewDelegate
->
+
 @property (nonatomic,strong) WKWebView *webView;
 @property (nonatomic,strong) UIButton *button;
 
@@ -25,7 +23,6 @@
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
 
         _webView.scrollView.bounces = NO;
-        _webView.scrollView.delegate = self;
         _webView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_webView];
     }
