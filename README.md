@@ -36,7 +36,7 @@
 
 ```objc
 [TYSnapshot screenSnapshot:yourView finishBlock:^(UIImage *snapShotImage) {
-        doSomeThing
+        doSomething
     }];
 
 ```
