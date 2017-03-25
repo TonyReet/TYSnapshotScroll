@@ -263,6 +263,7 @@
 				TargetAttributes = {
 					307205D31D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2TEXXRXK22;
 					};
 					307205EC1D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -479,7 +480,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TEXXRXK22;
 				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -490,7 +493,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TEXXRXK22;
 				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";

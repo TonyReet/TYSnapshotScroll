@@ -73,7 +73,7 @@
         //保存相册
         UIImageWriteToSavedPhotosAlbum(snapShotImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
         
-        [self.button setTitle:@"保存到相册,请稍后" forState:UIControlStateNormal];
+        [self.button setTitle:@"保存到相册,请稍候" forState:UIControlStateNormal];
     }];
 }
 

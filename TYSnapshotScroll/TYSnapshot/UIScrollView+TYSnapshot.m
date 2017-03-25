@@ -90,7 +90,7 @@
     //获取所有快照
     for (NSUInteger idx=0; idx< snapshotScreenCount; idx++) {
         UIImage *viewScreenshot;
-        CGFloat snapshotHegith = idx*self.bounds.size.height;
+        CGFloat snapshotHegith = snapshotList.count*self.bounds.size.height;
         if (idx + 1 == snapshotScreenCount) {
             //最后一屏,需要进行判断，只获取需要的内容
             CGFloat shotSizeHeight = self.bounds.size.height - (self.contentSize.height - oldContentSize.height);
