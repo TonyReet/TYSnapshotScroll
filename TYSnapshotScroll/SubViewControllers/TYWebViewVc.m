@@ -68,6 +68,7 @@
     [self.webView loadRequest:request];
 }
 
+//保存图片
 - (void)snapshotBtn:(UIButton *)sender
 {
     [self.button setTitle:@"截图中,请稍候" forState:UIControlStateNormal];

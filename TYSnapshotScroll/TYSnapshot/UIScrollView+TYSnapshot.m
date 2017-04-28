@@ -14,7 +14,7 @@
 - (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
     UIImage* snapshotImage = nil;
     
-    UIGraphicsBeginImageContextWithOptions(self.contentSize,NO,0.0);
+    UIGraphicsBeginImageContextWithOptions(self.contentSize,NO,[UIScreen mainScreen].scale);
     
     //保存offset
     CGPoint oldContentOffset = self.contentOffset;
@@ -42,33 +42,6 @@
     }
 }
 
-#pragma mark - 获取屏幕快照
-+(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView
-{
-    return [self screenSnapshotWithSnapshotView:snapshotView snapshotSize:CGSizeZero];
-}
-
-+(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize
-{
-    if (snapshotSize.height == 0|| snapshotSize.width == 0) {//宽高为0的时候没有意义
-        snapshotSize = snapshotView.bounds.size;
-    }
-    
-    //创建
-    UIGraphicsBeginImageContextWithOptions(snapshotSize,NO,0.0);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    [snapshotView.layer renderInContext:context];
-    
-    //获取图片
-    UIImage *snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
-    
-    //关闭
-    UIGraphicsEndImageContext();
-    
-    return snapshotImg;
-}
 
 - (void )screenWebViewSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
     
@@ -111,7 +84,46 @@
     }
 }
 
+#pragma mark - 获取屏幕快照
+/*
+ *  snapshotView:需要截取的view
+ */
++(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView
+{
+    return [self screenSnapshotWithSnapshotView:snapshotView snapshotSize:CGSizeZero];
+}
+
+/*
+ *  snapshotView:需要截取的view
+ *  snapshotSize:需要截取的size
+ */
++(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize
+{
+    if (snapshotSize.height == 0|| snapshotSize.width == 0) {//宽高为0的时候没有意义
+        snapshotSize = snapshotView.bounds.size;
+    }
+    
+    //创建
+    UIGraphicsBeginImageContextWithOptions(snapshotSize,NO,[UIScreen mainScreen].scale);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    [snapshotView.layer renderInContext:context];
+    
+    //获取图片
+    UIImage *snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //关闭
+    UIGraphicsEndImageContext();
+    
+    return snapshotImg;
+}
+
 #pragma mark - 滑动屏幕并且获取快照
+/*
+ *  height:截取的高度
+ *  scrollView:需要截取的view
+ */
 +(UIImage *)screenSnapshotOfViewHeight:(CGFloat )height scrollView:(UIScrollView *)scrollView
 {
     scrollView.contentOffset = CGPointMake(0, height);
@@ -119,6 +131,11 @@
     return [self screenSnapshotWithSnapshotView:[scrollView superview]];
 }
 
+/*
+ *  height:截取的高度
+ *  scrollView:需要截取的view
+ *  snapshotSize:需要截取的size
+ */
 +(UIImage *)screenSnapshotOfViewHeight:(CGFloat )height scrollView:(UIScrollView *)scrollView snapshotSize:(CGSize )snapshotSize
 {
     scrollView.contentOffset = CGPointMake(0, height);

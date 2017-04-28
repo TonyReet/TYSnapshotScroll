@@ -6,6 +6,11 @@
 
 **<mark>更新内容:</mark>**
 
+----------------- 2017.04.28更新 -------------
+
+1、添加UIScrollView+TYSnapshot的注释，画图统一调取屏幕的比例
+
+
 ----------------- 2016.12.28更新 -------------
 
 1、修改WKWebView不能截图的问题
@@ -15,7 +20,7 @@
 
 ----------------- 2016.12.26更新 -------------
 
-1、tableView的图片保存会有问题，最后参考了[ZFBest/UITableViewSnapshot] (https://github.com/ZFBest/UITableViewSnapshot)
+1、tableView的图片保存会有问题，最后参考了[ZFBest/UITableViewSnapshot](https://github.com/ZFBest/UITableViewSnapshot)
 对tableview的处理办法暂时解决了，后面有空的话还是会统一逻辑的
 
 
@@ -42,167 +47,20 @@
 ```
 
 
-![TYSnapshotScroll] (https://github.com/TonyReet/TYSnapshotScroll/blob/master/Snapshot.gif)
+![TYSnapshotScroll] (Snapshot.gif)
 
------------------ 增加长度 -------------
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-1
+----------------- 增加长度 start -------------
 
                      |
                      
                      |
                      
                      |
-                     
-2
 
                      |
-                     
-                     |
-                     
-                     |
-                     
-3
 
                      |
-                     
-                     |
-                     
-                     |
-                     
-4
 
                      |
-                     
-                     |
-                     
-                     |
-                     
-5
 
-                     |
-                     
-                     |
-                     
-                     |
-                     
-6
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-7
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-8
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-9
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-10
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-11
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-12
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-13
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-14
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-15
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-16
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-17
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-18
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-19
-
-                     |
-                     
-                     |
-                     
-                     |
-                     
-20
------------------ 增加长度 -------------
+----------------- 增加长度 end -------------

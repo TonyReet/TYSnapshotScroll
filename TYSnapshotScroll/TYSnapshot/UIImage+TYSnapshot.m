@@ -15,7 +15,7 @@
 {
     UIImage *image;
     CGSize imageTotalSize = [self getImageTotalSizeFromImagesArray:imagesArr];
-    UIGraphicsBeginImageContextWithOptions(imageTotalSize, NO, 0.f);
+    UIGraphicsBeginImageContextWithOptions(imageTotalSize, NO, [UIScreen mainScreen].scale);
     
     //拼接图片
     int imageOffset = 0;

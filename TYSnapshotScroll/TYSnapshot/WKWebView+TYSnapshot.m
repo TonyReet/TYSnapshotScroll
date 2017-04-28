@@ -44,7 +44,7 @@
     
 }
 
-//滑动画了在截图
+//滑动画了再截图
 - (void )scrollToDraw:(NSInteger )index maxIndex:(NSInteger )maxIndex finishBlock:(void(^)())finishBlock{
     
     self.scrollView.contentOffset = CGPointMake(0, (float)index * self.scrollView.frame.size.height);

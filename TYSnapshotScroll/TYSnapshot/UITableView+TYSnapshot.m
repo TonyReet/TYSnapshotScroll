@@ -39,6 +39,7 @@
     UIImage *footerScreenSnapshot = [self screenSnapshotOfFooterView];
     if (footerScreenSnapshot) [screenSnapshots addObject:footerScreenSnapshot];
     
+    //拼接图片
     if (screenSnapshots.count != 0 && finishBlock) {
         finishBlock([UIImage getImageFromImagesArray:screenSnapshots]);
     }
