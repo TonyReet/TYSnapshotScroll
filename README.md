@@ -47,7 +47,7 @@
 ```
 
 
-![TYSnapshotScroll] (Snapshot.gif)
+![TYSnapshotScroll](Snapshot.gif)
 
 ----------------- 增加长度 start -------------
 
