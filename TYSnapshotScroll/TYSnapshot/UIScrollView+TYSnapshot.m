@@ -14,29 +14,30 @@
 - (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
     UIImage* snapshotImage = nil;
     
-    UIGraphicsBeginImageContextWithOptions(self.contentSize,NO,[UIScreen mainScreen].scale);
-    
-    //保存offset
-    CGPoint oldContentOffset = self.contentOffset;
-    
-    //保存frame
-    CGRect oldFrame = self.frame;
-    
-    self.contentOffset = CGPointZero;
-    
-    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
-    
-    [self.layer renderInContext: UIGraphicsGetCurrentContext()];
-    
-    snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    //还原
-    self.contentOffset = oldContentOffset;
-    
-    self.frame = oldFrame;
-    
-    UIGraphicsEndImageContext();
-    
+    @autoreleasepool{
+        UIGraphicsBeginImageContextWithOptions(self.contentSize,NO,[UIScreen mainScreen].scale);
+        
+        //保存offset
+        CGPoint oldContentOffset = self.contentOffset;
+        
+        //保存frame
+        CGRect oldFrame = self.frame;
+        
+        self.contentOffset = CGPointZero;
+        
+        self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+        
+        [self.layer renderInContext: UIGraphicsGetCurrentContext()];
+        
+        snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        //还原
+        self.contentOffset = oldContentOffset;
+        
+        self.frame = oldFrame;
+        
+        UIGraphicsEndImageContext();
+    }
     if (snapshotImage != nil && finishBlock) {
         finishBlock(snapshotImage);
     }
@@ -59,7 +60,7 @@
     
     //先将内容扩大，最后还原
     self.contentSize = CGSizeMake(self.bounds.size.width, snapshotScreenCount * self.bounds.size.height);
-    
+
     //获取所有快照
     for (NSUInteger idx=0; idx< snapshotScreenCount; idx++) {
         UIImage *viewScreenshot;
@@ -74,7 +75,7 @@
         
         if (viewScreenshot) [snapshotList addObject:viewScreenshot];
     }
-    
+
     self.contentOffset = oldContentOffset;
     self.contentSize = oldContentSize;
     
@@ -99,26 +100,27 @@
  */
 +(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize
 {
-    if (snapshotSize.height == 0|| snapshotSize.width == 0) {//宽高为0的时候没有意义
-        snapshotSize = snapshotView.bounds.size;
+    UIImage *snapshotImg;
+    @autoreleasepool{
+        if (snapshotSize.height == 0|| snapshotSize.width == 0) {//宽高为0的时候没有意义
+            snapshotSize = snapshotView.bounds.size;
+        }
+        
+        //创建
+        UIGraphicsBeginImageContextWithOptions(snapshotSize,NO,[UIScreen mainScreen].scale);
+        
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        [snapshotView.layer renderInContext:context];
+        
+        //获取图片
+        snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
+        
+        //关闭
+        UIGraphicsEndImageContext();
     }
-    
-    //创建
-    UIGraphicsBeginImageContextWithOptions(snapshotSize,NO,[UIScreen mainScreen].scale);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    [snapshotView.layer renderInContext:context];
-    
-    //获取图片
-    UIImage *snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
-    
-    //关闭
-    UIGraphicsEndImageContext();
-    
     return snapshotImg;
 }
-
 #pragma mark - 滑动屏幕并且获取快照
 /*
  *  height:截取的高度
@@ -144,3 +146,4 @@
 }
 
 @end
+

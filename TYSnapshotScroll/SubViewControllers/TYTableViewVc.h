@@ -6,8 +6,8 @@
 //  Copyright © 2016年 TonyReet. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TYBaseVc.h"
 
-@interface TYTableViewVc : UIViewController
+@interface TYTableViewVc : TYBaseVc
 
 @end

@@ -13,21 +13,24 @@
 #pragma mark 拼接快照
 + (UIImage *)getImageFromImagesArray:(NSArray *)imagesArr
 {
+
     UIImage *image;
-    CGSize imageTotalSize = [self getImageTotalSizeFromImagesArray:imagesArr];
-    UIGraphicsBeginImageContextWithOptions(imageTotalSize, NO, [UIScreen mainScreen].scale);
-    
-    //拼接图片
-    int imageOffset = 0;
-    for (UIImage *images in imagesArr) {
-        [images drawAtPoint:CGPointMake(0, imageOffset)];
-        imageOffset += images.size.height;
+    @autoreleasepool{
+        CGSize imageTotalSize = [self getImageTotalSizeFromImagesArray:imagesArr];
+        UIGraphicsBeginImageContextWithOptions(imageTotalSize, NO, [UIScreen mainScreen].scale);
+        
+        //拼接图片
+        int imageOffset = 0;
+        for (UIImage *images in imagesArr) {
+            [images drawAtPoint:CGPointMake(0, imageOffset)];
+            imageOffset += images.size.height;
+        }
+        
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
     }
-    
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
     return image;
+
 }
 
 #pragma mark 获取全部图片拼接后size

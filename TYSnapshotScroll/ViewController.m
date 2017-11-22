@@ -23,7 +23,7 @@
     [super viewDidLoad];
 
 
-    self.dataSourceArr = @[@"WebView保存为图片",@"tableView保存为图片",@"WKWebView保存为图片"];
+    self.dataSourceArr = @[@"WebView保存为图片",@"tableView保存为图片",@"WKWebView保存为图片",@"scrollView保存为图片"];
     
     [self tableViewInit];
 }
@@ -72,14 +72,15 @@
         
     }else if(indexPath.row == 1){
         nextVc = [NSClassFromString(@"TYTableViewVc") new];
-        
     }else if(indexPath.row == 2){
-        nextVc = [NSClassFromString(@"TYWKWebView") new];
-        
+        nextVc = [NSClassFromString(@"TYWKWebViewVc") new];
+    }else if(indexPath.row == 3){
+        nextVc = [NSClassFromString(@"TYScrollViewVc") new];
     }
     
-    
-    [self.navigationController pushViewController:nextVc animated:YES];
+    if (nextVc != nil) {
+        [self.navigationController pushViewController:nextVc animated:YES];
+    }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

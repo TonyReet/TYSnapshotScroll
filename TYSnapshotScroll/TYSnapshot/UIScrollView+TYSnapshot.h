@@ -18,3 +18,4 @@
 
 +(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize;
 @end
+
