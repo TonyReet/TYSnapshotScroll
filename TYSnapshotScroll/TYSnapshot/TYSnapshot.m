@@ -9,13 +9,10 @@
 #import "TYSnapshot.h"
 #import "WKWebView+TYSnapshot.h"
 #import "UIScrollView+TYSnapshot.h"
-#import "UIScrollView+TYSnapshot.h"
 
 @implementation TYSnapshot
 
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
-    
-    
     if ([snapshotView isKindOfClass:[UITableView class]]) {
         //tableview
         UITableView *tableView = (UITableView *)snapshotView;
@@ -39,7 +36,7 @@
         //UIWebView
         UIWebView *webView = (UIWebView *)snapshotView;
         
-        [webView.scrollView screenWebViewSnapshot:^(UIImage *snapShotImage) {
+        [webView.scrollView screenSnapshot:^(UIImage *snapShotImage) {
             if (snapShotImage != nil && finishBlock) {
                 finishBlock(snapShotImage);
             }

@@ -23,6 +23,7 @@
 		307205FD1D33C1CD0011A262 /* TYSnapshotScrollUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205FC1D33C1CD0011A262 /* TYSnapshotScrollUITests.m */; };
 		3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */; };
 		307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */; };
+		6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */; };
 		6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EBD1FC575B100D0C91D /* TYBaseVc.m */; };
 		6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,8 @@
 		3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYSnapshot.m"; sourceTree = "<group>"; };
 		3072060D1D33C2020011A262 /* UIScrollView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSnapshot.h"; sourceTree = "<group>"; };
 		3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshot.m"; sourceTree = "<group>"; };
+		6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewVc.h; sourceTree = "<group>"; };
+		6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewVc.m; sourceTree = "<group>"; };
 		6A895EBC1FC575B100D0C91D /* TYBaseVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBaseVc.h; sourceTree = "<group>"; };
 		6A895EBD1FC575B100D0C91D /* TYBaseVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBaseVc.m; sourceTree = "<group>"; };
 		6A895EBF1FC5786500D0C91D /* TYScrollViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollViewVc.h; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				18C29ADD1E1286230047E25D /* TYWKWebViewVc.m */,
 				6A895EBF1FC5786500D0C91D /* TYScrollViewVc.h */,
 				6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */,
+				6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */,
+				6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */,
 			);
 			path = SubViewControllers;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				TargetAttributes = {
 					307205D31D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = VXJWPMTZDB;
 					};
 					307205EC1D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -339,6 +345,7 @@
 				1843AF2A1E13ACEE002097F2 /* WKWebView+TYSnapshot.m in Sources */,
 				3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */,
 				1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */,
+				6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */,
 				307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */,
 				1843AF2D1E13B018002097F2 /* TYSnapshot.m in Sources */,
 				307205DF1D33C1CD0011A262 /* ViewController.m in Sources */,
@@ -491,7 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VXJWPMTZDB;
 				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -504,7 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VXJWPMTZDB;
 				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

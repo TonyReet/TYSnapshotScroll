@@ -16,14 +16,8 @@
 
 @implementation TYScrollViewVc
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self scrollViewInit];
-    [self buttonInit:@"保存scrollView为图片"];
-}
 
-- (void)scrollViewInit{
+- (void)subClassInit {
     CGRect screenBounds = [UIScreen mainScreen].bounds;
     self.scrollView = [[UIScrollView alloc] initWithFrame:screenBounds];
     self.scrollView.backgroundColor = [UIColor whiteColor];

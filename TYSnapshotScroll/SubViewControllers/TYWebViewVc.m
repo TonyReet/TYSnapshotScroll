@@ -10,31 +10,26 @@
 
 
 @interface TYWebViewVc ()
-
+<
+    UIWebViewDelegate
+>
 @property (nonatomic,strong) UIWebView *webView;
 
 @end
 
 @implementation TYWebViewVc
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self webViewInit];
-    
-    [self buttonInit:@"保存网页为图片"];
-}
-
-- (void)webViewInit{
+- (void)subClassInit {
     self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     
+    self.webView.delegate = self;
     self.webView.scalesPageToFit = YES;
     self.webView.scrollView.bounces = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];
     
-    NSString *urlStr = @"https://m.baidu.com";
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:5];//超时时间5秒
+    NSString *urlStr = @"https://www.meituan.com";
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];//超时时间10秒
     
     //加载地址数据
     [self.webView loadRequest:request];

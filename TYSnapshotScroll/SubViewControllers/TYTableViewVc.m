@@ -13,21 +13,15 @@
     UITableViewDataSource,
     UITableViewDelegate
 >
+
 @property (nonatomic,strong) UITableView *tableView;
 
 @end
 
 @implementation TYTableViewVc
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self tableViewInit];
-    
-    [self buttonInit:@"保存tableview为图片"];
-}
 
--(void )tableViewInit{
+- (void)subClassInit {
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     
     self.tableView.delegate = (id)self;

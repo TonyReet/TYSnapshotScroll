@@ -23,7 +23,7 @@
     [super viewDidLoad];
 
 
-    self.dataSourceArr = @[@"WebView保存为图片",@"tableView保存为图片",@"WKWebView保存为图片",@"scrollView保存为图片"];
+    self.dataSourceArr = @[@"UIWebView保存为图片",@"UITableView保存为图片",@"WKWebView保存为图片",@"UIScrollView保存为图片"];
     
     [self tableViewInit];
 }

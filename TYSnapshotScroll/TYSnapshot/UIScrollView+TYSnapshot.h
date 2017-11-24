@@ -12,7 +12,7 @@
 
 - (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock;
 
-- (void )screenWebViewSnapshot:(void(^)(UIImage *snapShotImage))finishBlock;
+//- (void )screenWebViewSnapshot:(void(^)(UIImage *snapShotImage))finishBlock;
 
 +(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView;
 

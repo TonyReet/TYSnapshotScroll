@@ -14,12 +14,10 @@
 //需要截图的view
 @property (nonatomic,strong) UIView *snapView;
 
-@property (nonatomic,strong) UIButton *button;
 
-- (void )buttonInit:(NSString *)title;
+/**
+ 子类初始化方法
+ */
+- (void)subClassInit;
 
-//保存图片
-- (void)snapshotBtn:(UIButton *)sender;
-
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 @end
