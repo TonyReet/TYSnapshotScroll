@@ -1,11 +1,11 @@
 # TYSnapshotScroll
-##将scrollView相关的页面保存为图片,支持UIScrollView,UIWebView,UITableView,WKWebView。
+## 将scrollView相关的页面保存为图片,支持UIScrollView,UIWebView,UITableView,WKWebView。支持iOS11
 
 [![](https://img.shields.io/badge/Supported-iOS7-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
 
-###使用方法
+### 使用方法
 - 1、引入头文件:
 
 ```objc
