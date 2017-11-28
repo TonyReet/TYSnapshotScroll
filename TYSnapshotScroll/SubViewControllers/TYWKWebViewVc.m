@@ -29,12 +29,5 @@
     [self.webView loadRequest:request];
     
     self.snapView = self.webView;
-    
-    [self.webView.scrollView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
 }
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-
-}
-
 @end
