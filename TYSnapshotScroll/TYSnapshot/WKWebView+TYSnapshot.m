@@ -15,9 +15,6 @@
     CGPoint oldOffset = self.scrollView.contentOffset;
     CGRect oldFrame = self.frame;
     
-    if (self.scrollView.contentSize.height > self.frame.size.height) {
-        self.scrollView.contentOffset = CGPointMake(0, self.scrollView.contentSize.height - self.frame.size.height);
-    }
     self.frame = CGRectMake(0, 0, oldFrame.size.width, self.scrollView.contentSize.height);
 
     //是否有余数，如果有余数需要增加一个屏幕数
@@ -34,10 +31,8 @@
         UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        __strong __typeof(self) strongSelf = weakSelf;
-        
-        strongSelf.scrollView.frame = oldFrame;
-        strongSelf.scrollView.contentOffset = oldOffset;
+        weakSelf.frame = oldFrame;
+        weakSelf.scrollView.contentOffset = oldOffset;
         
         if (finishBlock) {
             finishBlock(snapshotImage);
