@@ -13,16 +13,7 @@
 @implementation TYSnapshot
 
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
-    if ([snapshotView isKindOfClass:[UITableView class]]) {
-        //tableview
-        UITableView *tableView = (UITableView *)snapshotView;
-        
-        [tableView screenSnapshot:^(UIImage *snapShotImage) {
-            if (snapShotImage != nil && finishBlock) {
-                finishBlock(snapShotImage);
-            }
-        }];
-    }else if([snapshotView isKindOfClass:[WKWebView class]]){
+    if([snapshotView isKindOfClass:[WKWebView class]]){
         //WKWebView
         WKWebView *wkWebView = (WKWebView *)snapshotView;
         [wkWebView screenSnapshot:^(UIImage *snapShotImage) {
@@ -30,7 +21,6 @@
                 finishBlock(snapShotImage);
             }
         }];
-        
     }else if([snapshotView isKindOfClass:[UIWebView class]]){
         
         //UIWebView
@@ -41,17 +31,9 @@
                 finishBlock(snapShotImage);
             }
         }];
-    }else if([snapshotView isKindOfClass:[UICollectionView class]]){
-        
-        //UICollectionView
-        UICollectionView *collectionView = (UICollectionView *)snapshotView;
-        
-        [collectionView screenSnapshot:^(UIImage *snapShotImage) {
-            if (snapShotImage != nil && finishBlock) {
-                finishBlock(snapShotImage);
-            }
-        }];
-    }else if([snapshotView isKindOfClass:[UIScrollView class]]
+    }else if([snapshotView isKindOfClass:[UIScrollView class]] ||
+            [snapshotView isKindOfClass:[UITableView class]] ||
+            [snapshotView isKindOfClass:[UICollectionView class]]
              ){
         //ScrollView
         UIScrollView *scrollView = (UIScrollView *)snapshotView;
