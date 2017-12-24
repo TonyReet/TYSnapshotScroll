@@ -23,19 +23,16 @@
 
 - (void)subClassInit {
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    
-    self.tableView.delegate = (id)self;
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-    [self.tableView reloadData];
     
     self.snapView = self.tableView;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 50;
+    return 25;
 }
 
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
