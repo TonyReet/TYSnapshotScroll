@@ -51,19 +51,19 @@
 
 //滑动画了再截图
 - (void )scrollToDraw:(NSInteger )index maxIndex:(NSInteger )maxIndex finishBlock:(void(^)(void))finishBlock{
-    UIView *superView = self.superview;
+    UIView *snapshotView = self;
     
     //截取的frame
-    CGRect snapshotFrame = CGRectMake(0, (float)index * superView.bounds.size.height, superView.bounds.size.width, superView.bounds.size.height);
-
+    CGRect snapshotFrame = CGRectMake(0, (float)index * snapshotView.bounds.size.height, snapshotView.bounds.size.width, snapshotView.bounds.size.height);
+    
     // set up webview originY
     CGRect myFrame = self.frame;
-    myFrame.origin.y = -((index) * superView.frame.size.height);
+    myFrame.origin.y = -((index) * snapshotView.frame.size.height);
     self.frame = myFrame;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
         
-        [superView drawViewHierarchyInRect:snapshotFrame afterScreenUpdates:YES];
+        [snapshotView drawViewHierarchyInRect:snapshotFrame afterScreenUpdates:YES];
         
         if(index < maxIndex){
             [self scrollToDraw:index + 1 maxIndex:maxIndex finishBlock:finishBlock];
