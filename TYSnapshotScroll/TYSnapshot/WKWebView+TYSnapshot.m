@@ -50,7 +50,7 @@
 }
 
 //滑动画了再截图
-- (void )scrollToDraw:(NSInteger )index maxIndex:(NSInteger )maxIndex finishBlock:(void(^)())finishBlock{
+- (void )scrollToDraw:(NSInteger )index maxIndex:(NSInteger )maxIndex finishBlock:(void(^)(void))finishBlock{
     UIView *superView = self.superview;
     
     //截取的frame
