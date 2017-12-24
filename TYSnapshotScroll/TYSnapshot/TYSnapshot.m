@@ -41,7 +41,18 @@
                 finishBlock(snapShotImage);
             }
         }];
-    }else if([snapshotView isKindOfClass:[UIScrollView class]]){
+    }else if([snapshotView isKindOfClass:[UICollectionView class]]){
+        
+        //UICollectionView
+        UICollectionView *collectionView = (UICollectionView *)snapshotView;
+        
+        [collectionView screenSnapshot:^(UIImage *snapShotImage) {
+            if (snapShotImage != nil && finishBlock) {
+                finishBlock(snapShotImage);
+            }
+        }];
+    }else if([snapshotView isKindOfClass:[UIScrollView class]]
+             ){
         //ScrollView
         UIScrollView *scrollView = (UIScrollView *)snapshotView;
         

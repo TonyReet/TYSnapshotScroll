@@ -23,7 +23,7 @@
     [super viewDidLoad];
 
 
-    self.dataSourceArr = @[@"UIWebView保存为图片",@"UITableView保存为图片",@"WKWebView保存为图片",@"UIScrollView保存为图片"];
+    self.dataSourceArr = @[@"UIWebView保存为图片",@"UITableView保存为图片",@"WKWebView保存为图片",@"UIScrollView保存为图片",@"UICollectionView保存为图片"];
     
     [self tableViewInit];
 }
@@ -76,6 +76,8 @@
         nextVc = [NSClassFromString(@"TYWKWebViewVc") new];
     }else if(indexPath.row == 3){
         nextVc = [NSClassFromString(@"TYScrollViewVc") new];
+    }else if(indexPath.row == 4){
+        nextVc = [NSClassFromString(@"TYCollectionViewVc") new];
     }
     
     if (nextVc != nil) {
