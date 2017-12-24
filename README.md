@@ -1,6 +1,6 @@
 # TYSnapshotScroll
 
-## 一句代码保存截图,将scrollView相关的页面保存为图片,支持UIScrollView,UIWebView,UITableView,WKWebView。支持iOS11
+## 一句代码保存截图,将scrollView相关的页面保存为图片,支持UIScrollView,UITableView,UICollectionView,UIWebView,WKWebView。支持iOS11
 
 ###修改了网页截图类似美团，百度首页截取时下部出现重复显示的问题。
 
