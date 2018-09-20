@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WKWebView.h>
 
-#define TYSnapshotMainScreenBounds [UIScreen mainScreen].bounds
-
 @interface TYSnapshot : NSObject
 
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBloc;

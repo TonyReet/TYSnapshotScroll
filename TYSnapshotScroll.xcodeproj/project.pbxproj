@@ -23,6 +23,7 @@
 		3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */; };
 		307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */; };
 		6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */; };
+		6A67DFF021532D2700C9CAD0 /* UIViewController+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A67DFEF21532D2700C9CAD0 /* UIViewController+TYSnapshot.m */; };
 		6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */; };
 		6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EBD1FC575B100D0C91D /* TYBaseVc.m */; };
 		6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */; };
@@ -78,6 +79,8 @@
 		3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshot.m"; sourceTree = "<group>"; };
 		6A675A191FEF8E0200BA2B46 /* TYCollectionViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYCollectionViewVc.h; sourceTree = "<group>"; };
 		6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYCollectionViewVc.m; sourceTree = "<group>"; };
+		6A67DFEE21532D2700C9CAD0 /* UIViewController+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYSnapshot.h"; sourceTree = "<group>"; };
+		6A67DFEF21532D2700C9CAD0 /* UIViewController+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TYSnapshot.m"; sourceTree = "<group>"; };
 		6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewVc.h; sourceTree = "<group>"; };
 		6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewVc.m; sourceTree = "<group>"; };
 		6A895EBC1FC575B100D0C91D /* TYBaseVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBaseVc.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */,
 				1843AF281E13ACEE002097F2 /* WKWebView+TYSnapshot.h */,
 				1843AF291E13ACEE002097F2 /* WKWebView+TYSnapshot.m */,
+				6A67DFEE21532D2700C9CAD0 /* UIViewController+TYSnapshot.h */,
+				6A67DFEF21532D2700C9CAD0 /* UIViewController+TYSnapshot.m */,
 			);
 			path = TYSnapshot;
 			sourceTree = "<group>";
@@ -273,11 +278,12 @@
 		307205CC1D33C1CD0011A262 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = TonyReet;
 				TargetAttributes = {
 					307205D31D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2TEXXRXK22;
 					};
 					307205EC1D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -343,6 +349,7 @@
 			files = (
 				1843AF2A1E13ACEE002097F2 /* WKWebView+TYSnapshot.m in Sources */,
 				3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */,
+				6A67DFF021532D2700C9CAD0 /* UIViewController+TYSnapshot.m in Sources */,
 				1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */,
 				6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */,
 				307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */,
@@ -418,13 +425,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -463,13 +480,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -497,7 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2TEXXRXK22;
 				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -510,7 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2TEXXRXK22;
 				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
