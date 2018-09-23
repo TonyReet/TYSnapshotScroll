@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */; };
 		1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */; };
-		1843AF2A1E13ACEE002097F2 /* WKWebView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843AF291E13ACEE002097F2 /* WKWebView+TYSnapshot.m */; };
-		1843AF2D1E13B018002097F2 /* TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843AF2C1E13B018002097F2 /* TYSnapshot.m */; };
 		18C29ADE1E1286230047E25D /* TYWKWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C29ADD1E1286230047E25D /* TYWKWebViewVc.m */; };
 		307205D91D33C1CD0011A262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205D81D33C1CD0011A262 /* main.m */; };
 		307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DB1D33C1CD0011A262 /* AppDelegate.m */; };
@@ -18,13 +16,15 @@
 		307205E21D33C1CD0011A262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307205E01D33C1CD0011A262 /* Main.storyboard */; };
 		307205E41D33C1CD0011A262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307205E31D33C1CD0011A262 /* Assets.xcassets */; };
 		307205E71D33C1CD0011A262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */; };
-		307205F21D33C1CD0011A262 /* TYSnapshotScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205F11D33C1CD0011A262 /* TYSnapshotScrollTests.m */; };
-		307205FD1D33C1CD0011A262 /* TYSnapshotScrollUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205FC1D33C1CD0011A262 /* TYSnapshotScrollUITests.m */; };
-		3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */; };
-		307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */; };
+		307205F21D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205F11D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m */; };
+		307205FD1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205FC1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m */; };
 		6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */; };
-		6A67DFF021532D2700C9CAD0 /* UIViewController+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A67DFEF21532D2700C9CAD0 /* UIViewController+TYSnapshot.m */; };
 		6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */; };
+		6A7913BE215732F000DB9626 /* TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B5215732F000DB9626 /* TYSnapshot.m */; };
+		6A7913BF215732F000DB9626 /* WKWebView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */; };
+		6A7913C0215732F000DB9626 /* UIScrollView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */; };
+		6A7913C1215732F000DB9626 /* UIImage+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */; };
+		6A7913C2215732F000DB9626 /* UIViewController+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913BD215732F000DB9626 /* UIViewController+TYSnapshot.m */; };
 		6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EBD1FC575B100D0C91D /* TYBaseVc.m */; };
 		6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */; };
 /* End PBXBuildFile section */
@@ -35,14 +35,14 @@
 			containerPortal = 307205CC1D33C1CD0011A262 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 307205D31D33C1CD0011A262;
-			remoteInfo = TYSnapshotScroll;
+			remoteInfo = TYSnapshotScrollDemo;
 		};
 		307205F91D33C1CD0011A262 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 307205CC1D33C1CD0011A262 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 307205D31D33C1CD0011A262;
-			remoteInfo = TYSnapshotScroll;
+			remoteInfo = TYSnapshotScrollDemo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,13 +51,9 @@
 		1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYWebViewVc.m; sourceTree = "<group>"; };
 		1802B45A1E10D3A300A6A2D1 /* TYTableViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTableViewVc.h; sourceTree = "<group>"; };
 		1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTableViewVc.m; sourceTree = "<group>"; };
-		1843AF281E13ACEE002097F2 /* WKWebView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+TYSnapshot.h"; sourceTree = "<group>"; };
-		1843AF291E13ACEE002097F2 /* WKWebView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+TYSnapshot.m"; sourceTree = "<group>"; };
-		1843AF2B1E13B018002097F2 /* TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYSnapshot.h; sourceTree = "<group>"; };
-		1843AF2C1E13B018002097F2 /* TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYSnapshot.m; sourceTree = "<group>"; };
 		18C29ADC1E1286230047E25D /* TYWKWebViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYWKWebViewVc.h; sourceTree = "<group>"; };
 		18C29ADD1E1286230047E25D /* TYWKWebViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYWKWebViewVc.m; sourceTree = "<group>"; };
-		307205D41D33C1CD0011A262 /* TYSnapshotScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSnapshotScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		307205D41D33C1CD0011A262 /* TYSnapshotScrollDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSnapshotScrollDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307205D81D33C1CD0011A262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		307205DA1D33C1CD0011A262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		307205DB1D33C1CD0011A262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,22 +63,26 @@
 		307205E31D33C1CD0011A262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307205E61D33C1CD0011A262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307205E81D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		307205ED1D33C1CD0011A262 /* TYSnapshotScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSnapshotScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		307205F11D33C1CD0011A262 /* TYSnapshotScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScrollTests.m; sourceTree = "<group>"; };
+		307205ED1D33C1CD0011A262 /* TYSnapshotScrollDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSnapshotScrollDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		307205F11D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScrollDemoTests.m; sourceTree = "<group>"; };
 		307205F31D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		307205F81D33C1CD0011A262 /* TYSnapshotScrollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSnapshotScrollUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		307205FC1D33C1CD0011A262 /* TYSnapshotScrollUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScrollUITests.m; sourceTree = "<group>"; };
+		307205F81D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSnapshotScrollDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		307205FC1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScrollDemoUITests.m; sourceTree = "<group>"; };
 		307205FE1D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3072060B1D33C2020011A262 /* UIImage+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYSnapshot.h"; sourceTree = "<group>"; };
-		3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYSnapshot.m"; sourceTree = "<group>"; };
-		3072060D1D33C2020011A262 /* UIScrollView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSnapshot.h"; sourceTree = "<group>"; };
-		3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshot.m"; sourceTree = "<group>"; };
 		6A675A191FEF8E0200BA2B46 /* TYCollectionViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYCollectionViewVc.h; sourceTree = "<group>"; };
 		6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYCollectionViewVc.m; sourceTree = "<group>"; };
-		6A67DFEE21532D2700C9CAD0 /* UIViewController+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYSnapshot.h"; sourceTree = "<group>"; };
-		6A67DFEF21532D2700C9CAD0 /* UIViewController+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TYSnapshot.m"; sourceTree = "<group>"; };
 		6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewVc.h; sourceTree = "<group>"; };
 		6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewVc.m; sourceTree = "<group>"; };
+		6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYSnapshot.h"; sourceTree = "<group>"; };
+		6A7913B5215732F000DB9626 /* TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYSnapshot.m; sourceTree = "<group>"; };
+		6A7913B6215732F000DB9626 /* UIViewController+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYSnapshot.h"; sourceTree = "<group>"; };
+		6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+TYSnapshot.m"; sourceTree = "<group>"; };
+		6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshot.m"; sourceTree = "<group>"; };
+		6A7913B9215732F000DB9626 /* TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYSnapshot.h; sourceTree = "<group>"; };
+		6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYSnapshot.m"; sourceTree = "<group>"; };
+		6A7913BB215732F000DB9626 /* UIScrollView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSnapshot.h"; sourceTree = "<group>"; };
+		6A7913BC215732F000DB9626 /* WKWebView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+TYSnapshot.h"; sourceTree = "<group>"; };
+		6A7913BD215732F000DB9626 /* UIViewController+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TYSnapshot.m"; sourceTree = "<group>"; };
 		6A895EBC1FC575B100D0C91D /* TYBaseVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBaseVc.h; sourceTree = "<group>"; };
 		6A895EBD1FC575B100D0C91D /* TYBaseVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBaseVc.m; sourceTree = "<group>"; };
 		6A895EBF1FC5786500D0C91D /* TYScrollViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollViewVc.h; sourceTree = "<group>"; };
@@ -138,9 +138,9 @@
 		307205CB1D33C1CD0011A262 = {
 			isa = PBXGroup;
 			children = (
-				307205D61D33C1CD0011A262 /* TYSnapshotScroll */,
-				307205F01D33C1CD0011A262 /* TYSnapshotScrollTests */,
-				307205FB1D33C1CD0011A262 /* TYSnapshotScrollUITests */,
+				307205D61D33C1CD0011A262 /* TYSnapshotScrollDemo */,
+				307205F01D33C1CD0011A262 /* TYSnapshotScrollDemoTests */,
+				307205FB1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests */,
 				307205D51D33C1CD0011A262 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,29 +148,29 @@
 		307205D51D33C1CD0011A262 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				307205D41D33C1CD0011A262 /* TYSnapshotScroll.app */,
-				307205ED1D33C1CD0011A262 /* TYSnapshotScrollTests.xctest */,
-				307205F81D33C1CD0011A262 /* TYSnapshotScrollUITests.xctest */,
+				307205D41D33C1CD0011A262 /* TYSnapshotScrollDemo.app */,
+				307205ED1D33C1CD0011A262 /* TYSnapshotScrollDemoTests.xctest */,
+				307205F81D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		307205D61D33C1CD0011A262 /* TYSnapshotScroll */ = {
+		307205D61D33C1CD0011A262 /* TYSnapshotScrollDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3072060A1D33C2020011A262 /* TYSnapshot */,
 				307205DA1D33C1CD0011A262 /* AppDelegate.h */,
 				307205DB1D33C1CD0011A262 /* AppDelegate.m */,
 				307205DD1D33C1CD0011A262 /* ViewController.h */,
 				307205DE1D33C1CD0011A262 /* ViewController.m */,
-				1802B4561E10D2F900A6A2D1 /* SubViewControllers */,
 				307205E01D33C1CD0011A262 /* Main.storyboard */,
 				307205E31D33C1CD0011A262 /* Assets.xcassets */,
 				307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */,
 				307205E81D33C1CD0011A262 /* Info.plist */,
+				1802B4561E10D2F900A6A2D1 /* SubViewControllers */,
+				6A7913B3215732F000DB9626 /* TYSnapshotScroll */,
 				307205D71D33C1CD0011A262 /* Supporting Files */,
 			);
-			path = TYSnapshotScroll;
+			path = TYSnapshotScrollDemo;
 			sourceTree = "<group>";
 		};
 		307205D71D33C1CD0011A262 /* Supporting Files */ = {
@@ -181,47 +181,47 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		307205F01D33C1CD0011A262 /* TYSnapshotScrollTests */ = {
+		307205F01D33C1CD0011A262 /* TYSnapshotScrollDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				307205F11D33C1CD0011A262 /* TYSnapshotScrollTests.m */,
+				307205F11D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m */,
 				307205F31D33C1CD0011A262 /* Info.plist */,
 			);
-			path = TYSnapshotScrollTests;
+			path = TYSnapshotScrollDemoTests;
 			sourceTree = "<group>";
 		};
-		307205FB1D33C1CD0011A262 /* TYSnapshotScrollUITests */ = {
+		307205FB1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				307205FC1D33C1CD0011A262 /* TYSnapshotScrollUITests.m */,
+				307205FC1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m */,
 				307205FE1D33C1CD0011A262 /* Info.plist */,
 			);
-			path = TYSnapshotScrollUITests;
+			path = TYSnapshotScrollDemoUITests;
 			sourceTree = "<group>";
 		};
-		3072060A1D33C2020011A262 /* TYSnapshot */ = {
+		6A7913B3215732F000DB9626 /* TYSnapshotScroll */ = {
 			isa = PBXGroup;
 			children = (
-				1843AF2B1E13B018002097F2 /* TYSnapshot.h */,
-				1843AF2C1E13B018002097F2 /* TYSnapshot.m */,
-				3072060B1D33C2020011A262 /* UIImage+TYSnapshot.h */,
-				3072060C1D33C2020011A262 /* UIImage+TYSnapshot.m */,
-				3072060D1D33C2020011A262 /* UIScrollView+TYSnapshot.h */,
-				3072060E1D33C2020011A262 /* UIScrollView+TYSnapshot.m */,
-				1843AF281E13ACEE002097F2 /* WKWebView+TYSnapshot.h */,
-				1843AF291E13ACEE002097F2 /* WKWebView+TYSnapshot.m */,
-				6A67DFEE21532D2700C9CAD0 /* UIViewController+TYSnapshot.h */,
-				6A67DFEF21532D2700C9CAD0 /* UIViewController+TYSnapshot.m */,
+				6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */,
+				6A7913B5215732F000DB9626 /* TYSnapshot.m */,
+				6A7913B6215732F000DB9626 /* UIViewController+TYSnapshot.h */,
+				6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */,
+				6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */,
+				6A7913B9215732F000DB9626 /* TYSnapshot.h */,
+				6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */,
+				6A7913BB215732F000DB9626 /* UIScrollView+TYSnapshot.h */,
+				6A7913BC215732F000DB9626 /* WKWebView+TYSnapshot.h */,
+				6A7913BD215732F000DB9626 /* UIViewController+TYSnapshot.m */,
 			);
-			path = TYSnapshot;
-			sourceTree = "<group>";
+			path = TYSnapshotScroll;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		307205D31D33C1CD0011A262 /* TYSnapshotScroll */ = {
+		307205D31D33C1CD0011A262 /* TYSnapshotScrollDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 307206011D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScroll" */;
+			buildConfigurationList = 307206011D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollDemo" */;
 			buildPhases = (
 				307205D01D33C1CD0011A262 /* Sources */,
 				307205D11D33C1CD0011A262 /* Frameworks */,
@@ -231,14 +231,14 @@
 			);
 			dependencies = (
 			);
-			name = TYSnapshotScroll;
-			productName = TYSnapshotScroll;
-			productReference = 307205D41D33C1CD0011A262 /* TYSnapshotScroll.app */;
+			name = TYSnapshotScrollDemo;
+			productName = TYSnapshotScrollDemo;
+			productReference = 307205D41D33C1CD0011A262 /* TYSnapshotScrollDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		307205EC1D33C1CD0011A262 /* TYSnapshotScrollTests */ = {
+		307205EC1D33C1CD0011A262 /* TYSnapshotScrollDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 307206041D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollTests" */;
+			buildConfigurationList = 307206041D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollDemoTests" */;
 			buildPhases = (
 				307205E91D33C1CD0011A262 /* Sources */,
 				307205EA1D33C1CD0011A262 /* Frameworks */,
@@ -249,14 +249,14 @@
 			dependencies = (
 				307205EF1D33C1CD0011A262 /* PBXTargetDependency */,
 			);
-			name = TYSnapshotScrollTests;
-			productName = TYSnapshotScrollTests;
-			productReference = 307205ED1D33C1CD0011A262 /* TYSnapshotScrollTests.xctest */;
+			name = TYSnapshotScrollDemoTests;
+			productName = TYSnapshotScrollDemoTests;
+			productReference = 307205ED1D33C1CD0011A262 /* TYSnapshotScrollDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		307205F71D33C1CD0011A262 /* TYSnapshotScrollUITests */ = {
+		307205F71D33C1CD0011A262 /* TYSnapshotScrollDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 307206071D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollUITests" */;
+			buildConfigurationList = 307206071D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollDemoUITests" */;
 			buildPhases = (
 				307205F41D33C1CD0011A262 /* Sources */,
 				307205F51D33C1CD0011A262 /* Frameworks */,
@@ -267,9 +267,9 @@
 			dependencies = (
 				307205FA1D33C1CD0011A262 /* PBXTargetDependency */,
 			);
-			name = TYSnapshotScrollUITests;
-			productName = TYSnapshotScrollUITests;
-			productReference = 307205F81D33C1CD0011A262 /* TYSnapshotScrollUITests.xctest */;
+			name = TYSnapshotScrollDemoUITests;
+			productName = TYSnapshotScrollDemoUITests;
+			productReference = 307205F81D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +295,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 307205CF1D33C1CD0011A262 /* Build configuration list for PBXProject "TYSnapshotScroll" */;
+			buildConfigurationList = 307205CF1D33C1CD0011A262 /* Build configuration list for PBXProject "TYSnapshotScrollDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -308,9 +308,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				307205D31D33C1CD0011A262 /* TYSnapshotScroll */,
-				307205EC1D33C1CD0011A262 /* TYSnapshotScrollTests */,
-				307205F71D33C1CD0011A262 /* TYSnapshotScrollUITests */,
+				307205D31D33C1CD0011A262 /* TYSnapshotScrollDemo */,
+				307205EC1D33C1CD0011A262 /* TYSnapshotScrollDemoTests */,
+				307205F71D33C1CD0011A262 /* TYSnapshotScrollDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -347,16 +347,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1843AF2A1E13ACEE002097F2 /* WKWebView+TYSnapshot.m in Sources */,
-				3072060F1D33C2020011A262 /* UIImage+TYSnapshot.m in Sources */,
-				6A67DFF021532D2700C9CAD0 /* UIViewController+TYSnapshot.m in Sources */,
+				6A7913BF215732F000DB9626 /* WKWebView+TYSnapshot.m in Sources */,
 				1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */,
+				6A7913C2215732F000DB9626 /* UIViewController+TYSnapshot.m in Sources */,
+				6A7913BE215732F000DB9626 /* TYSnapshot.m in Sources */,
 				6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */,
-				307206101D33C2020011A262 /* UIScrollView+TYSnapshot.m in Sources */,
-				1843AF2D1E13B018002097F2 /* TYSnapshot.m in Sources */,
 				307205DF1D33C1CD0011A262 /* ViewController.m in Sources */,
 				6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */,
+				6A7913C1215732F000DB9626 /* UIImage+TYSnapshot.m in Sources */,
 				307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */,
+				6A7913C0215732F000DB9626 /* UIScrollView+TYSnapshot.m in Sources */,
 				6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */,
 				18C29ADE1E1286230047E25D /* TYWKWebViewVc.m in Sources */,
 				307205D91D33C1CD0011A262 /* main.m in Sources */,
@@ -369,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				307205F21D33C1CD0011A262 /* TYSnapshotScrollTests.m in Sources */,
+				307205F21D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				307205FD1D33C1CD0011A262 /* TYSnapshotScrollUITests.m in Sources */,
+				307205FD1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,12 +386,12 @@
 /* Begin PBXTargetDependency section */
 		307205EF1D33C1CD0011A262 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 307205D31D33C1CD0011A262 /* TYSnapshotScroll */;
+			target = 307205D31D33C1CD0011A262 /* TYSnapshotScrollDemo */;
 			targetProxy = 307205EE1D33C1CD0011A262 /* PBXContainerItemProxy */;
 		};
 		307205FA1D33C1CD0011A262 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 307205D31D33C1CD0011A262 /* TYSnapshotScroll */;
+			target = 307205D31D33C1CD0011A262 /* TYSnapshotScrollDemo */;
 			targetProxy = 307205F91D33C1CD0011A262 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -525,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2TEXXRXK22;
-				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
+				INFOPLIST_FILE = TYSnapshotScrollDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollDemo;
@@ -538,7 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2TEXXRXK22;
-				INFOPLIST_FILE = TYSnapshotScroll/Info.plist;
+				INFOPLIST_FILE = TYSnapshotScrollDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollDemo;
@@ -550,11 +550,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TYSnapshotScrollTests/Info.plist;
+				INFOPLIST_FILE = TYSnapshotScrollDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYSnapshotScroll.app/TYSnapshotScroll";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYSnapshotScrollDemo.app/TYSnapshotScrollDemo";
 			};
 			name = Debug;
 		};
@@ -562,40 +562,40 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TYSnapshotScrollTests/Info.plist;
+				INFOPLIST_FILE = TYSnapshotScrollDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYSnapshotScroll.app/TYSnapshotScroll";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYSnapshotScrollDemo.app/TYSnapshotScrollDemo";
 			};
 			name = Release;
 		};
 		307206081D33C1CD0011A262 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = TYSnapshotScrollUITests/Info.plist;
+				INFOPLIST_FILE = TYSnapshotScrollDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TYSnapshotScroll;
+				TEST_TARGET_NAME = TYSnapshotScrollDemo;
 			};
 			name = Debug;
 		};
 		307206091D33C1CD0011A262 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = TYSnapshotScrollUITests/Info.plist;
+				INFOPLIST_FILE = TYSnapshotScrollDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonyreet.TYSnapshotScrollDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TYSnapshotScroll;
+				TEST_TARGET_NAME = TYSnapshotScrollDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		307205CF1D33C1CD0011A262 /* Build configuration list for PBXProject "TYSnapshotScroll" */ = {
+		307205CF1D33C1CD0011A262 /* Build configuration list for PBXProject "TYSnapshotScrollDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				307205FF1D33C1CD0011A262 /* Debug */,
@@ -604,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		307206011D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScroll" */ = {
+		307206011D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				307206021D33C1CD0011A262 /* Debug */,
@@ -613,7 +613,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		307206041D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollTests" */ = {
+		307206041D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				307206051D33C1CD0011A262 /* Debug */,
@@ -622,7 +622,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		307206071D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollUITests" */ = {
+		307206071D33C1CD0011A262 /* Build configuration list for PBXNativeTarget "TYSnapshotScrollDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				307206081D33C1CD0011A262 /* Debug */,
