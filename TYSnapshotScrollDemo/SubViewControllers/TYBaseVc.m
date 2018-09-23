@@ -24,7 +24,7 @@
 - (void)snapshotBtn{
     if (self.snapView != nil){
         __weak typeof(self) weakSelf = self;
-        [TYSnapshot screenSnapshot:self.snapView finishBlock:^(UIImage *snapShotImage) {
+        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapShotImage) {
             UIViewController *preVc = [[PreviewVc alloc] init:snapShotImage];
 
             [weakSelf.navigationController pushViewController:preVc animated:true];
