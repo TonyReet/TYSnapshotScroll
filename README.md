@@ -21,7 +21,7 @@
 
 
 //再需要截图的地方调用此方法
-[TYSnapshot screenSnapshot:yourView finishBlock:^(UIImage *snapShotImage) {
+[TYSnapshotScroll screenSnapshot:yourView finishBlock:^(UIImage *snapShotImage) {
         doSomething
     }];
 ```
@@ -35,7 +35,7 @@
 - 2、使用以下方法
 
 ```objc
-[TYSnapshot screenSnapshot:yourView finishBlock:^(UIImage *snapShotImage) {
+[TYSnapshotScroll screenSnapshot:yourView finishBlock:^(UIImage *snapShotImage) {
         doSomething
     }];
 

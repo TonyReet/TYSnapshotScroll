@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TYSnapshot.h"
+#import "TYSnapshotScroll.h"
 
 @interface TYBaseVc : UIViewController
 

@@ -20,7 +20,7 @@
 		307205FD1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205FC1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m */; };
 		6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */; };
 		6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */; };
-		6A7913BE215732F000DB9626 /* TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B5215732F000DB9626 /* TYSnapshot.m */; };
+		6A7913BE215732F000DB9626 /* TYSnapshotScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B5215732F000DB9626 /* TYSnapshotScroll.m */; };
 		6A7913BF215732F000DB9626 /* WKWebView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */; };
 		6A7913C0215732F000DB9626 /* UIScrollView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */; };
 		6A7913C1215732F000DB9626 /* UIImage+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */; };
@@ -74,11 +74,11 @@
 		6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewVc.h; sourceTree = "<group>"; };
 		6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewVc.m; sourceTree = "<group>"; };
 		6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYSnapshot.h"; sourceTree = "<group>"; };
-		6A7913B5215732F000DB9626 /* TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYSnapshot.m; sourceTree = "<group>"; };
+		6A7913B5215732F000DB9626 /* TYSnapshotScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScroll.m; sourceTree = "<group>"; };
 		6A7913B6215732F000DB9626 /* UIViewController+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYSnapshot.h"; sourceTree = "<group>"; };
 		6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+TYSnapshot.m"; sourceTree = "<group>"; };
 		6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshot.m"; sourceTree = "<group>"; };
-		6A7913B9215732F000DB9626 /* TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYSnapshot.h; sourceTree = "<group>"; };
+		6A7913B9215732F000DB9626 /* TYSnapshotScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYSnapshotScroll.h; sourceTree = "<group>"; };
 		6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYSnapshot.m"; sourceTree = "<group>"; };
 		6A7913BB215732F000DB9626 /* UIScrollView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSnapshot.h"; sourceTree = "<group>"; };
 		6A7913BC215732F000DB9626 /* WKWebView+TYSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+TYSnapshot.h"; sourceTree = "<group>"; };
@@ -203,11 +203,11 @@
 			isa = PBXGroup;
 			children = (
 				6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */,
-				6A7913B5215732F000DB9626 /* TYSnapshot.m */,
+				6A7913B5215732F000DB9626 /* TYSnapshotScroll.m */,
 				6A7913B6215732F000DB9626 /* UIViewController+TYSnapshot.h */,
 				6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */,
 				6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */,
-				6A7913B9215732F000DB9626 /* TYSnapshot.h */,
+				6A7913B9215732F000DB9626 /* TYSnapshotScroll.h */,
 				6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */,
 				6A7913BB215732F000DB9626 /* UIScrollView+TYSnapshot.h */,
 				6A7913BC215732F000DB9626 /* WKWebView+TYSnapshot.h */,
@@ -350,7 +350,7 @@
 				6A7913BF215732F000DB9626 /* WKWebView+TYSnapshot.m in Sources */,
 				1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */,
 				6A7913C2215732F000DB9626 /* UIViewController+TYSnapshot.m in Sources */,
-				6A7913BE215732F000DB9626 /* TYSnapshot.m in Sources */,
+				6A7913BE215732F000DB9626 /* TYSnapshotScroll.m in Sources */,
 				6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */,
 				307205DF1D33C1CD0011A262 /* ViewController.m in Sources */,
 				6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */,
