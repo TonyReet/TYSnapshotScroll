@@ -1,5 +1,5 @@
 //
-//  TYSnapshot.h
+//  TYSnapshotScroll.h
 //  TYSnapshotScroll
 //
 //  Created by apple on 16/12/28.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WKWebView.h>
 
-@interface TYSnapshot : NSObject
+@interface TYSnapshotScroll : NSObject
 
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBloc;
 
