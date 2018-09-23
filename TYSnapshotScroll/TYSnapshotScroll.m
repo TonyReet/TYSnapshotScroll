@@ -1,16 +1,16 @@
 //
-//  TYSnapshot.m
+//  TYSnapshotScroll.m
 //  TYSnapshotScroll
 //
 //  Created by apple on 16/12/28.
 //  Copyright © 2016年 TonyReet. All rights reserved.
 //
 
-#import "TYSnapshot.h"
+#import "TYSnapshotScroll.h"
 #import "WKWebView+TYSnapshot.h"
 #import "UIScrollView+TYSnapshot.h"
 
-@implementation TYSnapshot
+@implementation TYSnapshotScroll
 
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
     if([snapshotView isKindOfClass:[WKWebView class]]){

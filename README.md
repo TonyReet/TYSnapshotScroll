@@ -8,7 +8,25 @@
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
 
-### 使用方法
+### 方法一:cocopods
+- 1、:
+
+```objc
+在Podfile文件里面添加:pod 'TYSnapshotScroll'
+```
+- 2、:对应文件添加头文件
+
+```objc
+#import "TYSnapshotScroll.h"
+
+
+//再需要截图的地方调用此方法
+[TYSnapshot screenSnapshot:yourView finishBlock:^(UIImage *snapShotImage) {
+        doSomething
+    }];
+```
+
+### 方法二:手动添加
 - 1、引入头文件:
 
 ```objc
@@ -25,3 +43,5 @@
 
 
 ![TYSnapshotScroll](Snapshot.gif)
+
+
