@@ -20,4 +20,15 @@
  */
 - (void)subClassInit;
 
+
+/**
+ 菊花转动
+ */
+- (void)startAnimating;
+
+
+/**
+ 菊花停止
+ */
+- (void)stopAnimating;
 @end

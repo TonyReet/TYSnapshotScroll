@@ -202,15 +202,15 @@
 		6A7913B3215732F000DB9626 /* TYSnapshotScroll */ = {
 			isa = PBXGroup;
 			children = (
-				6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */,
-				6A7913B5215732F000DB9626 /* TYSnapshotScroll.m */,
-				6A7913B6215732F000DB9626 /* UIViewController+TYSnapshot.h */,
-				6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */,
-				6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */,
 				6A7913B9215732F000DB9626 /* TYSnapshotScroll.h */,
+				6A7913B5215732F000DB9626 /* TYSnapshotScroll.m */,
+				6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */,
 				6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */,
-				6A7913BB215732F000DB9626 /* UIScrollView+TYSnapshot.h */,
 				6A7913BC215732F000DB9626 /* WKWebView+TYSnapshot.h */,
+				6A7913B7215732F000DB9626 /* WKWebView+TYSnapshot.m */,
+				6A7913BB215732F000DB9626 /* UIScrollView+TYSnapshot.h */,
+				6A7913B8215732F000DB9626 /* UIScrollView+TYSnapshot.m */,
+				6A7913B6215732F000DB9626 /* UIViewController+TYSnapshot.h */,
 				6A7913BD215732F000DB9626 /* UIViewController+TYSnapshot.m */,
 			);
 			path = TYSnapshotScroll;
