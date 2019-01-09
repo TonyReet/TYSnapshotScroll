@@ -28,12 +28,8 @@
     [self.view addSubview:self.activityIndicator];
 
     self.activityIndicator.center = self.view.center;
-    
-    //设置小菊花颜色
     self.activityIndicator.color = [UIColor blackColor];
-    //设置背景颜色
     self.activityIndicator.backgroundColor = [UIColor clearColor];
-    
     self.activityIndicator.hidesWhenStopped = YES;
     
     self.view.backgroundColor = [UIColor whiteColor];

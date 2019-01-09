@@ -31,7 +31,12 @@
     @autoreleasepool{
         UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
 
-        [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+        CGContextRef context = UIGraphicsGetCurrentContext();
+
+        [self.layer renderInContext:context];
+        
+//        [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
+        
         snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext();
@@ -71,7 +76,10 @@
         //创建
         UIGraphicsBeginImageContextWithOptions(snapshotSize,NO,[UIScreen mainScreen].scale);
         
-        [snapshotView drawViewHierarchyInRect:snapshotView.bounds afterScreenUpdates:YES];
+        CGContextRef context = UIGraphicsGetCurrentContext();
+
+        [snapshotView.layer renderInContext:context];
+//        [snapshotView drawViewHierarchyInRect:snapshotView.bounds afterScreenUpdates:NO];
         
         //获取图片
         snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
