@@ -35,6 +35,7 @@
     [self.webView loadRequest:request];
     
     self.snapView = self.webView;
+    [self startAnimating];
 }
 
 #pragma mark - UIWebViewDelegate
