@@ -7,8 +7,12 @@
 //
 
 #import "TYWKWebViewVc.h"
+#import <WebKit/WebKit.h>
 
 @interface TYWKWebViewVc ()
+<
+    WKNavigationDelegate
+>
 
 @property (nonatomic,strong) WKWebView *webView;
 
@@ -19,6 +23,7 @@
 - (void)subClassInit {
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     
+    self.webView.navigationDelegate = self;
     self.webView.scrollView.bounces = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];
@@ -30,4 +35,14 @@
     
     self.snapView = self.webView;
 }
+
+#pragma mark - WKNavigationDelegate
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
+    [self startAnimating];
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
+    [self stopAnimating];
+}
+
 @end
