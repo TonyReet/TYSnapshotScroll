@@ -33,9 +33,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self adjustsScrollViewInset];
+    
     [self initView];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存截图" style:UIBarButtonItemStylePlain target:self action:@selector(saveImage)];
+}
+- (void)adjustsScrollViewInset{
+    if (@available(iOS 11.0, *)) {
+        self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 - (void)initView{
@@ -46,17 +55,17 @@
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     self.scrollView = [UIScrollView new];
-    [self.scrollView addSubview:self.imageView];
     
-    [self.view addSubview:self.scrollView];
-}
+    [self.scrollView addSubview:self.imageView];
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+    [self.view addSubview:self.scrollView];
+
+    CGRect scrollViewFrame = self.view.bounds;
+    scrollViewFrame.origin.y = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    self.scrollView.frame = scrollViewFrame;
     
     CGFloat height =  self.image.size.height;
     CGFloat width =  self.image.size.width;
-    self.scrollView.frame = self.view.bounds;
     self.scrollView.contentSize = CGSizeMake(width, height);
     self.imageView.frame = CGRectMake(0, 0, width, height);
 }
