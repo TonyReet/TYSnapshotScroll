@@ -61,7 +61,7 @@
 
 //滑动画了再截图
 - (void )scrollToDraw:(NSInteger )index maxIndex:(NSInteger )maxIndex finishBlock:(void(^)(void))finishBlock{
-    UIView *snapshotView = self;
+    UIView *snapshotView = self.superview;
     
     //截取的frame
     CGRect snapshotFrame = CGRectMake(0, (float)index * snapshotView.bounds.size.height, snapshotView.bounds.size.width, snapshotView.bounds.size.height);

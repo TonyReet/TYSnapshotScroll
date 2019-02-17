@@ -25,7 +25,7 @@
     //设置小菊花的frame
     self.activityIndicator.frame= CGRectMake(0, 0, 100, 100);
     
-    [self.view addSubview:self.activityIndicator];
+    [self.navigationController.navigationBar addSubview:self.activityIndicator];
 
     self.activityIndicator.center = self.view.center;
     self.activityIndicator.color = [UIColor blackColor];
@@ -58,7 +58,7 @@
 - (void)startAnimating{
     if ([self.activityIndicator isAnimating])return;
     
-    [self.view bringSubviewToFront:self.activityIndicator];
+    [self.navigationController.navigationBar bringSubviewToFront:self.activityIndicator];
     [self.activityIndicator startAnimating];
 }
 
