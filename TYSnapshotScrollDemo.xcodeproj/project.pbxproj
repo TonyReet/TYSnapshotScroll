@@ -27,6 +27,7 @@
 		6A7913C2215732F000DB9626 /* UIViewController+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913BD215732F000DB9626 /* UIViewController+TYSnapshot.m */; };
 		6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EBD1FC575B100D0C91D /* TYBaseVc.m */; };
 		6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */; };
+		6A9DD8E02249D0F300257C68 /* UIView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9DD8DF2249D0F300257C68 /* UIView+TYSnapshot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		6A895EBD1FC575B100D0C91D /* TYBaseVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBaseVc.m; sourceTree = "<group>"; };
 		6A895EBF1FC5786500D0C91D /* TYScrollViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollViewVc.h; sourceTree = "<group>"; };
 		6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYScrollViewVc.m; sourceTree = "<group>"; };
+		6A9DD8DE2249D0F300257C68 /* UIView+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TYSnapshot.h"; sourceTree = "<group>"; };
+		6A9DD8DF2249D0F300257C68 /* UIView+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TYSnapshot.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 			children = (
 				6A7913B9215732F000DB9626 /* TYSnapshotScroll.h */,
 				6A7913B5215732F000DB9626 /* TYSnapshotScroll.m */,
+				6A9DD8DE2249D0F300257C68 /* UIView+TYSnapshot.h */,
+				6A9DD8DF2249D0F300257C68 /* UIView+TYSnapshot.m */,
 				6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */,
 				6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */,
 				6A7913BC215732F000DB9626 /* WKWebView+TYSnapshot.h */,
@@ -361,6 +366,7 @@
 				307205D91D33C1CD0011A262 /* main.m in Sources */,
 				6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */,
 				1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */,
+				6A9DD8E02249D0F300257C68 /* UIView+TYSnapshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

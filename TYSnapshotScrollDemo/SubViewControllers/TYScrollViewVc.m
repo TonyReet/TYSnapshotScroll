@@ -12,6 +12,8 @@
 
 @property (nonatomic,strong) UIScrollView *scrollView;
 
+@property (nonatomic,strong) UILabel *label;
+
 @end
 
 @implementation TYScrollViewVc
@@ -36,5 +38,12 @@
         label.text = [label.text stringByAppendingString:[NSString stringWithFormat:@"我是第%@个测试文本,",@(index)]];
     }
     [self.scrollView addSubview:label];
+    
+    self.label = label;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [self.label sizeToFit];
 }
 @end

@@ -7,11 +7,14 @@
 //
 
 #import "WKWebView+TYSnapshot.h"
+#import "UIView+TYSnapshot.h"
 #import "UIViewController+TYSnapshot.h"
 
 @implementation WKWebView (TYSnapshot)
 
 - (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
+    if (!finishBlock)return;
+    
     //获取父view
     UIView *superview;
     UIViewController *currentViewController = [UIViewController currentViewController];
@@ -53,9 +56,7 @@
         weakSelf.frame = oldFrame;
         weakSelf.scrollView.contentOffset = oldOffset;
         
-        if (finishBlock) {
-            finishBlock(snapshotImage);
-        }
+        finishBlock(snapshotImage);
     }];
 }
 

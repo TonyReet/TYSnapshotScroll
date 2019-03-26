@@ -7,11 +7,14 @@
 //
 
 #import "UIScrollView+TYSnapshot.h"
+#import "UIView+TYSnapshot.h"
 #import "UIImage+TYSnapshot.h"
 
 @implementation UIScrollView (TYSnapshot)
 
 - (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
+    if (!finishBlock)return;
+    
     __block UIImage* snapshotImage = nil;
     
     //保存offset
@@ -46,7 +49,7 @@
     //还原
     self.contentOffset = oldContentOffset;
     
-    if (snapshotImage != nil && finishBlock) {
+    if (snapshotImage != nil) {
         finishBlock(snapshotImage);
     }
 }
