@@ -38,6 +38,11 @@
     [self subClassInit];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self stopAnimating];
+}
+
 //saveSnap
 - (void)snapshotBtn{
     if (self.snapView != nil){
