@@ -20,15 +20,13 @@
 
 
 - (void)subClassInit {
-    CGRect screenBounds = [UIScreen mainScreen].bounds;
-    self.scrollView = [[UIScrollView alloc] initWithFrame:screenBounds];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.scrollView.backgroundColor = [UIColor whiteColor];
-    self.scrollView.contentSize = CGSizeMake(screenBounds.size.width, screenBounds.size.height*3);
-    [self.view addSubview:_scrollView];
+    [self.view addSubview:self.scrollView];
 
     self.snapView = self.scrollView;
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, screenBounds.size.width, self.scrollView.contentSize.height)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 0)];
     label.text = @"";
     label.numberOfLines = 0;
     label.textColor = [UIColor blackColor];
@@ -40,10 +38,10 @@
     [self.scrollView addSubview:label];
     
     self.label = label;
+    
+    [self.label sizeToFit];
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.label.frame.size.height + 10);
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    [self.label sizeToFit];
-}
 @end
