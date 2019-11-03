@@ -29,14 +29,6 @@
     [self.view addSubview:self.tableView];
     
     self.snapView = self.tableView;
-    
-    UILabel *testLabel = [[UILabel alloc] init];
-    testLabel.text = @"测试哈哈哈哈";
-    [self.tableView addSubview:testLabel];
-    [testLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.width.mas_equalTo(self.tableView);
-        make.height.mas_equalTo(50);
-    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
