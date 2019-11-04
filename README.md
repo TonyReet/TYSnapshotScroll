@@ -39,10 +39,10 @@
     }];
 ```
 
-正常：
+正常：   
 ![TYSnapshotScroll-w240](Snapshot.gif)     
 
-UIScrollView嵌套UITableView：
+UIScrollView嵌套UITableView：    
 ![TYSnapshotScroll-w240](Snapshot_1.gif)
    
 2019/11/04:
