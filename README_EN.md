@@ -44,7 +44,11 @@ pod install
     }];
 ```
 
+normal:
+![TYSnapshotScroll-w240](Snapshot.gif)     
 
-![TYSnapshotScroll](Snapshot.gif)
+UITableView in UIScrollView:
+![TYSnapshotScroll-w240](Snapshot_1.gif)
 
-
+2019/11/04:
+add：UITableView in UIScrollView

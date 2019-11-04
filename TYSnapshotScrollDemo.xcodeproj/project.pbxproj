@@ -18,6 +18,7 @@
 		307205E71D33C1CD0011A262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */; };
 		307205F21D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205F11D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m */; };
 		307205FD1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205FC1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m */; };
+		6A58241A236BE3C300F27469 /* TYScrollEmbedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A582419236BE3C300F27469 /* TYScrollEmbedVC.m */; };
 		6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */; };
 		6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */; };
 		6A7913BE215732F000DB9626 /* TYSnapshotScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7913B5215732F000DB9626 /* TYSnapshotScroll.m */; };
@@ -54,7 +55,7 @@
 		1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTableViewVc.m; sourceTree = "<group>"; };
 		18C29ADC1E1286230047E25D /* TYWKWebViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYWKWebViewVc.h; sourceTree = "<group>"; };
 		18C29ADD1E1286230047E25D /* TYWKWebViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYWKWebViewVc.m; sourceTree = "<group>"; };
-		307205D41D33C1CD0011A262 /* TYSnapshotScrollDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSnapshotScrollDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		307205D41D33C1CD0011A262 /* TYSnapshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSnapshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307205D81D33C1CD0011A262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		307205DA1D33C1CD0011A262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		307205DB1D33C1CD0011A262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +71,8 @@
 		307205F81D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSnapshotScrollDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		307205FC1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScrollDemoUITests.m; sourceTree = "<group>"; };
 		307205FE1D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A582418236BE3C300F27469 /* TYScrollEmbedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollEmbedVC.h; sourceTree = "<group>"; };
+		6A582419236BE3C300F27469 /* TYScrollEmbedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYScrollEmbedVC.m; sourceTree = "<group>"; };
 		6A675A191FEF8E0200BA2B46 /* TYCollectionViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYCollectionViewVc.h; sourceTree = "<group>"; };
 		6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYCollectionViewVc.m; sourceTree = "<group>"; };
 		6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewVc.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */,
 				6A675A191FEF8E0200BA2B46 /* TYCollectionViewVc.h */,
 				6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */,
+				6A582418236BE3C300F27469 /* TYScrollEmbedVC.h */,
+				6A582419236BE3C300F27469 /* TYScrollEmbedVC.m */,
 				6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */,
 				6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */,
 			);
@@ -145,13 +150,14 @@
 				307205F01D33C1CD0011A262 /* TYSnapshotScrollDemoTests */,
 				307205FB1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests */,
 				307205D51D33C1CD0011A262 /* Products */,
+				4235895B1797C69E42159303 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		307205D51D33C1CD0011A262 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				307205D41D33C1CD0011A262 /* TYSnapshotScrollDemo.app */,
+				307205D41D33C1CD0011A262 /* TYSnapshot.app */,
 				307205ED1D33C1CD0011A262 /* TYSnapshotScrollDemoTests.xctest */,
 				307205F81D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.xctest */,
 			);
@@ -202,6 +208,13 @@
 			path = TYSnapshotScrollDemoUITests;
 			sourceTree = "<group>";
 		};
+		4235895B1797C69E42159303 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A7913B3215732F000DB9626 /* TYSnapshotScroll */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +251,7 @@
 			);
 			name = TYSnapshotScrollDemo;
 			productName = TYSnapshotScrollDemo;
-			productReference = 307205D41D33C1CD0011A262 /* TYSnapshotScrollDemo.app */;
+			productReference = 307205D41D33C1CD0011A262 /* TYSnapshot.app */;
 			productType = "com.apple.product-type.application";
 		};
 		307205EC1D33C1CD0011A262 /* TYSnapshotScrollDemoTests */ = {
@@ -354,6 +367,7 @@
 				6A7913BF215732F000DB9626 /* WKWebView+TYSnapshot.m in Sources */,
 				1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */,
 				6A7913C2215732F000DB9626 /* UIViewController+TYSnapshot.m in Sources */,
+				6A58241A236BE3C300F27469 /* TYScrollEmbedVC.m in Sources */,
 				6A7913BE215732F000DB9626 /* TYSnapshotScroll.m in Sources */,
 				6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */,
 				307205DF1D33C1CD0011A262 /* ViewController.m in Sources */,

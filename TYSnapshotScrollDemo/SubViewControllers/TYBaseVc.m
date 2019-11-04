@@ -33,7 +33,7 @@
     self.activityIndicator.hidesWhenStopped = YES;
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStylePlain target:self action:@selector(snapshotBtn)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStylePlain target:self action:@selector(snapshotBtnClick)];
     
     [self subClassInit];
 }
@@ -44,18 +44,24 @@
 }
 
 //saveSnap
-- (void)snapshotBtn{
+- (void)snapshotBtnClick{
     if (self.snapView != nil){
         [self startAnimating];
+        
         __weak typeof(self) weakSelf = self;
+        
         [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapShotImage) {
             [weakSelf stopAnimating];
             
-            UIViewController *preVc = [[PreviewVc alloc] init:snapShotImage];
-
-            [weakSelf.navigationController pushViewController:preVc animated:true];
+            [weakSelf pushToPreVcWithImage:snapShotImage];
         }];
     }
+}
+
+- (void)pushToPreVcWithImage:(UIImage *)snapShotImage{
+    UIViewController *preVc = [[PreviewVc alloc] init:snapShotImage];
+
+    [self.navigationController pushViewController:preVc animated:true];
 }
 
 - (void)subClassInit{}

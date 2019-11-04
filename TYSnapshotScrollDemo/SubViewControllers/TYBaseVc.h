@@ -31,4 +31,14 @@
  菊花停止
  */
 - (void)stopAnimating;
+
+/**
+点击保存截图
+*/
+- (void)snapshotBtnClick;
+
+/**
+截完图的跳转
+*/
+- (void)pushToPreVcWithImage:(UIImage *)snapShotImage;
 @end

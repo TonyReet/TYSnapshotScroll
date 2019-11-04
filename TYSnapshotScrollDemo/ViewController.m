@@ -23,7 +23,7 @@
     [super viewDidLoad];
 
 
-    self.dataSourceArr = @[@"UIWebView保存为图片",@"UITableView保存为图片",@"WKWebView保存为图片",@"UIScrollView保存为图片",@"UICollectionView保存为图片"];
+    self.dataSourceArr = @[@"UIWebView_截图",@"UITableView_截图",@"WKWebView_截图",@"UIScrollView_截图",@"UICollectionView_截图",@"UIScrollView嵌套UITableView_截图"];
     
     [self tableViewInit];
 }
@@ -78,9 +78,14 @@
         nextVc = [NSClassFromString(@"TYScrollViewVc") new];
     }else if(indexPath.row == 4){
         nextVc = [NSClassFromString(@"TYCollectionViewVc") new];
+    }else if(indexPath.row == 5){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        nextVc = [storyboard instantiateViewControllerWithIdentifier:@"TYScrollEmbedVC"];
     }
     
     if (nextVc != nil) {
+        nextVc.title = self.dataSourceArr[indexPath.row];
         [self.navigationController pushViewController:nextVc animated:YES];
     }
     
