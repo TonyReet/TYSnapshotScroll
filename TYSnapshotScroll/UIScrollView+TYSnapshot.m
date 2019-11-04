@@ -25,7 +25,7 @@
     if (self.contentSize.height > self.frame.size.height) {
         self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
     }
-    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.contentSize.width, self.contentSize.height);
     
     //延迟0.3秒，避免有时候渲染不出来的情况
     [NSThread sleepForTimeInterval:0.3];
@@ -94,5 +94,26 @@
 }
 
 
+- (instancetype )subScrollViewTotalExtraHeight:(void(^)(CGFloat subScrollViewExtraHeight))finishBlock{
+    __block CGFloat extraHeight = 0.0;
+      
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+      if ([obj isKindOfClass:[UIScrollView class]]){
+          UIScrollView *scrollView = (UIScrollView *)obj;
+
+          if (scrollView.contentSize.height > scrollView.frame.size.height) {
+              extraHeight = scrollView.contentSize.height - scrollView.frame.size.height;
+          }
+          
+          [scrollView subScrollViewTotalExtraHeight:^(CGFloat subScrollViewExtraHeight) {
+              extraHeight += subScrollViewExtraHeight;
+          }];
+      }
+    }];
+
+
+    !finishBlock?:finishBlock(extraHeight);
+    return self;
+}
 @end
 

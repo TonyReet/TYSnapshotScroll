@@ -42,5 +42,30 @@
     }];
 }
 
++(void )screenSnapshotWithMultipleScroll:(UIView *)snapshotView modifyLayoutBlock:(void(^)(CGFloat extraHeight))modifyLayoutBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock  {
+   [TYSnapshotScroll scrollViewGetTotalExtraHeight:snapshotView finishBlock:^(CGFloat subScrollViewExtraHeight) {
+
+       !modifyLayoutBlock?:modifyLayoutBlock(subScrollViewExtraHeight);
+
+       [TYSnapshotScroll screenSnapshot:snapshotView finishBlock:^(UIImage *snapShotImage) {
+           !finishBlock?:finishBlock(snapShotImage);
+       }];
+   }];
+}
+
++ (void )scrollViewGetTotalExtraHeight:(UIView *)view finishBlock:(void(^)(CGFloat subScrollViewExtraHeight))finishBlock{
+    
+    if (![view isKindOfClass:[UIScrollView class]]){
+        !finishBlock?:finishBlock(0);
+        return;
+    };
+
+    UIScrollView *scrollView = (UIScrollView *)view;
+    [scrollView subScrollViewTotalExtraHeight:^(CGFloat subScrollViewExtraHeight) {
+        !finishBlock?:finishBlock(subScrollViewExtraHeight);
+    }];
+}
+
+
 
 @end

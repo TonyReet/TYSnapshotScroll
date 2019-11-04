@@ -39,7 +39,13 @@
     }];
 ```
 
+正常：
+![TYSnapshotScroll-w240](Snapshot.gif)     
 
-![TYSnapshotScroll](Snapshot.gif)
+UIScrollView嵌套UITableView：
+![TYSnapshotScroll-w240](Snapshot_1.gif)
+   
+2019/11/04:
+新增：UIScrollView嵌套UITableView截图
 
 
