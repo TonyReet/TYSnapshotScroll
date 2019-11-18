@@ -4,7 +4,7 @@
 English|[简体中文](README.md)
 ## Save the scroll view page as an image,support UIScrollView,UITableView,UICollectionView,UIWebView,WKWebView。
 
-[![](https://img.shields.io/badge/Supported-iOS7-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
+[![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
 

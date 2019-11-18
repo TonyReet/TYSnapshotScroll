@@ -67,11 +67,8 @@
     //截取的frame
     CGRect snapshotFrame = CGRectMake(0, (float)index * snapshotView.bounds.size.height, snapshotView.bounds.size.width, snapshotView.bounds.size.height);
     
-    // set up webview originY
-    CGRect myFrame = self.frame;
-    myFrame.origin.y = -((index) * snapshotView.frame.size.height);
-    self.frame = myFrame;
-    
+    [self.scrollView setContentOffset:CGPointMake(0, index * snapshotView.frame.size.height)];
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
         
         [snapshotView drawViewHierarchyInRect:snapshotFrame afterScreenUpdates:YES];
