@@ -24,13 +24,14 @@
 
 
     self.dataSourceArr = @[
-                                @"UIWebView_截图",
-                                @"UITableView_截图",
-                                @"WKWebView_截图",
-                                @"UIScrollView_截图",
-                                @"UICollectionView_截图",
-                                @"SB_UIScrollView嵌套UITableView_截图",
-                                @"AutoLayout_WKWebView_截图",
+        @{@"TYWebViewVc":@"UIWebView_截图"},
+        @{@"TYTableViewVc":@"UITableView_截图"},
+        @{@"TYWKWebViewVc":@"WKWebView_截图"},
+        @{@"TYScrollViewVc":@"UIScrollView_截图"},
+        @{@"TYCollectionViewVc":@"UICollectionView_截图"},
+        @{@"TYLayoutScrollViewVc":@"Layout_UIScrollView_截图"},
+        @{@"SB_TYScrollEmbedVC":@"SB_ScrollView嵌套TableView_截图"},
+        @{@"TYVFLWKWebViewVC":@"Layout_WKWebView_截图"},
                         ];
     
     [self tableViewInit];
@@ -67,7 +68,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    cell.textLabel.text = self.dataSourceArr[indexPath.row];
+    NSDictionary *model = (NSDictionary *)self.dataSourceArr[indexPath.row];
+    
+    cell.textLabel.text = [model.allValues firstObject];
     
     return cell;
 }
@@ -75,27 +78,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UIViewController *nextVc;
-    if (indexPath.row == 0) {
-        nextVc = [NSClassFromString(@"TYWebViewVc") new];
-        
-    }else if(indexPath.row == 1){
-        nextVc = [NSClassFromString(@"TYTableViewVc") new];
-    }else if(indexPath.row == 2){
-        nextVc = [NSClassFromString(@"TYWKWebViewVc") new];
-    }else if(indexPath.row == 3){
-        nextVc = [NSClassFromString(@"TYScrollViewVc") new];
-    }else if(indexPath.row == 4){
-        nextVc = [NSClassFromString(@"TYCollectionViewVc") new];
-    }else if(indexPath.row == 5){
+    
+    NSDictionary *model = (NSDictionary *)self.dataSourceArr[indexPath.row];
+    NSString *key = [model.allKeys firstObject];
+    if ([key containsString:@"SB_"]){
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        nextVc = [storyboard instantiateViewControllerWithIdentifier:@"TYScrollEmbedVC"];
-    }else if(indexPath.row == 6){
-        nextVc = [NSClassFromString(@"TYVFLWKWebViewVC") new];
+        nextVc = [storyboard instantiateViewControllerWithIdentifier:[key stringByReplacingOccurrencesOfString:@"SB_" withString:@""]];
+    }else{
+        nextVc = [NSClassFromString(key) new];
     }
-    
+
     if (nextVc != nil) {
-        nextVc.title = self.dataSourceArr[indexPath.row];
+        NSDictionary *model = (NSDictionary *)self.dataSourceArr[indexPath.row];
+        
+        nextVc.title = [model.allValues firstObject];
         [self.navigationController pushViewController:nextVc animated:YES];
     }
     
