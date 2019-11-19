@@ -23,7 +23,15 @@
     [super viewDidLoad];
 
 
-    self.dataSourceArr = @[@"UIWebView_截图",@"UITableView_截图",@"WKWebView_截图",@"UIScrollView_截图",@"UICollectionView_截图",@"UIScrollView嵌套UITableView_截图"];
+    self.dataSourceArr = @[
+                                @"UIWebView_截图",
+                                @"UITableView_截图",
+                                @"WKWebView_截图",
+                                @"UIScrollView_截图",
+                                @"UICollectionView_截图",
+                                @"SB_UIScrollView嵌套UITableView_截图",
+                                @"AutoLayout_WKWebView_截图",
+                        ];
     
     [self tableViewInit];
 }
@@ -82,6 +90,8 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         nextVc = [storyboard instantiateViewControllerWithIdentifier:@"TYScrollEmbedVC"];
+    }else if(indexPath.row == 6){
+        nextVc = [NSClassFromString(@"TYVFLWKWebViewVC") new];
     }
     
     if (nextVc != nil) {
