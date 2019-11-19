@@ -25,13 +25,13 @@
     if (self.contentSize.height > self.frame.size.height) {
         self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
     }
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.contentSize.width, self.contentSize.height);
+    self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     
     //延迟0.3秒，避免有时候渲染不出来的情况
     [NSThread sleepForTimeInterval:0.3];
     
     self.contentOffset = CGPointZero;
-    @autoreleasepool{
+//    @autoreleasepool{
         UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
 
         CGContextRef context = UIGraphicsGetCurrentContext();
@@ -43,9 +43,9 @@
         snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext();
-    }
+//    }
     
-    self.frame = oldFrame;
+    self.layer.frame = oldFrame;
     //还原
     self.contentOffset = oldContentOffset;
     
