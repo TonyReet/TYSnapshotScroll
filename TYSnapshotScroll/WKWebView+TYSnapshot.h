@@ -10,6 +10,6 @@
 
 @interface WKWebView (TYSnapshot)
 
-- (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock;
+- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock;
 
 @end

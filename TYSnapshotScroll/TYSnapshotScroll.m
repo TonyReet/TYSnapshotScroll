@@ -14,6 +14,15 @@
 @implementation TYSnapshotScroll
 
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
+    [self screenSnapshot:snapshotView needMask:YES addMaskAfterBlock:nil finishBlock:finishBlock];
+}
+
++ (void )screenSnapshot:(UIView *)snapshotView addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
+    BOOL needMask = addMaskAfterBlock?YES:NO;
+    [self screenSnapshot:snapshotView needMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:finishBlock];
+}
+    
++ (void )screenSnapshot:(UIView *)snapshotView needMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
     UIView *snapshotFinalView = snapshotView;
     
     if([snapshotView isKindOfClass:[WKWebView class]]){
@@ -34,8 +43,8 @@
     }else{
         NSLog(@"不支持的类型");
     }
-    
-    [snapshotFinalView screenSnapshot:^(UIImage *snapShotImage) {
+  
+    [snapshotView screenSnapshotNeedMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:^(UIImage * _Nonnull snapShotImage) {
         if (snapShotImage != nil && finishBlock) {
             finishBlock(snapShotImage);
         }

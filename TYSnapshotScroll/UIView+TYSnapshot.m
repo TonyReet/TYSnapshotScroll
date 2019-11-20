@@ -11,8 +11,14 @@
 
 @implementation UIView (TYSnapshot)
 
-- (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
+- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
     if (!finishBlock)return;
+    
+    UIView *snapShotMaskView;
+    if (needMask){
+      snapShotMaskView = [self addSnapShotMaskView];
+      addMaskAfterBlock?addMaskAfterBlock():nil;
+    }
     
     UIImage *snapshotImage = nil;
     
@@ -26,6 +32,10 @@
     
     UIGraphicsEndImageContext();
     
+    if (snapShotMaskView){
+        [snapShotMaskView removeFromSuperview];
+    }
+
     finishBlock(snapshotImage);
 }
 
