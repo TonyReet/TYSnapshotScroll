@@ -53,8 +53,8 @@
         //还原
         self.contentOffset = oldContentOffset;
         
-        if (snapShotMaskView){
-            [snapShotMaskView removeFromSuperview];
+        if (snapShotMaskView.layer){
+            [snapShotMaskView.layer removeFromSuperlayer];
         }
         
         if (snapshotImage != nil) {

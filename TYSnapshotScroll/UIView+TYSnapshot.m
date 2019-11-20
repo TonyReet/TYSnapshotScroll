@@ -54,7 +54,7 @@
     UIView *snapShotMaskView = [superview snapshotViewAfterScreenUpdates:YES];
     snapShotMaskView.frame = self.frame;
     
-    [superview addSubview:snapShotMaskView];
+    [superview.layer addSublayer:snapShotMaskView.layer];
     
     return snapShotMaskView;
 }
