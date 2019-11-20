@@ -14,7 +14,7 @@
 /// 截图类方法，默认添加遮盖的view
 /// @param snapshotView 需要截取的view
 /// @param finishBlock 结束操作
-+ (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBloc;
++ (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBlock;
 
 
 /// 截图类方法
