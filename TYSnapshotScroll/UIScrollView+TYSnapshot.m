@@ -30,11 +30,12 @@
     if (self.contentSize.height > self.frame.size.height) {
         self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
     }
-    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
 
     //延迟0.3秒，避免有时候渲染不出来的情况
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
         self.contentOffset = CGPointZero;
+
 
         UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
 
@@ -48,14 +49,14 @@
 
         UIGraphicsEndImageContext();
 
-        self.frame = oldFrame;
+        self.layer.frame = oldFrame;
         //还原
         self.contentOffset = oldContentOffset;
-
+        
         if (snapShotMaskView){
             [snapShotMaskView removeFromSuperview];
         }
-
+        
         if (snapshotImage != nil) {
             finishBlock(snapshotImage);
         }
