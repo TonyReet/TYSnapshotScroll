@@ -8,7 +8,6 @@
 
 #import "UIScrollView+TYSnapshot.h"
 #import "UIView+TYSnapshot.h"
-#import "UIImage+TYSnapshot.h"
 
 @implementation UIScrollView (TYSnapshot)
 
@@ -16,6 +15,8 @@
     if (!finishBlock)return;
     
     __block UIImage* snapshotImage = nil;
+    
+    UIView *snapShotMaskView = [self addSnapShotMaskView];
     
     //保存offset
     CGPoint oldContentOffset = self.contentOffset;
@@ -25,48 +26,45 @@
     if (self.contentSize.height > self.frame.size.height) {
         self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
     }
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.contentSize.width, self.contentSize.height);
+    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     
     //延迟0.3秒，避免有时候渲染不出来的情况
     [NSThread sleepForTimeInterval:0.3];
     
     self.contentOffset = CGPointZero;
-    @autoreleasepool{
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
+   
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
 
-        CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextRef context = UIGraphicsGetCurrentContext();
 
-        [self.layer renderInContext:context];
-        
+    [self.layer renderInContext:context];
+    
 //        [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
-        
-        snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
-        
-        UIGraphicsEndImageContext();
-    }
+    
+    snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
     
     self.frame = oldFrame;
     //还原
     self.contentOffset = oldContentOffset;
     
+    [snapShotMaskView removeFromSuperview];
+    
     if (snapshotImage != nil) {
         finishBlock(snapshotImage);
     }
 }
-
-#pragma mark - 获取屏幕快照
+                   
 /*
- *  snapshotView:需要截取的view
- */
+#pragma mark - 获取屏幕快照
+/// snapshotView:需要截取的view
 +(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView
 {
     return [self screenSnapshotWithSnapshotView:snapshotView snapshotSize:CGSizeZero];
 }
 
-/*
- *  snapshotView:需要截取的view
- *  snapshotSize:需要截取的size
- */
+/// snapshotView:需要截取的view,snapshotSize:需要截取的size
 +(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize
 {
     UIImage *snapshotImg;
@@ -92,7 +90,7 @@
     }
     return snapshotImg;
 }
-
+*/
 
 - (instancetype )subScrollViewTotalExtraHeight:(void(^)(CGFloat subScrollViewExtraHeight))finishBlock{
     __block CGFloat extraHeight = 0.0;
@@ -112,7 +110,7 @@
     }];
 
 
-    !finishBlock?:finishBlock(extraHeight);
+    finishBlock?finishBlock(extraHeight):nil;
     return self;
 }
 @end

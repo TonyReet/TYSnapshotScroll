@@ -8,27 +8,14 @@
 
 #import "WKWebView+TYSnapshot.h"
 #import "UIView+TYSnapshot.h"
-#import "UIViewController+TYSnapshot.h"
+
 
 @implementation WKWebView (TYSnapshot)
 
 - (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
     if (!finishBlock)return;
     
-    //获取父view
-    UIView *superview;
-    UIViewController *currentViewController = [UIViewController currentViewController];
-    if (currentViewController){
-        superview = currentViewController.view;
-    }else{
-        superview = self.superview;
-    }
-    
-    //添加遮盖
-    UIView *snapShotView = [superview snapshotViewAfterScreenUpdates:YES];
-    snapShotView.frame = CGRectMake(superview.frame.origin.x, superview.frame.origin.y, snapShotView.frame.size.width, snapShotView.frame.size.height);
-    
-    [superview addSubview:snapShotView];
+    UIView *snapShotMaskView = [self addSnapShotMaskView];
     
     //保存原始信息
     CGRect oldFrame = self.frame;
@@ -48,7 +35,7 @@
     __weak typeof(self) weakSelf = self;
     //截取完所有图片
     [self scrollToDraw:0 maxIndex:(NSInteger )snapshotScreenCount finishBlock:^{
-        [snapShotView removeFromSuperview];
+        [snapShotMaskView removeFromSuperview];
         
         UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();

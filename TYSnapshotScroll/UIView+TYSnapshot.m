@@ -7,6 +7,7 @@
 //
 
 #import "UIView+TYSnapshot.h"
+#import "UIViewController+TYSnapshot.h"
 
 @implementation UIView (TYSnapshot)
 
@@ -28,4 +29,23 @@
     finishBlock(snapshotImage);
 }
 
+
+- (UIView *)addSnapShotMaskView{
+    //获取父view
+    UIView *superview;
+    UIViewController *currentViewController = [UIViewController currentViewController];
+    if (currentViewController){
+        superview = currentViewController.view;
+    }else{
+        superview = self.superview;
+    }
+    
+    //添加遮盖
+    UIView *snapShotMaskView = [superview snapshotViewAfterScreenUpdates:YES];
+    snapShotMaskView.frame = self.frame;
+    
+    [superview addSubview:snapShotMaskView];
+    
+    return snapShotMaskView;
+}
 @end

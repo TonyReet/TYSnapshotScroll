@@ -12,6 +12,7 @@
 
 - (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock;
 
+/*
 /// 截图snapshotView的图片
 /// @param snapshotView 需要截取的view
 +(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView;
@@ -20,6 +21,7 @@
 /// @param snapshotView 需要截取的view
 /// @param snapshotSize 需要截取的size
 +(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize;
+*/
 
 
 /// 获取子scrollView的内容的多余高度
