@@ -24,14 +24,12 @@
     self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
     //设置小菊花的frame
     self.activityIndicator.frame= CGRectMake(0, 0, 100, 100);
-    
-    [self.navigationController.navigationBar addSubview:self.activityIndicator];
-
     self.activityIndicator.center = self.view.center;
     self.activityIndicator.color = [UIColor blackColor];
     self.activityIndicator.backgroundColor = [UIColor clearColor];
     self.activityIndicator.hidesWhenStopped = YES;
     
+    [self.navigationController.view addSubview:self.activityIndicator];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStylePlain target:self action:@selector(snapshotBtnClick)];
     
@@ -49,12 +47,21 @@
         [self startAnimating];
         
         __weak typeof(self) weakSelf = self;
-        
         [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapShotImage) {
             [weakSelf stopAnimating];
-            
+
             [weakSelf pushToPreVcWithImage:snapShotImage];
         }];
+        
+//        另一种调用
+//        __weak typeof(self) weakSelf = self;
+//        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
+//            [weakSelf startAnimating];
+//        } finishBlock:^(UIImage *snapShotImage) {
+//            [weakSelf stopAnimating];
+//
+//            [weakSelf pushToPreVcWithImage:snapShotImage];
+//        }];
     }
 }
 
@@ -69,7 +76,7 @@
 - (void)startAnimating{
     if ([self.activityIndicator isAnimating])return;
     
-    [self.navigationController.navigationBar bringSubviewToFront:self.activityIndicator];
+    [self.navigationController.view bringSubviewToFront:self.activityIndicator];
     [self.activityIndicator startAnimating];
 }
 

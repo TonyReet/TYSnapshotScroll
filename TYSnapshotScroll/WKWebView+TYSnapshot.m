@@ -12,10 +12,14 @@
 
 @implementation WKWebView (TYSnapshot)
 
-- (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
+- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
     if (!finishBlock)return;
     
-    UIView *snapShotMaskView = [self addSnapShotMaskView];
+    UIView *snapShotMaskView;
+    if (needMask){
+        snapShotMaskView = [self addSnapShotMaskView];
+        addMaskAfterBlock?addMaskAfterBlock():nil;
+    }
     
     //保存原始信息
     CGRect oldFrame = self.frame;
@@ -35,7 +39,9 @@
     __weak typeof(self) weakSelf = self;
     //截取完所有图片
     [self scrollToDraw:0 maxIndex:(NSInteger )snapshotScreenCount finishBlock:^{
-        [snapShotMaskView removeFromSuperview];
+        if (snapShotMaskView){
+            [snapShotMaskView removeFromSuperview];
+        }
         
         UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();

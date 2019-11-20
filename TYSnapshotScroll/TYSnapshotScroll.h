@@ -11,8 +11,17 @@
 
 @interface TYSnapshotScroll : NSObject
 
+/// 截图类方法，默认添加遮盖的view
+/// @param snapshotView 需要截取的view
+/// @param finishBlock 结束操作
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBloc;
 
+
+/// 截图类方法
+/// @param snapshotView 需要截取的view
+/// @param addMaskAfterBlock 添加遮盖以后的操作，存在block添加遮盖
+/// @param finishBlock 结束操作
++ (void )screenSnapshot:(UIView *)snapshotView addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock;
 
 /// 多个scrollView(tablview)嵌套获取截图，使用场景:iOS13涉及scrollView嵌套tableView获取截图的地方
 /// @param snapshotView 最外层的scrollView

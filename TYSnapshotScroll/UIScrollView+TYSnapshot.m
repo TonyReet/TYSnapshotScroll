@@ -11,49 +11,55 @@
 
 @implementation UIScrollView (TYSnapshot)
 
-- (void )screenSnapshot:(void(^)(UIImage *snapShotImage))finishBlock{
+- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
     if (!finishBlock)return;
     
     __block UIImage* snapshotImage = nil;
     
-    UIView *snapShotMaskView = [self addSnapShotMaskView];
+    UIView *snapShotMaskView;
+    if (needMask){
+        snapShotMaskView = [self addSnapShotMaskView];
+        addMaskAfterBlock?addMaskAfterBlock():nil;
+    }
     
     //保存offset
     CGPoint oldContentOffset = self.contentOffset;
     //保存frame
     CGRect oldFrame = self.frame;
-    
+
     if (self.contentSize.height > self.frame.size.height) {
         self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
     }
     self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
-    
+
     //延迟0.3秒，避免有时候渲染不出来的情况
-    [NSThread sleepForTimeInterval:0.3];
-    
-    self.contentOffset = CGPointZero;
-   
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+        self.contentOffset = CGPointZero;
 
-    CGContextRef context = UIGraphicsGetCurrentContext();
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
 
-    [self.layer renderInContext:context];
-    
-//        [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
-    
-    snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    self.frame = oldFrame;
-    //还原
-    self.contentOffset = oldContentOffset;
-    
-    [snapShotMaskView removeFromSuperview];
-    
-    if (snapshotImage != nil) {
-        finishBlock(snapshotImage);
-    }
+        CGContextRef context = UIGraphicsGetCurrentContext();
+
+        [self.layer renderInContext:context];
+
+        //[self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
+
+        snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+
+        UIGraphicsEndImageContext();
+
+        self.frame = oldFrame;
+        //还原
+        self.contentOffset = oldContentOffset;
+
+        if (snapShotMaskView){
+            [snapShotMaskView removeFromSuperview];
+        }
+
+        if (snapshotImage != nil) {
+            finishBlock(snapshotImage);
+        }
+    });
 }
                    
 /*

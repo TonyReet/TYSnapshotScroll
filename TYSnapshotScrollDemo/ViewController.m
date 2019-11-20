@@ -39,12 +39,23 @@
 
 -(void )tableViewInit{
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.tableView = [[UITableView alloc] init];
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.tableView];
+    
+    NSString *vertical = @"V:|[tableView]|";
+    NSString *horizontal = @"H:|[tableView]|";
+    NSDictionary *views = @{@"tableView" : self.tableView};
+    
+    NSArray *verticalLayout = [NSLayoutConstraint constraintsWithVisualFormat:vertical options:0 metrics:nil views:views];
+    NSArray *horizontalLayout = [NSLayoutConstraint constraintsWithVisualFormat:horizontal options:0 metrics:nil views:views];
+    [self.view addConstraints:verticalLayout];
+    [self.view addConstraints:horizontalLayout];
     
     self.tableView.delegate = (id)self;
     self.tableView.dataSource = (id)self;
     self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.tableView];
+
     
     [self.tableView reloadData];
 }
