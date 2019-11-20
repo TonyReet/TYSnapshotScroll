@@ -29,8 +29,8 @@
                                 @"WKWebView_截图",
                                 @"UIScrollView_截图",
                                 @"UICollectionView_截图",
-                                @"SB_UIScrollView嵌套UITableView_截图",
-                                @"AutoLayout_WKWebView_截图",
+                                @"Layout_ScrollView嵌套TableView_截图",
+                                @"Layout_WKWebView_截图",
                         ];
     
     [self tableViewInit];
