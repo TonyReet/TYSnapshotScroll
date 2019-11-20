@@ -53,7 +53,7 @@
             [weakSelf pushToPreVcWithImage:snapShotImage];
         }];
         
-//        另一种调用
+//        /// 另一种调用
 //        __weak typeof(self) weakSelf = self;
 //        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
 //            [weakSelf startAnimating];
