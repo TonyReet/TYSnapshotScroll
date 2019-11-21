@@ -2,13 +2,14 @@
 
 
 [English](README_EN.md)|简体中文
-## 一句代码保存截图,将scrollView相关的页面保存为图片,支持UIScrollView,UITableView,UICollectionView,UIWebView,WKWebView。
+## 一句代码保存截图,将scrollView相关的页面保存为图片,支持UIScrollView,UITableView,UICollectionView,UIWebView,WKWebView。（支持iOS13）
 > Save the scroll view page as an image,support UIScrollView,UITableView,UICollectionView,UIWebView,WKWebView。
 
-[![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
-[![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
+[![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)  [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
-
+-------
++ 修复iOS13ScrollView和WKWebView只能截取一屏的问题，请升级至最新版本(0.1.4)   
+-------
 ### 方法一:cocopods
 - 1、:
 
@@ -44,6 +45,9 @@
 
 UIScrollView嵌套UITableView：    
 ![TYSnapshotScroll-w240](Snapshot_1.gif)
+
+2019/11/21:
+新增：修复iOS13截图的问题
    
 2019/11/04:
 新增：UIScrollView嵌套UITableView截图
