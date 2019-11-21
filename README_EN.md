@@ -2,12 +2,13 @@
 
 
 English|[简体中文](README.md)
-## Save the scroll view page as an image,support UIScrollView,UITableView,UICollectionView,UIWebView,WKWebView。
+## Save the scroll view page as an image,support UIScrollView,UITableView,UICollectionView,UIWebView,WKWebView.(Support iOS13)
 
-[![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
-[![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
+[![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)  [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
-
+-------
++ Fix bug on iOS13,please update the lastest version(0.1.4)   
+-------
 ### Cocoapods
 - 1、Add the following line to your Podfile:
 
@@ -49,6 +50,9 @@ normal:
 
 UITableView in UIScrollView:    
 ![TYSnapshotScroll-w240](Snapshot_1.gif)
+
+2019/11/21:
+add：Fix bug on iOS13
 
 2019/11/04:
 add：UITableView in UIScrollView
