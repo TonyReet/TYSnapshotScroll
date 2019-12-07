@@ -8,6 +8,8 @@ English|[简体中文](README.md)
 
 -------
 + Fix bug on iOS13,please update the lastest version(0.1.4)   
+
++ Pelease use real machine to debug, simulator has some problems   
 -------
 ### Cocoapods
 - 1、Add the following line to your Podfile:
