@@ -85,7 +85,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.imageView = [UIImageView new];
-//    self.imageView.image = self.image;
+    self.imageView.image = self.image;
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     self.scrollView = [UIScrollView new];
@@ -103,7 +103,7 @@
     self.scrollView.contentSize = CGSizeMake(width, height);
     self.imageView.frame = CGRectMake(0, 0, width, height);
 
-        [NSThread detachNewThreadSelector:@selector(downsize) toTarget:self withObject:nil];
+//    [NSThread detachNewThreadSelector:@selector(downsize) toTarget:self withObject:nil];
 }
 
 - (void)saveImage{
