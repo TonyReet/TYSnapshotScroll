@@ -19,6 +19,8 @@
 		307205F21D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205F11D33C1CD0011A262 /* TYSnapshotScrollDemoTests.m */; };
 		307205FD1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205FC1D33C1CD0011A262 /* TYSnapshotScrollDemoUITests.m */; };
 		6A06BA2A23839A44006986A3 /* TYLayoutScrollViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A06BA2923839A44006986A3 /* TYLayoutScrollViewVc.m */; };
+		6A27656723BE2287005C14DB /* LargeImageDownsizingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A27656523BE2287005C14DB /* LargeImageDownsizingViewController.m */; };
+		6A27656923BE2304005C14DB /* large_leaves_80mp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A27656823BE2303005C14DB /* large_leaves_80mp.png */; };
 		6A58241A236BE3C300F27469 /* TYScrollEmbedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A582419236BE3C300F27469 /* TYScrollEmbedVC.m */; };
 		6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */; };
 		6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */; };
@@ -75,6 +77,9 @@
 		307205FE1D33C1CD0011A262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A06BA2823839A44006986A3 /* TYLayoutScrollViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYLayoutScrollViewVc.h; sourceTree = "<group>"; };
 		6A06BA2923839A44006986A3 /* TYLayoutScrollViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYLayoutScrollViewVc.m; sourceTree = "<group>"; };
+		6A27656523BE2287005C14DB /* LargeImageDownsizingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeImageDownsizingViewController.m; sourceTree = "<group>"; };
+		6A27656623BE2287005C14DB /* LargeImageDownsizingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeImageDownsizingViewController.h; sourceTree = "<group>"; };
+		6A27656823BE2303005C14DB /* large_leaves_80mp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = large_leaves_80mp.png; sourceTree = "<group>"; };
 		6A582418236BE3C300F27469 /* TYScrollEmbedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollEmbedVC.h; sourceTree = "<group>"; };
 		6A582419236BE3C300F27469 /* TYScrollEmbedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYScrollEmbedVC.m; sourceTree = "<group>"; };
 		6A675A191FEF8E0200BA2B46 /* TYCollectionViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYCollectionViewVc.h; sourceTree = "<group>"; };
@@ -129,6 +134,7 @@
 		1802B4561E10D2F900A6A2D1 /* SubViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A27656823BE2303005C14DB /* large_leaves_80mp.png */,
 				6A895EBC1FC575B100D0C91D /* TYBaseVc.h */,
 				6A895EBD1FC575B100D0C91D /* TYBaseVc.m */,
 				1802B4571E10D34C00A6A2D1 /* TYWebViewVc.h */,
@@ -149,6 +155,8 @@
 				6AF326182382384300651608 /* TYVFLWKWebViewVC.m */,
 				6A6BC5E71FC7BCF1006608B1 /* PreviewVc.h */,
 				6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */,
+				6A27656623BE2287005C14DB /* LargeImageDownsizingViewController.h */,
+				6A27656523BE2287005C14DB /* LargeImageDownsizingViewController.m */,
 			);
 			path = SubViewControllers;
 			sourceTree = "<group>";
@@ -311,6 +319,7 @@
 				TargetAttributes = {
 					307205D31D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XQ8CMT39QL;
 					};
 					307205EC1D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -350,6 +359,7 @@
 			files = (
 				307205E71D33C1CD0011A262 /* LaunchScreen.storyboard in Resources */,
 				307205E41D33C1CD0011A262 /* Assets.xcassets in Resources */,
+				6A27656923BE2304005C14DB /* large_leaves_80mp.png in Resources */,
 				307205E21D33C1CD0011A262 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +401,7 @@
 				6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */,
 				18C29ADE1E1286230047E25D /* TYWKWebViewVc.m in Sources */,
 				307205D91D33C1CD0011A262 /* main.m in Sources */,
+				6A27656723BE2287005C14DB /* LargeImageDownsizingViewController.m in Sources */,
 				6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */,
 				1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */,
 				6A9DD8E02249D0F300257C68 /* UIView+TYSnapshot.m in Sources */,
@@ -556,7 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XQ8CMT39QL;
 				INFOPLIST_FILE = TYSnapshotScrollDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -569,7 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XQ8CMT39QL;
 				INFOPLIST_FILE = TYSnapshotScrollDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
