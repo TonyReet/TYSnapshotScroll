@@ -68,6 +68,7 @@
 - (void)pushToPreVcWithImage:(UIImage *)snapShotImage{
     UIViewController *preVc = [[PreviewVc alloc] init:snapShotImage];
 
+//    UIViewController *preVc = [NSClassFromString(@"LargeImageDownsizingViewController") new];
     [self.navigationController pushViewController:preVc animated:true];
 }
 
