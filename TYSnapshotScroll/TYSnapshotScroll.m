@@ -25,7 +25,9 @@
 + (void )screenSnapshot:(UIView *)snapshotView needMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
     UIView *snapshotFinalView = snapshotView;
     
-    if([snapshotView isKindOfClass:[WKWebView class]]){
+    if([snapshotView isKindOfClass:[UIView class]]){
+        snapshotFinalView = (UIView *)snapshotView;
+    }else if([snapshotView isKindOfClass:[WKWebView class]]){
         //WKWebView
         snapshotFinalView = (WKWebView *)snapshotView;
         
