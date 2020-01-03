@@ -32,6 +32,7 @@
         @{@"TYLayoutScrollViewVc":@"Layout_UIScrollView_截图"},
         @{@"SB_TYScrollEmbedVC":@"SB_ScrollView嵌套TableView_截图"},
         @{@"TYVFLWKWebViewVC":@"Layout_WKWebView_截图"},
+        @{@"TYViewVC":@"UIView_截图"},
                         ];
     
     [self tableViewInit];
