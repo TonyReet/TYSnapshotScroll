@@ -27,9 +27,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>需要您的同意,才能访问相册</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要您的同意,才能访问相册</string>
+	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要您的同意,才能访问相册</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
