@@ -26,7 +26,8 @@
     UIView *snapshotFinalView = snapshotView;
     
     if([snapshotView isKindOfClass:[UIView class]]){
-        snapshotFinalView = (UIView *)snapshotView;
+        UIView *uiview = (UIView *)snapshotView;
+        snapshotFinalView = uiview;
     }else if([snapshotView isKindOfClass:[WKWebView class]]){
         //WKWebView
         snapshotFinalView = (WKWebView *)snapshotView;
@@ -36,6 +37,10 @@
         //UIWebView
         UIWebView *webView = (UIWebView *)snapshotView;
         snapshotFinalView = webView.scrollView;
+        
+        /// 因苹果2020年不支持UIWebView的更新，不再支持UIWebView
+        NSLog(@"不再支持UIWebView");
+        return;
     }else if([snapshotView isKindOfClass:[UIScrollView class]] ||
              [snapshotView isKindOfClass:[UITableView class]] ||
              [snapshotView isKindOfClass:[UICollectionView class]]
@@ -44,9 +49,11 @@
         snapshotFinalView = (UIScrollView *)snapshotView;
     }else{
         NSLog(@"不支持的类型");
+        
+        return;
     }
   
-    [snapshotView screenSnapshotNeedMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:^(UIImage * _Nonnull snapShotImage) {
+    [snapshotFinalView screenSnapshotNeedMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:^(UIImage * _Nonnull snapShotImage) {
         if (snapShotImage != nil && finishBlock) {
             finishBlock(snapShotImage);
         }

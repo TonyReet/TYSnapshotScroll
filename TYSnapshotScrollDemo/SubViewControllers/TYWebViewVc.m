@@ -39,10 +39,6 @@
 }
 
 #pragma mark - UIWebViewDelegate
-- (void)webViewDidStartLoad:(UIWebView *)webView{
-    [self startAnimating];
-}
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     [self stopAnimating];
 }

@@ -50,10 +50,6 @@
 }
 
 #pragma mark - WKNavigationDelegate
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
-    [self startAnimating];
-}
-
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
     [self stopAnimating];
 }
