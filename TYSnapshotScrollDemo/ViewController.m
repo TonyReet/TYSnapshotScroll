@@ -24,7 +24,6 @@
 
 
     self.dataSourceArr = @[
-        @{@"TYWebViewVc":@"UIWebView_截图"},
         @{@"TYTableViewVc":@"UITableView_截图"},
         @{@"TYWKWebViewVc":@"WKWebView_截图"},
         @{@"TYScrollViewVc":@"UIScrollView_截图"},
