@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */; };
 		1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */; };
 		18C29ADE1E1286230047E25D /* TYWKWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C29ADD1E1286230047E25D /* TYWKWebViewVc.m */; };
 		307205D91D33C1CD0011A262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205D81D33C1CD0011A262 /* main.m */; };
@@ -52,8 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1802B4571E10D34C00A6A2D1 /* TYWebViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYWebViewVc.h; sourceTree = "<group>"; };
-		1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYWebViewVc.m; sourceTree = "<group>"; };
 		1802B45A1E10D3A300A6A2D1 /* TYTableViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTableViewVc.h; sourceTree = "<group>"; };
 		1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTableViewVc.m; sourceTree = "<group>"; };
 		18C29ADC1E1286230047E25D /* TYWKWebViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYWKWebViewVc.h; sourceTree = "<group>"; };
@@ -134,8 +131,6 @@
 			children = (
 				6A895EBC1FC575B100D0C91D /* TYBaseVc.h */,
 				6A895EBD1FC575B100D0C91D /* TYBaseVc.m */,
-				1802B4571E10D34C00A6A2D1 /* TYWebViewVc.h */,
-				1802B4581E10D34C00A6A2D1 /* TYWebViewVc.m */,
 				1802B45A1E10D3A300A6A2D1 /* TYTableViewVc.h */,
 				1802B45B1E10D3A300A6A2D1 /* TYTableViewVc.m */,
 				18C29ADC1E1286230047E25D /* TYWKWebViewVc.h */,
@@ -382,7 +377,6 @@
 			files = (
 				6A06BA2A23839A44006986A3 /* TYLayoutScrollViewVc.m in Sources */,
 				6A7913BF215732F000DB9626 /* WKWebView+TYSnapshot.m in Sources */,
-				1802B4591E10D34C00A6A2D1 /* TYWebViewVc.m in Sources */,
 				6A7913C2215732F000DB9626 /* UIViewController+TYSnapshot.m in Sources */,
 				6A58241A236BE3C300F27469 /* TYScrollEmbedVC.m in Sources */,
 				6AF326192382384300651608 /* TYVFLWKWebViewVC.m in Sources */,
