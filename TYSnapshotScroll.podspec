@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/TonyReet/TYSnapshotScroll.git", :tag => s.version ,:branch => UIWeb}
+  s.source       = { :git => "https://github.com/TonyReet/TYSnapshotScroll.git", :tag => s.version ,:branch => "UIWeb"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
