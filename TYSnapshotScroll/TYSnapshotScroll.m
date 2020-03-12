@@ -29,11 +29,6 @@
         //WKWebView
         snapshotFinalView = (WKWebView *)snapshotView;
         
-    }else if([snapshotView isKindOfClass:[UIWebView class]]){
-        
-        //UIWebView
-        UIWebView *webView = (UIWebView *)snapshotView;
-        snapshotFinalView = (UIScrollView *)webView.scrollView;
     }else if([snapshotView isKindOfClass:[UIScrollView class]] ||
              [snapshotView isKindOfClass:[UITableView class]] ||
              [snapshotView isKindOfClass:[UICollectionView class]]
