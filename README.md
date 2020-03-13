@@ -8,7 +8,9 @@
 [![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)  [![](https://img.shields.io/badge/Objc-compatible-4BC51D.svg?style=flat-square)](https://github.com/TonyReet/TYSnapshotScroll)
 
 -------
-+ 修复iOS13ScrollView和WKWebView只能截取一屏的问题，请升级至最新版本(0.1.4)   
++ 0.1.9版本已经去掉UIWebView，如果需要使用UIWebView，请使用"版本号-UIWebView"，例如"0.1.9-UIWebView"
+
++ 修复iOS13ScrollView和WKWebView只能截取一屏的问题，请升级至0.1.4以上版本   
 
 + 使用真机调试，模拟器测试发现有问题   
 -------
