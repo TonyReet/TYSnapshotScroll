@@ -55,11 +55,11 @@
         [TYSnapshotScroll screenSnapshotWithMultipleScroll:self.snapView modifyLayoutBlock:^(CGFloat extraHeight) {
             weakSelf.tableViewLayoutHeight.constant +=extraHeight;
             [weakSelf.view layoutIfNeeded];
-        } finishBlock:^(UIImage *snapShotImage) {
+        } finishBlock:^(UIImage *snapshotImage) {
             [weakSelf stopAnimating];
             weakSelf.tableViewLayoutHeight.constant = oldTableViewHeight;
             
-            [weakSelf pushToPreVcWithImage:snapShotImage];
+            [weakSelf pushToPreVcWithImage:snapshotImage];
         }];
     }
 }

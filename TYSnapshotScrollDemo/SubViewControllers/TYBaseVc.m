@@ -8,6 +8,7 @@
 
 #import "TYBaseVc.h"
 #import "PreviewVc.h"
+#import "TYSnapshotManager.h"
 
 @interface TYBaseVc ()
 
@@ -33,6 +34,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStylePlain target:self action:@selector(snapshotBtnClick)];
     
+    [TYSnapshotManager defaultManager].maxScreenCount = 10;
+    [TYSnapshotManager defaultManager].delayTime = 0;
+    
     [self subClassInit];
 }
 
@@ -47,28 +51,34 @@
         [self startAnimating];
         
         __weak typeof(self) weakSelf = self;
-        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapShotImage) {
-            [weakSelf stopAnimating];
-
-            [weakSelf pushToPreVcWithImage:snapShotImage];
-        }];
-        
-//        /// 另一种调用
-//        __weak typeof(self) weakSelf = self;
-//        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
-//            [weakSelf startAnimating];
-//        } finishBlock:^(UIImage *snapShotImage) {
+//        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapshotImage) {
 //            [weakSelf stopAnimating];
 //
-//            [weakSelf pushToPreVcWithImage:snapShotImage];
+//            [weakSelf pushToPreVcWithImage:snapshotImage];
 //        }];
+        
+//        /// 另一种调用
+//        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
+//            [weakSelf startAnimating];
+//        } finishBlock:^(UIImage *snapshotImage) {
+//            [weakSelf stopAnimating];
+//
+//            [weakSelf pushToPreVcWithImage:snapshotImage];
+//        }];
+        /// 另一种调用
+        [TYSnapshotScroll screenSnapshot:self.snapView maxScreenCount:100 addMaskAfterBlock:^{
+            [weakSelf startAnimating];
+        } finishBlock:^(UIImage *snapshotImage) {
+            [weakSelf stopAnimating];
+
+            [weakSelf pushToPreVcWithImage:snapshotImage];
+        }];
     }
 }
 
-- (void)pushToPreVcWithImage:(UIImage *)snapShotImage{
-    UIViewController *preVc = [[PreviewVc alloc] init:snapShotImage];
+- (void)pushToPreVcWithImage:(UIImage *)snapshotImage{
+    UIViewController *preVc = [[PreviewVc alloc] init:snapshotImage];
 
-//    UIViewController *preVc = [NSClassFromString(@"LargeImageDownsizingViewController") new];
     [self.navigationController pushViewController:preVc animated:true];
 }
 

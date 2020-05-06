@@ -13,16 +13,20 @@
 
 @implementation TYSnapshotScroll
 
-+ (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
-    [self screenSnapshot:snapshotView needMask:YES addMaskAfterBlock:nil finishBlock:finishBlock];
++ (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
+    [self screenSnapshot:snapshotView needMask:YES maxScreenCount:0 addMaskAfterBlock:nil finishBlock:finishBlock];
 }
 
-+ (void )screenSnapshot:(UIView *)snapshotView addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
++ (void )screenSnapshot:(UIView *)snapshotView addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
+    [self screenSnapshot:snapshotView maxScreenCount:0 addMaskAfterBlock:addMaskAfterBlock finishBlock:finishBlock];
+}
+
++ (void )screenSnapshot:(UIView *)snapshotView maxScreenCount:(NSInteger )maxScreenCount addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
     BOOL needMask = addMaskAfterBlock?YES:NO;
-    [self screenSnapshot:snapshotView needMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:finishBlock];
+    [self screenSnapshot:snapshotView needMask:needMask maxScreenCount:maxScreenCount addMaskAfterBlock:addMaskAfterBlock finishBlock:finishBlock];
 }
     
-+ (void )screenSnapshot:(UIView *)snapshotView needMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
++ (void )screenSnapshot:(UIView *)snapshotView needMask:(BOOL)needMask maxScreenCount:(NSInteger )maxScreenCount addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
     UIView *snapshotFinalView = snapshotView;
     
     if([snapshotView isKindOfClass:[WKWebView class]]){
@@ -44,20 +48,20 @@
         return;
     }
   
-    [snapshotFinalView screenSnapshotNeedMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:^(UIImage * _Nonnull snapShotImage) {
-        if (snapShotImage != nil && finishBlock) {
-            finishBlock(snapShotImage);
+    [snapshotFinalView screenSnapshotNeedMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:^(UIImage * _Nonnull snapshotImage) {
+        if (snapshotImage != nil && finishBlock) {
+            finishBlock(snapshotImage);
         }
     }];
 }
 
-+(void )screenSnapshotWithMultipleScroll:(UIView *)snapshotView modifyLayoutBlock:(void(^)(CGFloat extraHeight))modifyLayoutBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock  {
++(void )screenSnapshotWithMultipleScroll:(UIView *)snapshotView modifyLayoutBlock:(void(^)(CGFloat extraHeight))modifyLayoutBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock  {
    [TYSnapshotScroll scrollViewGetTotalExtraHeight:snapshotView finishBlock:^(CGFloat subScrollViewExtraHeight) {
 
        !modifyLayoutBlock?:modifyLayoutBlock(subScrollViewExtraHeight);
 
-       [TYSnapshotScroll screenSnapshot:snapshotView finishBlock:^(UIImage *snapShotImage) {
-           !finishBlock?:finishBlock(snapShotImage);
+       [TYSnapshotScroll screenSnapshot:snapshotView finishBlock:^(UIImage *snapshotImage) {
+           !finishBlock?:finishBlock(snapshotImage);
        }];
    }];
 }

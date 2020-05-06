@@ -40,5 +40,5 @@
 /**
 截完图的跳转
 */
-- (void)pushToPreVcWithImage:(UIImage *)snapShotImage;
+- (void)pushToPreVcWithImage:(UIImage *)snapshotImage;
 @end
