@@ -8,13 +8,13 @@
 
 #import "UIScrollView+TYSnapshot.h"
 #import "UIView+TYSnapshot.h"
+#import "TYSnapshotManager.h"
+#import <TYSnapshotAuxiliary/UIScrollView+TYSnapshotAuxiliary.h>
 
 @implementation UIScrollView (TYSnapshot)
 
-- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
+- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(TYSnapshotFinishBlock )finishBlock{
     if (!finishBlock)return;
-    
-    __block UIImage* snapshotImage = nil;
     
     UIView *snapShotMaskView;
     if (needMask){
@@ -24,80 +24,88 @@
     
     //保存offset
     CGPoint oldContentOffset = self.contentOffset;
-    //保存frame
-    CGRect oldFrame = self.frame;
-
-    if (self.contentSize.height > self.frame.size.height) {
-        self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
+    
+    CGSize contentSize = self.contentSize;
+    
+    if ([self isBigImageWith:contentSize]){
+        [self snapshotBigImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+        return ;
     }
-    self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    
+    [self snapshotNormalImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+}
 
-    //延迟0.3秒，避免有时候渲染不出来的情况
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
-        self.contentOffset = CGPointZero;
+- (BOOL )isBigImageWith:(CGSize )contentSize{
+    TYSnapshotManager *snapshotManager = [TYSnapshotManager defaultManager];
+
+    if (contentSize.width * contentSize.height > snapshotManager.maxImageSize){
+        return YES;
+    }
+    
+    return NO;
+}
 
 
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
-
-        CGContextRef context = UIGraphicsGetCurrentContext();
-
-        [self.layer renderInContext:context];
-
-        //[self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
-
-        snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
-
-        UIGraphicsEndImageContext();
-
-        self.layer.frame = oldFrame;
-        //还原
-        self.contentOffset = oldContentOffset;
+- (void )snapshotBigImageWith:(UIView *)snapShotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
+    TYSnapshotManager *snapshotManager = [TYSnapshotManager defaultManager];
+    //计算快照屏幕数
+    NSUInteger snapshotScreenCount = floorf(contentSize.height / self.bounds.size.height);
+    
+    __weak typeof(self) weakSelf = self;
+    self.contentOffset = CGPointZero;
+    
+    NSInteger maxScreenCount = snapshotManager.maxScreenCount;
+    
+    self.delayTime = snapshotManager.delayTime;
+    [self screenSnapshotWith:snapshotScreenCount maxScreenCount:maxScreenCount finishBlock:^(UIImage * _Nonnull snapshotImage) {
         
         if (snapShotMaskView.layer){
             [snapShotMaskView.layer removeFromSuperlayer];
         }
+
+        weakSelf.contentOffset = oldContentOffset;
+        !finishBlock?:finishBlock(snapshotImage);
         
-        if (snapshotImage != nil) {
-            finishBlock(snapshotImage);
-        }
-    });
-}
-                   
-/*
-#pragma mark - 获取屏幕快照
-/// snapshotView:需要截取的view
-+(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView
-{
-    return [self screenSnapshotWithSnapshotView:snapshotView snapshotSize:CGSizeZero];
+    }];
 }
 
-/// snapshotView:需要截取的view,snapshotSize:需要截取的size
-+(UIImage *)screenSnapshotWithSnapshotView:(UIView *)snapshotView snapshotSize:(CGSize )snapshotSize
-{
-    UIImage *snapshotImg;
+- (void )snapshotNormalImageWith:(UIView *)snapShotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
+    //保存frame
+   CGRect oldFrame = self.frame;
 
-    @autoreleasepool{
-        if (snapshotSize.height == 0|| snapshotSize.width == 0) {//宽高为0的时候没有意义
-            snapshotSize = snapshotView.bounds.size;
-        }
-        
-        //创建
-        UIGraphicsBeginImageContextWithOptions(snapshotSize,NO,[UIScreen mainScreen].scale);
-        
-        CGContextRef context = UIGraphicsGetCurrentContext();
+   if (self.contentSize.height > self.frame.size.height) {
+       self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
+   }
+   self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    
+   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+       UIImage* snapshotImage = nil;
+       
+       self.contentOffset = CGPointZero;
 
-        [snapshotView.layer renderInContext:context];
-//        [snapshotView drawViewHierarchyInRect:snapshotView.bounds afterScreenUpdates:NO];
-        
-        //获取图片
-        snapshotImg = UIGraphicsGetImageFromCurrentImageContext();
-        
-        //关闭
-        UIGraphicsEndImageContext();
-    }
-    return snapshotImg;
+       UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
+
+       CGContextRef context = UIGraphicsGetCurrentContext();
+
+       [self.layer renderInContext:context];
+
+       snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+
+       UIGraphicsEndImageContext();
+
+       self.layer.frame = oldFrame;
+       //还原
+       self.contentOffset = oldContentOffset;
+       
+       if (snapShotMaskView.layer){
+           [snapShotMaskView.layer removeFromSuperlayer];
+       }
+       
+       if (snapshotImage != nil) {
+           finishBlock?:finishBlock(snapshotImage);
+       }
+   });
 }
-*/
 
 - (instancetype )subScrollViewTotalExtraHeight:(void(^)(CGFloat subScrollViewExtraHeight))finishBlock{
     __block CGFloat extraHeight = 0.0;

@@ -1,0 +1,29 @@
+//
+//  TYSnapshotManager.h
+//  TYSnapshotScrollDemo
+//
+//  Created by TonyReet on 2020/4/30.
+//  Copyright © 2020 TonyReet. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface TYSnapshotManager : NSObject
+
+// max count of snapshot,default is 100
+@property (nonatomic, assign) NSUInteger maxScreenCount;
+
+// max size of image,default is 4096*4096
+@property (nonatomic, assign) NSUInteger maxImageSize;
+
+// delay time,default is 0.3s, unit is second
+@property (nonatomic, assign) CGFloat delayTime;
+
++ (TYSnapshotManager *)defaultManager;
+
+
+@end
+
+NS_ASSUME_NONNULL_END

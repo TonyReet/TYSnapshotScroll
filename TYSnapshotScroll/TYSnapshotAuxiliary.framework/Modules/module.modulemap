@@ -1,0 +1,6 @@
+framework module TYSnapshotAuxiliary {
+  umbrella header "TYSnapshotAuxiliary.h"
+
+  export *
+  module * { export * }
+}

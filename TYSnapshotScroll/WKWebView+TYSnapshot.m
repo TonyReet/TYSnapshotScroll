@@ -8,11 +8,12 @@
 
 #import "WKWebView+TYSnapshot.h"
 #import "UIView+TYSnapshot.h"
-
+#import "TYSnapshotManager.h"
+#import <TYSnapshotAuxiliary/UIScrollView+TYSnapshotAuxiliary.h>
 
 @implementation WKWebView (TYSnapshot)
 
-- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapShotImage))finishBlock{
+- (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(TYSnapshotFinishBlock )finishBlock{
     if (!finishBlock)return;
     
     UIView *snapShotMaskView;
@@ -22,34 +23,39 @@
     }
     
     //保存原始信息
-    CGRect oldFrame = self.frame;
-    CGPoint oldOffset = self.scrollView.contentOffset;
+    CGPoint oldContentOffset = self.scrollView.contentOffset;
     CGSize contentSize = self.scrollView.contentSize;
+    
+    self.scrollView.contentOffset = CGPointZero;
+    
+    if ([self.scrollView isBigImageWith:contentSize]){
+        [self.scrollView snapshotBigImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+        return ;
+    }
+
+    [self snapshotNormalImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+}
+
+- (void )snapshotNormalImageWith:(UIView *)snapShotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
     
     //计算快照屏幕数
     NSUInteger snapshotScreenCount = floorf(contentSize.height / self.scrollView.bounds.size.height);
     
-    //设置frame为contentSize
-    self.frame = CGRectMake(0, 0, contentSize.width, contentSize.height);
-
-    self.scrollView.contentOffset = CGPointZero;
-    
-    UIGraphicsBeginImageContextWithOptions(contentSize, NO, [UIScreen mainScreen].scale);
-    
     __weak typeof(self) weakSelf = self;
+    UIGraphicsBeginImageContextWithOptions(contentSize, YES, [UIScreen mainScreen].scale);
+    
     //截取完所有图片
     [self scrollToDraw:0 maxIndex:(NSInteger )snapshotScreenCount finishBlock:^{
-        if (snapShotMaskView){
-            [snapShotMaskView removeFromSuperview];
+        if (snapShotMaskView.layer){
+            [snapShotMaskView.layer removeFromSuperlayer];
         }
         
         UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        weakSelf.frame = oldFrame;
-        weakSelf.scrollView.contentOffset = oldOffset;
+        weakSelf.scrollView.contentOffset = oldContentOffset;
         
-        finishBlock(snapshotImage);
+        !finishBlock?:finishBlock(snapshotImage);
     }];
 }
 
@@ -63,15 +69,12 @@
     [self.scrollView setContentOffset:CGPointMake(0, index * snapshotView.frame.size.height)];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
-        
         [snapshotView drawViewHierarchyInRect:snapshotFrame afterScreenUpdates:YES];
-        
+
         if(index < maxIndex){
             [self scrollToDraw:index + 1 maxIndex:maxIndex finishBlock:finishBlock];
         }else{
-            if (finishBlock) {
-                finishBlock();
-            }
+            !finishBlock?:finishBlock();
         }
     });
 }
