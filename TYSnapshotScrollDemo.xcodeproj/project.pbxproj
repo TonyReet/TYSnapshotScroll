@@ -11,7 +11,7 @@
 		18C29ADE1E1286230047E25D /* TYWKWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C29ADD1E1286230047E25D /* TYWKWebViewVc.m */; };
 		307205D91D33C1CD0011A262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205D81D33C1CD0011A262 /* main.m */; };
 		307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DB1D33C1CD0011A262 /* AppDelegate.m */; };
-		307205DF1D33C1CD0011A262 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DE1D33C1CD0011A262 /* ViewController.m */; };
+		307205DF1D33C1CD0011A262 /* TYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307205DE1D33C1CD0011A262 /* TYBaseViewController.m */; };
 		307205E21D33C1CD0011A262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307205E01D33C1CD0011A262 /* Main.storyboard */; };
 		307205E41D33C1CD0011A262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307205E31D33C1CD0011A262 /* Assets.xcassets */; };
 		307205E71D33C1CD0011A262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,7 @@
 		6A58241A236BE3C300F27469 /* TYScrollEmbedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A582419236BE3C300F27469 /* TYScrollEmbedVC.m */; };
 		6A5AD24C245A7CEE00EFFC79 /* TYSnapshotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD24B245A7CEE00EFFC79 /* TYSnapshotManager.m */; };
 		6A5AD2AF24624D7900EFFC79 /* TYSnapshotAuxiliary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5AD2AE24624D7900EFFC79 /* TYSnapshotAuxiliary.framework */; };
+		6A5AD2B32462950B00EFFC79 /* TYLongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD2B12462950B00EFFC79 /* TYLongViewController.m */; };
 		6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */; };
 		6A68832623BF391A00486773 /* TYViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A68832523BF391A00486773 /* TYViewVC.m */; };
 		6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* PreviewVc.m */; };
@@ -61,8 +62,8 @@
 		307205D81D33C1CD0011A262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		307205DA1D33C1CD0011A262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		307205DB1D33C1CD0011A262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		307205DD1D33C1CD0011A262 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		307205DE1D33C1CD0011A262 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		307205DD1D33C1CD0011A262 /* TYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBaseViewController.h; sourceTree = "<group>"; };
+		307205DE1D33C1CD0011A262 /* TYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBaseViewController.m; sourceTree = "<group>"; };
 		307205E11D33C1CD0011A262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		307205E31D33C1CD0011A262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307205E61D33C1CD0011A262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +81,8 @@
 		6A5AD24A245A7CEE00EFFC79 /* TYSnapshotManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSnapshotManager.h; sourceTree = "<group>"; };
 		6A5AD24B245A7CEE00EFFC79 /* TYSnapshotManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotManager.m; sourceTree = "<group>"; };
 		6A5AD2AE24624D7900EFFC79 /* TYSnapshotAuxiliary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYSnapshotAuxiliary.framework; sourceTree = "<group>"; };
+		6A5AD2B12462950B00EFFC79 /* TYLongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLongViewController.m; sourceTree = "<group>"; };
+		6A5AD2B22462950B00EFFC79 /* TYLongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLongViewController.h; sourceTree = "<group>"; };
 		6A675A191FEF8E0200BA2B46 /* TYCollectionViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYCollectionViewVc.h; sourceTree = "<group>"; };
 		6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYCollectionViewVc.m; sourceTree = "<group>"; };
 		6A68832423BF391A00486773 /* TYViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewVC.h; sourceTree = "<group>"; };
@@ -186,8 +189,10 @@
 				307205D71D33C1CD0011A262 /* Supporting Files */,
 				307205DA1D33C1CD0011A262 /* AppDelegate.h */,
 				307205DB1D33C1CD0011A262 /* AppDelegate.m */,
-				307205DD1D33C1CD0011A262 /* ViewController.h */,
-				307205DE1D33C1CD0011A262 /* ViewController.m */,
+				307205DD1D33C1CD0011A262 /* TYBaseViewController.h */,
+				307205DE1D33C1CD0011A262 /* TYBaseViewController.m */,
+				6A5AD2B22462950B00EFFC79 /* TYLongViewController.h */,
+				6A5AD2B12462950B00EFFC79 /* TYLongViewController.m */,
 				307205E01D33C1CD0011A262 /* Main.storyboard */,
 				307205E31D33C1CD0011A262 /* Assets.xcassets */,
 				307205E51D33C1CD0011A262 /* LaunchScreen.storyboard */,
@@ -398,7 +403,7 @@
 				6AF326192382384300651608 /* TYVFLWKWebViewVC.m in Sources */,
 				6A7913BE215732F000DB9626 /* TYSnapshotScroll.m in Sources */,
 				6A6BC5E91FC7BCF1006608B1 /* PreviewVc.m in Sources */,
-				307205DF1D33C1CD0011A262 /* ViewController.m in Sources */,
+				307205DF1D33C1CD0011A262 /* TYBaseViewController.m in Sources */,
 				6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */,
 				6A68832623BF391A00486773 /* TYViewVC.m in Sources */,
 				6A7913C1215732F000DB9626 /* UIImage+TYSnapshot.m in Sources */,
@@ -410,6 +415,7 @@
 				6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */,
 				1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */,
 				6A5AD24C245A7CEE00EFFC79 /* TYSnapshotManager.m in Sources */,
+				6A5AD2B32462950B00EFFC79 /* TYLongViewController.m in Sources */,
 				6A9DD8E02249D0F300257C68 /* UIView+TYSnapshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

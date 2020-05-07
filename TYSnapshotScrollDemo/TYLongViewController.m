@@ -1,39 +1,41 @@
 //
-//  ViewController.m
+//  TYLongViewController.m
 //  TYSnapshotScroll
 //
-//  Created by Tony on 2016/7/11.
-//  Copyright © 2016年 TonyReet. All rights reserved.
+//  Created by Tony on 2020/5/7..
+//  Copyright © 2020年 TonyReet. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TYLongViewController.h"
+#import "TYBaseVc.h"
 
-@interface ViewController ()
+@interface TYLongViewController ()
 
 @property (nonatomic,strong) UITableView *tableView;
 
 @property (nonatomic,copy) NSArray *dataSourceArr;
 @end
 
-@implementation ViewController
+@implementation TYLongViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+    self.title = self.navigationController.tabBarItem.title;
+    
     self.dataSourceArr = @[
-        @{@"TYTableViewVc":@"UITableView_截图"},
-        @{@"TYWKWebViewVc":@"WKWebView_截图"},
-        @{@"TYScrollViewVc":@"UIScrollView_截图"},
-        @{@"TYCollectionViewVc":@"UICollectionView_截图"},
-        @{@"TYLayoutScrollViewVc":@"Layout_UIScrollView_截图"},
-        @{@"SB_TYScrollEmbedVC":@"SB_ScrollView嵌套TableView_截图"},
-        @{@"TYVFLWKWebViewVC":@"Layout_WKWebView_截图"},
-        @{@"TYViewVC":@"UIView_截图"},
+        @{@"TYTableViewVc":@"UITableView_长截图"},
+        @{@"TYWKWebViewVc":@"WKWebView_长截图"},
+        @{@"TYScrollViewVc":@"UIScrollView_长截图"},
+        @{@"TYCollectionViewVc":@"UICollectionView_长截图"},
+        @{@"TYLayoutScrollViewVc":@"Layout_UIScrollView_长截图"},
+        @{@"SB_TYScrollEmbedVC":@"SB_ScrollView嵌套TableView_长截图"},
+        @{@"TYVFLWKWebViewVC":@"Layout_WKWebView_长截图"},
+        @{@"TYViewVC":@"UIView_长截图"},
                         ];
     
     [self tableViewInit];
 }
-
 
 -(void )tableViewInit{
     
@@ -57,7 +59,6 @@
     
     [self.tableView reloadData];
 }
-
 
 #pragma mark - delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -85,7 +86,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIViewController *nextVc;
+    TYBaseVc *nextVc;
     
     NSDictionary *model = (NSDictionary *)self.dataSourceArr[indexPath.row];
     NSString *key = [model.allKeys firstObject];
@@ -101,6 +102,7 @@
         NSDictionary *model = (NSDictionary *)self.dataSourceArr[indexPath.row];
         
         nextVc.title = [model.allValues firstObject];
+        nextVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:nextVc animated:YES];
     }
     

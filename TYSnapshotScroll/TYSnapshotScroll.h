@@ -21,12 +21,6 @@
 /// @param finishBlock 结束操作
 + (void )screenSnapshot:(UIView *)snapshotView addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock;
 
-/// @param snapshotView 需要截取的view
-/// @param maxScreenCount 最大屏幕数
-/// @param addMaskAfterBlock 添加遮盖以后的操作，存在block添加遮盖
-/// @param finishBlock 结束操作
-+ (void )screenSnapshot:(UIView *)snapshotView maxScreenCount:(NSInteger )maxScreenCount addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock;
-
 /// 多个scrollView(tablview)嵌套获取截图，使用场景:iOS13涉及scrollView嵌套tableView获取截图的地方
 /// @param snapshotView 最外层的scrollView
 /// @param modifyLayoutBlock 需要修改布局的block

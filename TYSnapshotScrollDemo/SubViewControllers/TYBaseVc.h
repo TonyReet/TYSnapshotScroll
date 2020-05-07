@@ -11,6 +11,8 @@
 
 @interface TYBaseVc : UIViewController
 
+@property (nonatomic, assign) BOOL isLongImage;
+
 //需要截图的view
 @property (nonatomic,strong) UIView *snapView;
 

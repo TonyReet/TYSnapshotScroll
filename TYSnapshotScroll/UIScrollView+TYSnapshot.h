@@ -19,7 +19,7 @@ typedef void(^TYSnapshotFinishBlock)(UIImage *snapshotImage);
 - (BOOL )isBigImageWith:(CGSize )contentSize;
 
 // 截图大图
-- (void )snapshotBigImageWith:(UIView *)snapShotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock;
+- (void )snapshotBigImageWith:(UIView *)snapshotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock;
 
 /// 获取子scrollView的内容的多余高度
 /// @param finishBlock 结束回调
