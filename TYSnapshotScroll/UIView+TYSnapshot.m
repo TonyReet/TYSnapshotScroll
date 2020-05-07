@@ -52,7 +52,7 @@
     
     //添加遮盖
     UIView *snapShotMaskView = [superview snapshotViewAfterScreenUpdates:YES];
-    snapShotMaskView.frame = self.frame;
+    snapShotMaskView.frame = superview.bounds;
     
     [superview.layer addSublayer:snapShotMaskView.layer];
     

@@ -78,7 +78,7 @@
    }
    self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     
-   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([TYSnapshotManager defaultManager].delayTime * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
        UIImage* snapshotImage = nil;
        
        self.contentOffset = CGPointZero;
@@ -101,8 +101,8 @@
            [snapShotMaskView.layer removeFromSuperlayer];
        }
        
-       if (snapshotImage != nil) {
-           finishBlock?:finishBlock(snapshotImage);
+       if (snapshotImage && finishBlock) {
+           finishBlock(snapshotImage);
        }
    });
 }
