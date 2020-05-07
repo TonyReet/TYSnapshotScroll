@@ -8,6 +8,7 @@
 
 #import "TYWKWebViewVc.h"
 #import <WebKit/WebKit.h>
+#import "TYSnapshotManager.h"
 
 @interface TYWKWebViewVc ()
 <
@@ -27,14 +28,18 @@
     self.webView.scrollView.bounces = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];
-    
-    NSString *urlStr = @"https://www.meituan.com";
+
+    NSString *urlStr = @"https://worlds-highest-website.com/zh/";
+//    NSString *urlStr = @"https://www.meituan.com";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];//超时时间10秒
     //加载地址数据
     [self.webView loadRequest:request];
     
     self.snapView = self.webView;
     [self startAnimating];
+    
+    [TYSnapshotManager defaultManager].maxScreenCount = 10;
+    [TYSnapshotManager defaultManager].delayTime = 0.3;
 }
 
 #pragma mark - WKNavigationDelegate

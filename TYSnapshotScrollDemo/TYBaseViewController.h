@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TYBaseViewController.h
 //  TYSnapshotScroll
 //
 //  Created by Tony on 2016/7/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TYBaseViewController : UIViewController
 
 
 @end

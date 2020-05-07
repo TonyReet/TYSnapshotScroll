@@ -14,19 +14,15 @@
 @implementation TYSnapshotScroll
 
 + (void )screenSnapshot:(UIView *)snapshotView finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
-    [self screenSnapshot:snapshotView needMask:YES maxScreenCount:0 addMaskAfterBlock:nil finishBlock:finishBlock];
+    [self screenSnapshot:snapshotView needMask:YES addMaskAfterBlock:nil finishBlock:finishBlock];
 }
 
 + (void )screenSnapshot:(UIView *)snapshotView addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
-    [self screenSnapshot:snapshotView maxScreenCount:0 addMaskAfterBlock:addMaskAfterBlock finishBlock:finishBlock];
-}
-
-+ (void )screenSnapshot:(UIView *)snapshotView maxScreenCount:(NSInteger )maxScreenCount addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
     BOOL needMask = addMaskAfterBlock?YES:NO;
-    [self screenSnapshot:snapshotView needMask:needMask maxScreenCount:maxScreenCount addMaskAfterBlock:addMaskAfterBlock finishBlock:finishBlock];
+    [self screenSnapshot:snapshotView needMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:finishBlock];
 }
     
-+ (void )screenSnapshot:(UIView *)snapshotView needMask:(BOOL)needMask maxScreenCount:(NSInteger )maxScreenCount addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
++ (void )screenSnapshot:(UIView *)snapshotView needMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
     UIView *snapshotFinalView = snapshotView;
     
     if([snapshotView isKindOfClass:[WKWebView class]]){

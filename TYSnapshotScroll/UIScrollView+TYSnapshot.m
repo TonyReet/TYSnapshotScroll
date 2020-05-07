@@ -16,9 +16,9 @@
 - (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(TYSnapshotFinishBlock )finishBlock{
     if (!finishBlock)return;
     
-    UIView *snapShotMaskView;
+    UIView *snapshotMaskView;
     if (needMask){
-        snapShotMaskView = [self addSnapShotMaskView];
+        snapshotMaskView = [self addSnapshotMaskView];
         addMaskAfterBlock?addMaskAfterBlock():nil;
     }
     
@@ -28,11 +28,11 @@
     CGSize contentSize = self.contentSize;
     
     if ([self isBigImageWith:contentSize]){
-        [self snapshotBigImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+        [self snapshotBigImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
         return ;
     }
     
-    [self snapshotNormalImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+    [self snapshotNormalImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
 }
 
 - (BOOL )isBigImageWith:(CGSize )contentSize{
@@ -46,7 +46,7 @@
 }
 
 
-- (void )snapshotBigImageWith:(UIView *)snapShotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
+- (void )snapshotBigImageWith:(UIView *)snapshotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
     TYSnapshotManager *snapshotManager = [TYSnapshotManager defaultManager];
     //计算快照屏幕数
     NSUInteger snapshotScreenCount = floorf(contentSize.height / self.bounds.size.height);
@@ -59,31 +59,34 @@
     self.delayTime = snapshotManager.delayTime;
     [self screenSnapshotWith:snapshotScreenCount maxScreenCount:maxScreenCount finishBlock:^(UIImage * _Nonnull snapshotImage) {
         
-        if (snapShotMaskView.layer){
-            [snapShotMaskView.layer removeFromSuperlayer];
+        if (snapshotMaskView.layer){
+            [snapshotMaskView.layer removeFromSuperlayer];
         }
 
         weakSelf.contentOffset = oldContentOffset;
-        !finishBlock?:finishBlock(snapshotImage);
         
+        !finishBlock?:finishBlock(snapshotImage);
     }];
 }
 
-- (void )snapshotNormalImageWith:(UIView *)snapShotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
+- (void )snapshotNormalImageWith:(UIView *)snapshotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
     //保存frame
-   CGRect oldFrame = self.frame;
+   CGRect oldFrame = self.layer.frame;
 
+   // 划到bottom
    if (self.contentSize.height > self.frame.size.height) {
-       self.contentOffset = CGPointMake(0, self.contentSize.height - self.frame.size.height);
+       self.contentOffset = CGPointMake(0, self.contentSize.height - self.bounds.size.height + self.contentInset.bottom);
    }
+
    self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     
-   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+   CGFloat delayTime = [TYSnapshotManager defaultManager].delayTime;
+   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
        UIImage* snapshotImage = nil;
        
        self.contentOffset = CGPointZero;
 
-       UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
+       UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, NO, [UIScreen mainScreen].scale);
 
        CGContextRef context = UIGraphicsGetCurrentContext();
 
@@ -93,17 +96,15 @@
 
        UIGraphicsEndImageContext();
 
-       self.layer.frame = oldFrame;
        //还原
+       self.layer.frame = oldFrame;
        self.contentOffset = oldContentOffset;
        
-       if (snapShotMaskView.layer){
-           [snapShotMaskView.layer removeFromSuperlayer];
+       if (snapshotMaskView.layer){
+           [snapshotMaskView.layer removeFromSuperlayer];
        }
        
-       if (snapshotImage != nil) {
-           finishBlock?:finishBlock(snapshotImage);
-       }
+       !finishBlock?:finishBlock(snapshotImage);
    });
 }
 

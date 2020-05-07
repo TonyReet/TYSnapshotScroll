@@ -16,9 +16,9 @@
 - (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(TYSnapshotFinishBlock )finishBlock{
     if (!finishBlock)return;
     
-    UIView *snapShotMaskView;
+    UIView *snapshotMaskView;
     if (needMask){
-        snapShotMaskView = [self addSnapShotMaskView];
+        snapshotMaskView = [self addSnapshotMaskView];
         addMaskAfterBlock?addMaskAfterBlock():nil;
     }
     
@@ -29,14 +29,14 @@
     self.scrollView.contentOffset = CGPointZero;
     
     if ([self.scrollView isBigImageWith:contentSize]){
-        [self.scrollView snapshotBigImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+        [self.scrollView snapshotBigImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
         return ;
     }
 
-    [self snapshotNormalImageWith:snapShotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+    [self snapshotNormalImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
 }
 
-- (void )snapshotNormalImageWith:(UIView *)snapShotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
+- (void )snapshotNormalImageWith:(UIView *)snapshotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
     
     //计算快照屏幕数
     NSUInteger snapshotScreenCount = floorf(contentSize.height / self.scrollView.bounds.size.height);
@@ -46,8 +46,8 @@
     
     //截取完所有图片
     [self scrollToDraw:0 maxIndex:(NSInteger )snapshotScreenCount finishBlock:^{
-        if (snapShotMaskView.layer){
-            [snapShotMaskView.layer removeFromSuperlayer];
+        if (snapshotMaskView.layer){
+            [snapshotMaskView.layer removeFromSuperlayer];
         }
         
         UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -68,7 +68,8 @@
     
     [self.scrollView setContentOffset:CGPointMake(0, index * snapshotView.frame.size.height)];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+    CGFloat delayTime = [TYSnapshotManager defaultManager].delayTime;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [snapshotView drawViewHierarchyInRect:snapshotFrame afterScreenUpdates:YES];
 
         if(index < maxIndex){

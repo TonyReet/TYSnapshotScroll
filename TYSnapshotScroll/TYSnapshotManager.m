@@ -23,7 +23,7 @@ static TYSnapshotManager *_manager = nil;
 }
 
 - (void )initData{
-    self.maxScreenCount = 100;
+    self.maxScreenCount = 50;
     self.maxImageSize = 4096 * 4096;
     self.delayTime = 0.3;
 }
