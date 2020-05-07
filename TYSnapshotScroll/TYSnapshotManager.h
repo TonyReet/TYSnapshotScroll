@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TYSnapshotManager : NSObject
 
-// max count of snapshot,default is 100
+// max count of snapshot,default is 50
 @property (nonatomic, assign) NSUInteger maxScreenCount;
 
 // max size of image,default is 4096*4096

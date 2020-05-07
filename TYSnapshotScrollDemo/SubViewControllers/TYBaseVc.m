@@ -48,15 +48,15 @@
 //saveSnap
 - (void)snapshotBtnClick{
     if (self.snapView != nil){
-        [self startAnimating];
-        
         __weak typeof(self) weakSelf = self;
-//        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapshotImage) {
-//            [weakSelf stopAnimating];
-//
-//            [weakSelf pushToPreVcWithImage:snapshotImage];
-//        }];
         
+        [self startAnimating];
+        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapshotImage) {
+            [weakSelf stopAnimating];
+
+            [weakSelf pushToPreVcWithImage:snapshotImage];
+        }];
+
 //        /// 另一种调用
 //        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
 //            [weakSelf startAnimating];
@@ -65,14 +65,6 @@
 //
 //            [weakSelf pushToPreVcWithImage:snapshotImage];
 //        }];
-        /// 另一种调用
-        [TYSnapshotScroll screenSnapshot:self.snapView maxScreenCount:100 addMaskAfterBlock:^{
-            [weakSelf startAnimating];
-        } finishBlock:^(UIImage *snapshotImage) {
-            [weakSelf stopAnimating];
-
-            [weakSelf pushToPreVcWithImage:snapshotImage];
-        }];
     }
 }
 

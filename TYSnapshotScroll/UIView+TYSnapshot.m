@@ -14,9 +14,9 @@
 - (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock{
     if (!finishBlock)return;
     
-    UIView *snapShotMaskView;
+    UIView *snapshotMaskView;
     if (needMask){
-      snapShotMaskView = [self addSnapShotMaskView];
+      snapshotMaskView = [self addSnapshotMaskView];
       addMaskAfterBlock?addMaskAfterBlock():nil;
     }
     
@@ -32,15 +32,15 @@
     
     UIGraphicsEndImageContext();
     
-    if (snapShotMaskView){
-        [snapShotMaskView removeFromSuperview];
+    if (snapshotMaskView){
+        [snapshotMaskView removeFromSuperview];
     }
 
     finishBlock(snapshotImage);
 }
 
 
-- (UIView *)addSnapShotMaskView{
+- (UIView *)addSnapshotMaskView{
     //获取父view
     UIView *superview;
     UIViewController *currentViewController = [UIViewController currentViewController];
@@ -54,8 +54,8 @@
     UIView *snapShotMaskView = [superview snapshotViewAfterScreenUpdates:YES];
     snapShotMaskView.frame = superview.bounds;
     
-    [superview.layer addSublayer:snapShotMaskView.layer];
+    [superview.layer addSublayer:snapshotMaskView.layer];
     
-    return snapShotMaskView;
+    return snapshotMaskView;
 }
 @end

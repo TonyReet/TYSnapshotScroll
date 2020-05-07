@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void )screenSnapshotNeedMask:(BOOL)needMask addMaskAfterBlock:(void(^)(void))addMaskAfterBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock;
 
 /// 添加当前截图的遮盖
-- (UIView *)addSnapShotMaskView;
+- (UIView *)addSnapshotMaskView;
 
 @end
 
