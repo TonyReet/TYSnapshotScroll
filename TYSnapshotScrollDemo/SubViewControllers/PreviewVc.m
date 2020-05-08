@@ -81,7 +81,13 @@
     [self.view addSubview:self.scrollView];
 
     CGRect scrollViewFrame = self.view.bounds;
-    scrollViewFrame.origin.y = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    //获取状态栏的rect
+    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
+    //获取导航栏的rect
+    CGRect navRect = self.navigationController.navigationBar.frame;
+    
+    scrollViewFrame.origin.y = statusRect.size.height + navRect.size.height;
+    scrollViewFrame.size.height -= scrollViewFrame.origin.y;
     self.scrollView.frame = scrollViewFrame;
     
     CGFloat height =  self.image.size.height;
