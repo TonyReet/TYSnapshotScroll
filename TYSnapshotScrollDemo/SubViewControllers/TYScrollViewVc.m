@@ -32,7 +32,8 @@
     label.textColor = [UIColor blackColor];
     label.font = [UIFont systemFontOfSize:14.0];
     
-    for (int index = 0; index < 400; index++) {
+    NSInteger indexCount = self.isLongImage?4000:400;
+    for (int index = 0; index < indexCount; index++) {
         label.text = [label.text stringByAppendingString:[NSString stringWithFormat:@"我是第%@个测试文本,",@(index)]];
     }
     [self.scrollView addSubview:label];

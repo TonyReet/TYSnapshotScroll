@@ -10,6 +10,7 @@
 
 @interface TYBaseViewController : UIViewController
 
+@property (nonatomic,copy) NSArray *dataSourceArr;
 
 @end
 

@@ -8,27 +8,10 @@
 
 #import "TYBaseViewController.h"
 
-@interface MNPerson : NSObject
-
-@property (nonatomic, copy)NSString *name;
-
-- (void)print;
-
-@end
-
-@implementation MNPerson
-
-- (void)print{
-    NSLog(@"self.name = %@",self.name);
-}
-
-@end
-
 @interface TYBaseViewController ()
 
 @property (nonatomic,strong) UITableView *tableView;
 
-@property (nonatomic,copy) NSArray *dataSourceArr;
 @end
 
 @implementation TYBaseViewController

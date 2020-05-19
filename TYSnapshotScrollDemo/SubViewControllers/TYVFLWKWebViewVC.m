@@ -39,8 +39,8 @@
     //一般需要把约束添加到父view上
     [self.view addConstraints:verticalLayout];
     [self.view addConstraints:horizontalLayout];
-    
-    NSString *urlStr = @"https://www.meituan.com";
+
+    NSString *urlStr = self.isLongImage?@"https://worlds-highest-website.com/zh/":@"https://www.meituan.com";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];//超时时间10秒
     //加载地址数据
     [self.webView loadRequest:request];

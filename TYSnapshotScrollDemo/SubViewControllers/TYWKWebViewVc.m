@@ -29,8 +29,7 @@
     self.webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];
 
-    NSString *urlStr = @"https://worlds-highest-website.com/zh/";
-//    NSString *urlStr = @"https://www.meituan.com";
+    NSString *urlStr = self.isLongImage?@"https://worlds-highest-website.com/zh/":@"https://www.meituan.com";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];//超时时间10秒
     //加载地址数据
     [self.webView loadRequest:request];
