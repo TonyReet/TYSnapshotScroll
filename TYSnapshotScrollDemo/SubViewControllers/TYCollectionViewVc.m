@@ -7,6 +7,7 @@
 //
 
 #import "TYCollectionViewVc.h"
+#import "CustomCollectionViewCell.h"
 
 @interface TYCollectionViewVc ()
 <
@@ -24,26 +25,30 @@ static NSString *collectionCellID = @"collectionCellID";
 - (void)subClassInit {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flowLayout.itemSize = CGSizeMake(50, 50);
+    
     self.collectionView = [[UICollectionView alloc] initWithFrame:[[UIScreen mainScreen] bounds] collectionViewLayout:flowLayout];
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.view addSubview:self.collectionView];
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:collectionCellID];
+    [self.collectionView registerClass:[CustomCollectionViewCell class] forCellWithReuseIdentifier:collectionCellID];
     
     self.snapView = self.collectionView;
 }
 
 #pragma mark - dataSource
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 100;
+    return self.isLongImage ? 1000 : 100;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
     
     cell.contentView.backgroundColor = [UIColor colorWithHue:drand48() saturation:1.0 brightness:1.0 alpha:1.0];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",@(indexPath.row)];
+    
     return cell;
 }
 @end

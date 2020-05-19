@@ -6,9 +6,9 @@
 //  Copyright © 2020年 TonyReet. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TYBaseViewController.h"
 
-@interface TYLongViewController : UIViewController
+@interface TYLongViewController : TYBaseViewController
 
 
 @end
