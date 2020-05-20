@@ -424,6 +424,7 @@
 				6A7913C0215732F000DB9626 /* UIScrollView+TYSnapshot.m in Sources */,
 				6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */,
 				18C29ADE1E1286230047E25D /* TYWKWebViewVc.m in Sources */,
+				6A2C9D3724650F240044A28C /* CustomCollectionViewCell.m in Sources */,
 				307205D91D33C1CD0011A262 /* main.m in Sources */,
 				6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */,
 				1802B45C1E10D3A300A6A2D1 /* TYTableViewVc.m in Sources */,
