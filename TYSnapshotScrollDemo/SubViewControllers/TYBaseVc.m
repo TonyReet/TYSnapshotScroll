@@ -30,11 +30,11 @@
     self.activityIndicator.backgroundColor = [UIColor clearColor];
     self.activityIndicator.hidesWhenStopped = YES;
     
-    [self.navigationController.view addSubview:self.activityIndicator];
+    [self.view addSubview:self.activityIndicator];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStylePlain target:self action:@selector(snapshotBtnClick)];
     
-    [TYSnapshotManager defaultManager].maxScreenCount = 10;
+    [TYSnapshotManager defaultManager].maxScreenCount = 20;
     [TYSnapshotManager defaultManager].delayTime = 0;
     
     [self subClassInit];
@@ -79,7 +79,7 @@
 - (void)startAnimating{
     if ([self.activityIndicator isAnimating])return;
     
-    [self.navigationController.view bringSubviewToFront:self.activityIndicator];
+    [self.view bringSubviewToFront:self.activityIndicator];
     [self.activityIndicator startAnimating];
 }
 
@@ -87,7 +87,6 @@
     if ([self.activityIndicator isAnimating]){
         [self.activityIndicator stopAnimating];
     }
-    
 }
 
 @end

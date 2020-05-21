@@ -8,6 +8,7 @@
 
 #import "TYVFLWKWebViewVC.h"
 #import <WebKit/WebKit.h>
+#import "TYSnapshotManager.h"
 
 @interface TYVFLWKWebViewVC ()
 <
@@ -47,6 +48,9 @@
     
     self.snapView = self.webView;
     [self startAnimating];
+    
+    [TYSnapshotManager defaultManager].maxScreenCount = 40;
+    [TYSnapshotManager defaultManager].delayTime = 0.3;
 }
 
 #pragma mark - WKNavigationDelegate
