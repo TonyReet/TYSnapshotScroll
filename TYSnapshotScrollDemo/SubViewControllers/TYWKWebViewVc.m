@@ -37,7 +37,7 @@
     self.snapView = self.webView;
     [self startAnimating];
     
-    [TYSnapshotManager defaultManager].maxScreenCount = 10;
+    [TYSnapshotManager defaultManager].maxScreenCount = 40;
     [TYSnapshotManager defaultManager].delayTime = 0.3;
 }
 

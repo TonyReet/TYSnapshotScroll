@@ -79,6 +79,7 @@
 		6A06BA2923839A44006986A3 /* TYLayoutScrollViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYLayoutScrollViewVc.m; sourceTree = "<group>"; };
 		6A2C9D3524650F240044A28C /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		6A2C9D3624650F240044A28C /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		6A448DB024740F74001CA1A5 /* TYGCDTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYGCDTools.h; sourceTree = "<group>"; };
 		6A582418236BE3C300F27469 /* TYScrollEmbedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollEmbedVC.h; sourceTree = "<group>"; };
 		6A582419236BE3C300F27469 /* TYScrollEmbedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYScrollEmbedVC.m; sourceTree = "<group>"; };
 		6A5AD24A245A7CEE00EFFC79 /* TYSnapshotManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSnapshotManager.h; sourceTree = "<group>"; };
@@ -256,6 +257,7 @@
 				6A7913BD215732F000DB9626 /* UIViewController+TYSnapshot.m */,
 				6A7913B4215732F000DB9626 /* UIImage+TYSnapshot.h */,
 				6A7913BA215732F000DB9626 /* UIImage+TYSnapshot.m */,
+				6A448DB024740F74001CA1A5 /* TYGCDTools.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";

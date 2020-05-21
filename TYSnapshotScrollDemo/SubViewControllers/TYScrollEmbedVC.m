@@ -64,6 +64,11 @@
     }
 }
 
+#pragma mark - tableview delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.isLongImage ? 1000 : 100;
 }
