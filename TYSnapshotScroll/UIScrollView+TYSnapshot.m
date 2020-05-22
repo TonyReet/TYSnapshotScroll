@@ -7,6 +7,7 @@
 //
 
 #import "UIScrollView+TYSnapshot.h"
+#import "TYGCDTools.h"
 #import "UIView+TYSnapshot.h"
 #import "TYSnapshotManager.h"
 #import <TYSnapshotAuxiliary/UIScrollView+TYSnapshotAuxiliary.h>
@@ -22,10 +23,14 @@
         addMaskAfterBlock?addMaskAfterBlock():nil;
     }
     
-    //保存offset
-    CGPoint oldContentOffset = self.contentOffset;
+    //保存原始信息
+    __block CGPoint oldContentOffset;
+    __block CGSize contentSize;
     
-    CGSize contentSize = self.contentSize;
+    onMainThreadSync(^{
+        oldContentOffset = self.contentOffset;
+        contentSize = self.contentSize;
+    });
     
     if ([self isBigImageWith:contentSize]){
         [self snapshotBigImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
@@ -37,7 +42,7 @@
 
 - (BOOL )isBigImageWith:(CGSize )contentSize{
     TYSnapshotManager *snapshotManager = [TYSnapshotManager defaultManager];
-
+    
     if (contentSize.width * contentSize.height > snapshotManager.maxImageSize){
         return YES;
     }
@@ -62,7 +67,7 @@
         if (snapshotMaskView.layer){
             [snapshotMaskView.layer removeFromSuperlayer];
         }
-
+        
         weakSelf.contentOffset = oldContentOffset;
         
         !finishBlock?:finishBlock(snapshotImage);
@@ -71,61 +76,64 @@
 
 - (void )snapshotNormalImageWith:(UIView *)snapshotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
     //保存frame
-   CGRect oldFrame = self.layer.frame;
-
-   // 划到bottom
-   if (self.contentSize.height > self.frame.size.height) {
-       self.contentOffset = CGPointMake(0, self.contentSize.height - self.bounds.size.height + self.contentInset.bottom);
-   }
-
-   self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    __block CGRect oldFrame;
     
-   CGFloat delayTime = [TYSnapshotManager defaultManager].delayTime;
-   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-       UIImage* snapshotImage = nil;
-       
-       self.contentOffset = CGPointZero;
-
-       UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, NO, [UIScreen mainScreen].scale);
-
-       CGContextRef context = UIGraphicsGetCurrentContext();
-
-       [self.layer renderInContext:context];
-
-       snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
-
-       UIGraphicsEndImageContext();
-
-       //还原
-       self.layer.frame = oldFrame;
-       self.contentOffset = oldContentOffset;
-       
-       if (snapshotMaskView.layer){
-           [snapshotMaskView.layer removeFromSuperlayer];
-       }
-       
-       !finishBlock?:finishBlock(snapshotImage);
-   });
+    onMainThreadSync(^{
+        oldFrame = self.layer.frame;
+        // 划到bottom
+        if (self.contentSize.height > self.frame.size.height) {
+            self.contentOffset = CGPointMake(0, self.contentSize.height - self.bounds.size.height + self.contentInset.bottom);
+        }
+        
+        self.layer.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    });
+    
+    CGFloat delayTime = [TYSnapshotManager defaultManager].delayTime;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIImage* snapshotImage = nil;
+        
+        self.contentOffset = CGPointZero;
+        
+        UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, NO, [UIScreen mainScreen].scale);
+        
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        [self.layer renderInContext:context];
+        
+        snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        //还原
+        self.layer.frame = oldFrame;
+        self.contentOffset = oldContentOffset;
+        
+        if (snapshotMaskView.layer){
+            [snapshotMaskView.layer removeFromSuperlayer];
+        }
+        
+        !finishBlock?:finishBlock(snapshotImage);
+    });
 }
 
 - (instancetype )subScrollViewTotalExtraHeight:(void(^)(CGFloat subScrollViewExtraHeight))finishBlock{
     __block CGFloat extraHeight = 0.0;
-      
+    
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-      if ([obj isKindOfClass:[UIScrollView class]]){
-          UIScrollView *scrollView = (UIScrollView *)obj;
-
-          if (scrollView.contentSize.height > scrollView.frame.size.height) {
-              extraHeight = scrollView.contentSize.height - scrollView.frame.size.height;
-          }
-          
-          [scrollView subScrollViewTotalExtraHeight:^(CGFloat subScrollViewExtraHeight) {
-              extraHeight += subScrollViewExtraHeight;
-          }];
-      }
+        if ([obj isKindOfClass:[UIScrollView class]]){
+            UIScrollView *scrollView = (UIScrollView *)obj;
+            
+            if (scrollView.contentSize.height > scrollView.frame.size.height) {
+                extraHeight = scrollView.contentSize.height - scrollView.frame.size.height;
+            }
+            
+            [scrollView subScrollViewTotalExtraHeight:^(CGFloat subScrollViewExtraHeight) {
+                extraHeight += subScrollViewExtraHeight;
+            }];
+        }
     }];
-
-
+    
+    
     finishBlock?finishBlock(extraHeight):nil;
     return self;
 }

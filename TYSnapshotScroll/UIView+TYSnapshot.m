@@ -8,6 +8,7 @@
 
 #import "UIView+TYSnapshot.h"
 #import "UIViewController+TYSnapshot.h"
+#import "TYGCDTools.h"
 
 @implementation UIView (TYSnapshot)
 
@@ -22,11 +23,18 @@
     
     UIImage *snapshotImage = nil;
     
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,[UIScreen mainScreen].scale);
+    __block CGRect bounds;
+    __block CALayer *selfLayer;
+    onMainThreadSync(^{
+        bounds = self.bounds;
+        selfLayer = self.layer;
+    });
+    
+    UIGraphicsBeginImageContextWithOptions(bounds.size,NO,[UIScreen mainScreen].scale);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    [self.layer renderInContext:context];
+    [selfLayer renderInContext:context];
 
     snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -41,20 +49,26 @@
 
 
 - (UIView *)addSnapshotMaskView{
+    __block UIView *snapshotMaskView;
+    
     //获取父view
-    UIView *superview;
-    UIViewController *currentViewController = [UIViewController currentViewController];
-    if (currentViewController){
-        superview = currentViewController.view;
-    }else{
-        superview = self.superview;
-    }
+    __block UIView *superview;
+    __block UIViewController *currentViewController;
     
-    //添加遮盖
-    UIView *snapshotMaskView = [superview snapshotViewAfterScreenUpdates:YES];
-    snapshotMaskView.frame = superview.frame;
-    
-    [superview.layer addSublayer:snapshotMaskView.layer];
+    onMainThreadSync(^{
+        currentViewController = [UIViewController currentViewController];
+        if (currentViewController){
+            superview = currentViewController.view;
+        }else{
+            superview = self.superview;
+        }
+        
+        //添加遮盖
+        snapshotMaskView = [superview snapshotViewAfterScreenUpdates:YES];
+        
+        snapshotMaskView.frame = superview.frame;
+        [superview.layer addSublayer:snapshotMaskView.layer];
+    });
     
     return snapshotMaskView;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "TYSnapshotScroll.h"
+#import "TYGCDTools.h"
 #import "WKWebView+TYSnapshot.h"
 #import "UIScrollView+TYSnapshot.h"
 #import "UIView+TYSnapshot.h"
@@ -44,11 +45,23 @@
         return;
     }
   
-    [snapshotFinalView screenSnapshotNeedMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:^(UIImage * _Nonnull snapshotImage) {
-        if (snapshotImage != nil && finishBlock) {
-            finishBlock(snapshotImage);
-        }
-    }];
+    void(^snapshotBlock)(void) = ^{
+        [snapshotFinalView screenSnapshotNeedMask:needMask addMaskAfterBlock:addMaskAfterBlock finishBlock:^(UIImage * _Nonnull snapshotImage) {
+            if (!snapshotImage)return;
+
+            onMainThreadSync(^{
+                !finishBlock?: finishBlock(snapshotImage);
+            });
+        }];
+    };
+    
+    if([snapshotView isKindOfClass:[UIView class]]){
+        snapshotBlock();
+    }else {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            snapshotBlock();
+        });
+    }
 }
 
 +(void )screenSnapshotWithMultipleScroll:(UIView *)snapshotView modifyLayoutBlock:(void(^)(CGFloat extraHeight))modifyLayoutBlock finishBlock:(void(^)(UIImage *snapshotImage))finishBlock  {
@@ -57,7 +70,11 @@
        !modifyLayoutBlock?:modifyLayoutBlock(subScrollViewExtraHeight);
 
        [TYSnapshotScroll screenSnapshot:snapshotView finishBlock:^(UIImage *snapshotImage) {
-           !finishBlock?:finishBlock(snapshotImage);
+           if (!snapshotImage)return;
+           
+           onMainThreadSync(^{
+               !finishBlock?:finishBlock(snapshotImage);
+           });
        }];
    }];
 }
