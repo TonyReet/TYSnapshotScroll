@@ -25,7 +25,7 @@
 		6A675A1B1FEF8E0200BA2B46 /* TYCollectionViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A675A1A1FEF8E0200BA2B46 /* TYCollectionViewVc.m */; };
 		6A68832623BF391A00486773 /* TYViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A68832523BF391A00486773 /* TYViewVc.m */; };
 		6A6BC5E91FC7BCF1006608B1 /* TYPreviewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BC5E81FC7BCF1006608B1 /* TYPreviewVc.m */; };
-		6A7EF9B72477C270008A6A53 /* TYTextFieldVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7EF9B62477C270008A6A53 /* TYTextFieldVc.m */; };
+		6A7EF9B72477C270008A6A53 /* TYTextViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7EF9B62477C270008A6A53 /* TYTextViewVc.m */; };
 		6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EBD1FC575B100D0C91D /* TYBaseVc.m */; };
 		6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */; };
 		6AF326192382384300651608 /* TYVFLWKWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF326182382384300651608 /* TYVFLWKWebViewVc.m */; };
@@ -84,8 +84,8 @@
 		6A6BC5E71FC7BCF1006608B1 /* TYPreviewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYPreviewVc.h; sourceTree = "<group>"; };
 		6A6BC5E81FC7BCF1006608B1 /* TYPreviewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYPreviewVc.m; sourceTree = "<group>"; };
 		6A7EF9B324777FF2008A6A53 /* libTYSnapshotScroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTYSnapshotScroll.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A7EF9B52477C270008A6A53 /* TYTextFieldVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYTextFieldVc.h; sourceTree = "<group>"; };
-		6A7EF9B62477C270008A6A53 /* TYTextFieldVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYTextFieldVc.m; sourceTree = "<group>"; };
+		6A7EF9B52477C270008A6A53 /* TYTextViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYTextViewVc.h; sourceTree = "<group>"; };
+		6A7EF9B62477C270008A6A53 /* TYTextViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYTextViewVc.m; sourceTree = "<group>"; };
 		6A895EBC1FC575B100D0C91D /* TYBaseVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBaseVc.h; sourceTree = "<group>"; };
 		6A895EBD1FC575B100D0C91D /* TYBaseVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBaseVc.m; sourceTree = "<group>"; };
 		6A895EBF1FC5786500D0C91D /* TYScrollViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollViewVc.h; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 				6AF326182382384300651608 /* TYVFLWKWebViewVc.m */,
 				6A68832423BF391A00486773 /* TYViewVc.h */,
 				6A68832523BF391A00486773 /* TYViewVc.m */,
-				6A7EF9B52477C270008A6A53 /* TYTextFieldVc.h */,
-				6A7EF9B62477C270008A6A53 /* TYTextFieldVc.m */,
+				6A7EF9B52477C270008A6A53 /* TYTextViewVc.h */,
+				6A7EF9B62477C270008A6A53 /* TYTextViewVc.m */,
 				6A6BC5E71FC7BCF1006608B1 /* TYPreviewVc.h */,
 				6A6BC5E81FC7BCF1006608B1 /* TYPreviewVc.m */,
 			);
@@ -315,6 +315,7 @@
 				TargetAttributes = {
 					307205D31D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TG9LT6D7DW;
 					};
 					307205EC1D33C1CD0011A262 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -412,7 +413,7 @@
 				6A68832623BF391A00486773 /* TYViewVc.m in Sources */,
 				307205DC1D33C1CD0011A262 /* AppDelegate.m in Sources */,
 				6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */,
-				6A7EF9B72477C270008A6A53 /* TYTextFieldVc.m in Sources */,
+				6A7EF9B72477C270008A6A53 /* TYTextViewVc.m in Sources */,
 				18C29ADE1E1286230047E25D /* TYWKWebViewVc.m in Sources */,
 				6A2C9D3724650F240044A28C /* TYCustomCollectionViewCell.m in Sources */,
 				307205D91D33C1CD0011A262 /* main.m in Sources */,
@@ -584,7 +585,7 @@
 			baseConfigurationReference = 8B6FDBF859F7FA84F15DB819 /* Pods-TYSnapshotScrollDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TG9LT6D7DW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TYSnapshotScroll",
@@ -606,7 +607,7 @@
 			baseConfigurationReference = 77BB7458EFB241D1A028AB5A /* Pods-TYSnapshotScrollDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TG9LT6D7DW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TYSnapshotScroll",
