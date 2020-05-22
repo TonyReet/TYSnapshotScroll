@@ -35,8 +35,11 @@ pod install
 - 3、import .h file:   
 
 ```objc    
-#import "TYSnapshotScroll.h"
+#import <TYSnapshotScroll.h>
 ```
+
+- 4、if have error "Undefined symbols for architecture arm64"
+add "$(inherited)" into "Other Linker Flags"
 
 ### Manually
 - 1、download "TYSnapshotScroll"，drag "TYSnapshotScroll" into the project

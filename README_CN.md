@@ -24,16 +24,19 @@
 
 -------
 ### 方法一:cocopods
-- 1、:
+- 1、在Podfile文件里面添加
 
 ```objc
-在Podfile文件里面添加:pod 'TYSnapshotScroll'
+pod 'TYSnapshotScroll'
 ```
-- 2、:对应文件添加头文件
+- 2、pod install，对应文件添加头文件
 
 ```objc
-#import "TYSnapshotScroll.h"
+#import <TYSnapshotScroll.h>
 ```
+
+- 3、如果出现提示"Undefined symbols for architecture arm64"
+可以在"Other Linker Flags"添加"$(inherited)" 
 
 ### 方法二:手动添加
 - 1、下载TYSnapshotScroll，将TYSnapshotScroll放到工程中
