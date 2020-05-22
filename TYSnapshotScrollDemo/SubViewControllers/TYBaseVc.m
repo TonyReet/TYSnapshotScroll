@@ -7,7 +7,7 @@
 //
 
 #import "TYBaseVc.h"
-#import "PreviewVc.h"
+#import "TYPreviewVc.h"
 
 @interface TYBaseVc ()
 
@@ -75,7 +75,7 @@
 }
 
 - (void)pushToPreVcWithImage:(UIImage *)snapshotImage{
-    UIViewController *preVc = [[PreviewVc alloc] init:snapshotImage];
+    UIViewController *preVc = [[TYPreviewVc alloc] init:snapshotImage];
 
     [self.navigationController pushViewController:preVc animated:true];
 }

@@ -1,5 +1,5 @@
 //
-//  TYVFLWKWebViewVC.h
+//  TYVFLWKWebViewVc.h
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2019/11/18.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TYVFLWKWebViewVC : TYBaseVc
+@interface TYVFLWKWebViewVc : TYBaseVc
 
 @end
 

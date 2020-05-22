@@ -1,20 +1,20 @@
 //
-//  TYViewVC.m
+//  TYViewVc.m
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2020/1/3.
 //  Copyright © 2020 TonyReet. All rights reserved.
 //
 
-#import "TYViewVC.h"
+#import "TYViewVc.h"
 
-@interface TYViewVC ()
+@interface TYViewVc ()
 
 @property (nonatomic,strong) UIView *normalView;
 
 @end
 
-@implementation TYViewVC
+@implementation TYViewVc
 
 - (void)subClassInit {
     self.automaticallyAdjustsScrollViewInsets = NO;

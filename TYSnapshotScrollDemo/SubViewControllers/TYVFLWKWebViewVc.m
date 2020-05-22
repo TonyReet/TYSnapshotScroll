@@ -1,15 +1,15 @@
 //
-//  TYVFLWKWebViewVC.m
+//  TYVFLWKWebViewVc.m
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2019/11/18.
 //  Copyright © 2019 TonyReet. All rights reserved.
 //
 
-#import "TYVFLWKWebViewVC.h"
+#import "TYVFLWKWebViewVc.h"
 #import <WebKit/WebKit.h>
 
-@interface TYVFLWKWebViewVC ()
+@interface TYVFLWKWebViewVc ()
 <
     WKNavigationDelegate
 >
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation TYVFLWKWebViewVC
+@implementation TYVFLWKWebViewVc
 
 - (void)subClassInit {
     self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];

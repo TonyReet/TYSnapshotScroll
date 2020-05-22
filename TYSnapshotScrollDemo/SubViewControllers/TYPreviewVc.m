@@ -1,14 +1,14 @@
 //
-//  PreviewVc.m
+//  TYPreviewVc.m
 //  TYSnapshotScroll
 //
 //  Created by TonyReet on 2017/11/24.
 //  Copyright © 2017年 TonyReet. All rights reserved.
 //
 
-#import "PreviewVc.h"
+#import "TYPreviewVc.h"
 
-@interface PreviewVc ()
+@interface TYPreviewVc ()
 
 @property (nonatomic,strong) UIScrollView *scrollView;
 
@@ -38,7 +38,7 @@
 
 @end
 
-@implementation PreviewVc
+@implementation TYPreviewVc
 
 
 - (instancetype)init:(UIImage *)image

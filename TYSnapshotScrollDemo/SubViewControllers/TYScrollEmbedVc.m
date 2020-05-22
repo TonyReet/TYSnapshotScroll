@@ -1,14 +1,14 @@
 //
-//  TYScrollEmbedVC.m
+//  TYScrollEmbedVc.m
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2019/11/1.
 //  Copyright © 2019 TonyReet. All rights reserved.
 //
 
-#import "TYScrollEmbedVC.h"
+#import "TYScrollEmbedVc.h"
 
-@interface TYScrollEmbedVC ()
+@interface TYScrollEmbedVc ()
 <
     UITableViewDataSource,
     UITableViewDelegate
@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLayoutHeight;
 @end
 
-@implementation TYScrollEmbedVC
+@implementation TYScrollEmbedVc
 
 
 - (void)subClassInit {
