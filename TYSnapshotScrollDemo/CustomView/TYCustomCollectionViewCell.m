@@ -1,14 +1,14 @@
 //
-//  CustomCollectionViewCell.m
+//  TYCustomCollectionViewCell.m
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2020/5/8.
 //  Copyright © 2020 TonyReet. All rights reserved.
 //
 
-#import "CustomCollectionViewCell.h"
+#import "TYCustomCollectionViewCell.h"
 
-@implementation CustomCollectionViewCell
+@implementation TYCustomCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {

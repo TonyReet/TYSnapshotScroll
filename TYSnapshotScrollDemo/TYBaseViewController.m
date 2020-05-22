@@ -27,9 +27,10 @@
         @{@"TYScrollViewVc":@"UIScrollView_截图"},
         @{@"TYCollectionViewVc":@"UICollectionView_截图"},
         @{@"TYLayoutScrollViewVc":@"Layout_UIScrollView_截图"},
-        @{@"SB_TYScrollEmbedVC":@"SB_ScrollView嵌套TableView_截图"},
-        @{@"TYVFLWKWebViewVC":@"Layout_WKWebView_截图"},
-        @{@"TYViewVC":@"UIView_截图"},
+        @{@"SB_TYScrollEmbedVc":@"SB_ScrollView嵌套TableView_截图"},
+        @{@"TYVFLWKWebViewVc":@"Layout_WKWebView_截图"},
+        @{@"TYViewVc":@"UIView_截图"},
+        @{@"TYTextFieldVc":@"UITextField_截图"},
                         ];
     
     [self tableViewInit];

@@ -1,5 +1,5 @@
 //
-//  CustomCollectionViewCell.h
+//  TYCustomCollectionViewCell.h
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2020/5/8.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CustomCollectionViewCell : UICollectionViewCell
+@interface TYCustomCollectionViewCell : UICollectionViewCell
 
 
 @property (nonatomic , strong) UILabel *textLabel;

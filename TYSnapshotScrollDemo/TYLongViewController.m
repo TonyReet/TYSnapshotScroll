@@ -20,8 +20,8 @@
         @{@"TYScrollViewVc":@"UIScrollView_长截图"},
         @{@"TYCollectionViewVc":@"UICollectionView_长截图"},
         @{@"TYLayoutScrollViewVc":@"Layout_UIScrollView_长截图"},
-        @{@"SB_TYScrollEmbedVC":@"SB_ScrollView嵌套TableView_长截图"},
-        @{@"TYVFLWKWebViewVC":@"Layout_WKWebView_长截图"},
+        @{@"SB_TYScrollEmbedVc":@"SB_ScrollView嵌套TableView_长截图"},
+        @{@"TYVFLWKWebViewVc":@"Layout_WKWebView_长截图"},
                         ];
 
 }

@@ -1,5 +1,5 @@
 //
-//  TYViewVC.h
+//  TYViewVc.h
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2020/1/3.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TYViewVC : TYBaseVc
+@interface TYViewVc : TYBaseVc
 
 @end
 

@@ -1,5 +1,5 @@
 //
-//  PreviewVc.h
+//  TYPreviewVc.h
 //  TYSnapshotScroll
 //
 //  Created by TonyReet on 2017/11/24.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PreviewVc : UIViewController
+@interface TYPreviewVc : UIViewController
 
 - (instancetype)init:(UIImage *)image;
 
