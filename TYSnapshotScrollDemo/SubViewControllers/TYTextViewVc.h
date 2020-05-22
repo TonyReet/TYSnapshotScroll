@@ -1,5 +1,5 @@
 //
-//  TYTextFieldVc.h
+//  TYTextViewVc.h
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2020/5/22.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TYTextFieldVc : TYBaseVc
+@interface TYTextViewVc : TYBaseVc
 
 @end
 

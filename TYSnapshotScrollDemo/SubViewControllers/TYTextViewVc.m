@@ -1,20 +1,20 @@
 //
-//  TYTextFieldVc.m
+//  TYTextViewVc.m
 //  TYSnapshotScrollDemo
 //
 //  Created by TonyReet on 2020/5/22.
 //  Copyright © 2020 TonyReet. All rights reserved.
 //
 
-#import "TYTextFieldVc.h"
+#import "TYTextViewVc.h"
 
-@interface TYTextFieldVc ()
+@interface TYTextViewVc ()
 
 @property (nonatomic,strong) UITextView *textView;
 
 @end
 
-@implementation TYTextFieldVc
+@implementation TYTextViewVc
 
 - (void)subClassInit {
     self.textView = [[UITextView alloc] initWithFrame:self.view.bounds];
