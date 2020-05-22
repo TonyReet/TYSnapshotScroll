@@ -29,7 +29,7 @@
     self.activityIndicator.backgroundColor = [UIColor clearColor];
     self.activityIndicator.hidesWhenStopped = YES;
     
-    [self.view addSubview:self.activityIndicator];
+    [self.navigationController.view addSubview:self.activityIndicator];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStylePlain target:self action:@selector(snapshotBtnClick)];
     
@@ -50,20 +50,20 @@
         __weak typeof(self) weakSelf = self;
         
         [self startAnimating];
-        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapshotImage) {
-            [weakSelf stopAnimating];
-
-            [weakSelf pushToPreVcWithImage:snapshotImage];
-        }];
-
-//        /// 另一种调用
-//        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
-//            [weakSelf startAnimating];
-//        } finishBlock:^(UIImage *snapshotImage) {
+//        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapshotImage) {
 //            [weakSelf stopAnimating];
 //
 //            [weakSelf pushToPreVcWithImage:snapshotImage];
 //        }];
+
+        /// 另一种调用
+        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
+            
+        } finishBlock:^(UIImage *snapshotImage) {
+            [weakSelf stopAnimating];
+
+            [weakSelf pushToPreVcWithImage:snapshotImage];
+        }];
     }
 }
 
@@ -78,7 +78,7 @@
 - (void)startAnimating{
     if ([self.activityIndicator isAnimating])return;
     
-    [self.view bringSubviewToFront:self.activityIndicator];
+    [self.navigationController.view bringSubviewToFront:self.activityIndicator];
     [self.activityIndicator startAnimating];
 }
 
