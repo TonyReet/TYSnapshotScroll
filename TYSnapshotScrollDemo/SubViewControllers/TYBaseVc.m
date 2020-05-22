@@ -50,20 +50,27 @@
         __weak typeof(self) weakSelf = self;
         
         [self startAnimating];
-//        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapshotImage) {
-//            [weakSelf stopAnimating];
-//
-//            [weakSelf pushToPreVcWithImage:snapshotImage];
-//        }];
-
-        /// 另一种调用
-        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
-            
-        } finishBlock:^(UIImage *snapshotImage) {
+        [TYSnapshotScroll screenSnapshot:self.snapView finishBlock:^(UIImage *snapshotImage) {
             [weakSelf stopAnimating];
 
             [weakSelf pushToPreVcWithImage:snapshotImage];
         }];
+
+//        /// 添加遮盖后有操作
+//        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:^{
+//            [weakSelf startAnimating];
+//        } finishBlock:^(UIImage *snapshotImage) {
+//            [weakSelf stopAnimating];
+//
+//            [weakSelf pushToPreVcWithImage:snapshotImage];
+//        }];
+//        
+//        /// 不添加mask遮盖
+//        [TYSnapshotScroll screenSnapshot:self.snapView addMaskAfterBlock:nil finishBlock:^(UIImage *snapshotImage) {
+//            [weakSelf stopAnimating];
+//
+//            [weakSelf pushToPreVcWithImage:snapshotImage];
+//        }];
     }
 }
 
