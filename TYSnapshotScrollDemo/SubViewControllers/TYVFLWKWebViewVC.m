@@ -8,7 +8,6 @@
 
 #import "TYVFLWKWebViewVC.h"
 #import <WebKit/WebKit.h>
-#import "TYSnapshotManager.h"
 
 @interface TYVFLWKWebViewVC ()
 <

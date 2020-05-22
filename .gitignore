@@ -58,3 +58,8 @@ fastlane/screenshots
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+Pods
+Podfile.lock
+TYSnapshotScrollDemo.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+TYSnapshotScrollDemo.xcodeproj/xcshareddata/xcschemes/TYSnapshotScrollDemo.xcscheme
+TYSnapshotScrollDemo.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
