@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TYSnapshotScroll"
-  s.version      = "0.2.3"
+  s.version      = "0.2.4"
   s.summary      = "A snapshot library."
 
   # This description is used to generate tags and improve search results.
