@@ -8,7 +8,6 @@
 
 #import "TYBaseVc.h"
 #import "PreviewVc.h"
-#import "TYSnapshotManager.h"
 
 @interface TYBaseVc ()
 
