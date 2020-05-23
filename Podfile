@@ -5,6 +5,6 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 
 target 'TYSnapshotScrollDemo' do
-  pod 'TYSnapshotScroll', :path => '../TYSnapshotScroll'
+  pod 'TYSnapshotScroll', :path => './TYSnapshotScroll'
 end
 
