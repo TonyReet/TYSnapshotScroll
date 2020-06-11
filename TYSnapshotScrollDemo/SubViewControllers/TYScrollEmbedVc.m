@@ -38,7 +38,7 @@
 
 - (void)snapshotBtnClick{
     if (@available(iOS 13.0, *)) {
-    //因iOS13在使用AutoLayout的情况下，手动修改contentSize失效，并且因AutoLayout的布局情况太多，不能一一判断你，故相关操作以block处理,iOS12之前用老方法效率高，新方法会有递归
+    //因iOS13在使用AutoLayout的情况下，手动修改contentSize失效，并且因AutoLayout的布局情况太多，不能一一判断，故相关操作以block处理,iOS12之前用老方法效率高，新方法会有递归
         [self iOS13SnapshotBtnClick];
     } else {
         [super snapshotBtnClick];
