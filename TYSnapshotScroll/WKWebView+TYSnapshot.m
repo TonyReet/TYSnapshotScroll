@@ -34,6 +34,7 @@
         
         oldContentOffset = scrollView.contentOffset;
         contentSize = scrollView.contentSize;
+        contentSize.height += scrollView.contentInset.top + scrollView.contentInset.bottom;
         scrollView.contentOffset = CGPointZero;
     });
     
@@ -83,7 +84,7 @@
         //截取的frame
         snapshotFrame = CGRectMake(0, (float)index * snapshotView.bounds.size.height, snapshotView.bounds.size.width, snapshotView.bounds.size.height);
     
-        [self.scrollView setContentOffset:CGPointMake(0, index * snapshotView.frame.size.height)];
+        [self.scrollView setContentOffset:CGPointMake(0, -self.scrollView.contentInset.top + index * snapshotView.frame.size.height)];
     });
     
     CGFloat delayTime = [TYSnapshotManager defaultManager].delayTime;
