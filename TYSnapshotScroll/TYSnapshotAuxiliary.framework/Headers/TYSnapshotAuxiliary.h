@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import <TYSnapshotAuxiliary/UIScrollView+TYSnapshotAuxiliary.h>
+#import "UIScrollView+TYSnapshotAuxiliary.h"
 
-#import <TYSnapshotAuxiliary/WKWebView+TYSnapshotAuxiliary.h>
+#import "WKWebView+TYSnapshotAuxiliary.h"
 
 //! Project version number for TYSnapshotAuxiliary.
 FOUNDATION_EXPORT double TYSnapshotAuxiliaryVersionNumber;
