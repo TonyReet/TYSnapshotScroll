@@ -92,7 +92,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "**/*.{h,m}"
-  s.vendored_frameworks = '*.framework'
+  s.vendored_frameworks = 'TYSnapshotAuxiliary.framework'
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
