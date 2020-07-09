@@ -10,7 +10,6 @@
 #import "TYGCDTools.h"
 #import "UIView+TYSnapshot.h"
 #import "TYSnapshotManager.h"
-#import <TYSnapshotAuxiliary/UIScrollView+TYSnapshotAuxiliary.h>
 
 @implementation WKWebView (TYSnapshot)
 
