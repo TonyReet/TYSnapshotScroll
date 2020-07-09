@@ -31,6 +31,7 @@
         @{@"TYVFLWKWebViewVc":@"Layout_WKWebView_截图"},
         @{@"TYViewVc":@"UIView_截图"},
         @{@"TYTextViewVc":@"UITextView_截图"},
+        @{@"TYPDFWKWebViewVc":@"WKWeb加载PDF_截图"},
                         ];
     
     [self tableViewInit];

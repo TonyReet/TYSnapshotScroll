@@ -78,6 +78,11 @@
     UIViewController *preVc = [[TYPreviewVc alloc] init:snapshotImage];
 
     [self.navigationController pushViewController:preVc animated:true];
+    
+    // 只是为了返回首页，具体可以自己修改
+    NSMutableArray *childViewControllers = self.navigationController.childViewControllers.mutableCopy;
+    [childViewControllers removeObjectAtIndex:childViewControllers.count - 2];
+    [self.navigationController setViewControllers:childViewControllers.copy];
 }
 
 - (void)subClassInit{}

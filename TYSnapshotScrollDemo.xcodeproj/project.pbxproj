@@ -28,6 +28,7 @@
 		6A7EF9B72477C270008A6A53 /* TYTextViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7EF9B62477C270008A6A53 /* TYTextViewVc.m */; };
 		6A895EBE1FC575B100D0C91D /* TYBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EBD1FC575B100D0C91D /* TYBaseVc.m */; };
 		6A895EC11FC5786500D0C91D /* TYScrollViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */; };
+		6AC0D69924B6F561004A97B2 /* TYPDFWKWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0D69824B6F561004A97B2 /* TYPDFWKWebViewVc.m */; };
 		6AF326192382384300651608 /* TYVFLWKWebViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF326182382384300651608 /* TYVFLWKWebViewVc.m */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,8 @@
 		6A895EBD1FC575B100D0C91D /* TYBaseVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBaseVc.m; sourceTree = "<group>"; };
 		6A895EBF1FC5786500D0C91D /* TYScrollViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYScrollViewVc.h; sourceTree = "<group>"; };
 		6A895EC01FC5786500D0C91D /* TYScrollViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYScrollViewVc.m; sourceTree = "<group>"; };
+		6AC0D69724B6F561004A97B2 /* TYPDFWKWebViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYPDFWKWebViewVc.h; sourceTree = "<group>"; };
+		6AC0D69824B6F561004A97B2 /* TYPDFWKWebViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYPDFWKWebViewVc.m; sourceTree = "<group>"; };
 		6AF326172382384300651608 /* TYVFLWKWebViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYVFLWKWebViewVc.h; sourceTree = "<group>"; };
 		6AF326182382384300651608 /* TYVFLWKWebViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYVFLWKWebViewVc.m; sourceTree = "<group>"; };
 		77BB7458EFB241D1A028AB5A /* Pods-TYSnapshotScrollDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSnapshotScrollDemo.release.xcconfig"; path = "Target Support Files/Pods-TYSnapshotScrollDemo/Pods-TYSnapshotScrollDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				6A68832523BF391A00486773 /* TYViewVc.m */,
 				6A7EF9B52477C270008A6A53 /* TYTextViewVc.h */,
 				6A7EF9B62477C270008A6A53 /* TYTextViewVc.m */,
+				6AC0D69724B6F561004A97B2 /* TYPDFWKWebViewVc.h */,
+				6AC0D69824B6F561004A97B2 /* TYPDFWKWebViewVc.m */,
 				6A6BC5E71FC7BCF1006608B1 /* TYPreviewVc.h */,
 				6A6BC5E81FC7BCF1006608B1 /* TYPreviewVc.m */,
 			);
@@ -404,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A06BA2A23839A44006986A3 /* TYLayoutScrollViewVc.m in Sources */,
+				6AC0D69924B6F561004A97B2 /* TYPDFWKWebViewVc.m in Sources */,
 				6A58241A236BE3C300F27469 /* TYScrollEmbedVc.m in Sources */,
 				6AF326192382384300651608 /* TYVFLWKWebViewVc.m in Sources */,
 				6A6BC5E91FC7BCF1006608B1 /* TYPreviewVc.m in Sources */,
