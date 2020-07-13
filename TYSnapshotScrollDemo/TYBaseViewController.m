@@ -32,6 +32,7 @@
         @{@"TYViewVc":@"UIView_截图"},
         @{@"TYTextViewVc":@"UITextView_截图"},
         @{@"TYPDFWKWebViewVc":@"WKWeb加载PDF_截图"},
+        @{@"TYTextViewInTableVc":@"TextView内嵌入Cell_截图"},
                         ];
     
     [self tableViewInit];

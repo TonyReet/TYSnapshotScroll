@@ -32,7 +32,6 @@
     NSArray *verticalLayout = [NSLayoutConstraint constraintsWithVisualFormat:vertical options:0 metrics:nil views:views];
     NSArray *horizontalLayout = [NSLayoutConstraint constraintsWithVisualFormat:horizontal options:0 metrics:nil views:views];
 
-    //一般需要把约束添加到父view上
     [self.view addConstraints:verticalLayout];
     [self.view addConstraints:horizontalLayout];
     [self.view layoutIfNeeded];

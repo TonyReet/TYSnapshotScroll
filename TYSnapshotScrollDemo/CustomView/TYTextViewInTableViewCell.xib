@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="117" id="KGk-i7-Jjw" customClass="TYTextViewInTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="117"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="363" height="117"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-3e-Gx0">
+                        <rect key="frame" x="-1" y="0.0" width="363" height="117"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="UOW-lP-BkW"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0bo-3e-Gx0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8EY-8S-92w"/>
+                    <constraint firstAttribute="bottom" secondItem="0bo-3e-Gx0" secondAttribute="bottom" id="H7b-WO-Suv"/>
+                    <constraint firstAttribute="trailing" secondItem="0bo-3e-Gx0" secondAttribute="trailing" id="Jgr-vS-DXS"/>
+                    <constraint firstItem="0bo-3e-Gx0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SQY-JV-DZL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textView" destination="0bo-3e-Gx0" id="FTm-WR-z7u"/>
+                <outlet property="textViewHeightConstraint" destination="UOW-lP-BkW" id="psp-eA-7bJ"/>
+            </connections>
+            <point key="canvasLocation" x="-102.17391304347827" y="82.03125"/>
+        </tableViewCell>
+    </objects>
+</document>
