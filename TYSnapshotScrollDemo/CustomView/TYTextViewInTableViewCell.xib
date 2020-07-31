@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,13 +16,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="363" height="117"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-3e-Gx0">
-                        <rect key="frame" x="-1" y="0.0" width="363" height="117"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="               " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-3e-Gx0">
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="117"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="UOW-lP-BkW"/>
-                        </constraints>
-                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
@@ -36,9 +33,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="textView" destination="0bo-3e-Gx0" id="FTm-WR-z7u"/>
-                <outlet property="textViewHeightConstraint" destination="UOW-lP-BkW" id="psp-eA-7bJ"/>
             </connections>
-            <point key="canvasLocation" x="-102.17391304347827" y="82.03125"/>
+            <point key="canvasLocation" x="-109.42028985507247" y="80.691964285714278"/>
         </tableViewCell>
     </objects>
 </document>

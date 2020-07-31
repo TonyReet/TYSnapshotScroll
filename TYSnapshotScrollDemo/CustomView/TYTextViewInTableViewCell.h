@@ -12,9 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TYTextViewInTableViewCell : UITableViewCell
 
-@property (nonatomic , weak) UITableView *tableView;
-
-- (void)setTVText:(NSString *)text;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 

@@ -50,9 +50,8 @@ UITableViewDataSource
     }
     NSString *tvText = [NSString stringWithFormat:@"测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，index:%@",@(indexPath.row)];
     
-    [cell setTVText:tvText];
-    cell.tableView = tableView;
-    
+    cell.textView.text = tvText;
+
     return cell;
 }
 
