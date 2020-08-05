@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, TYSnapshotType) {
+    TYSnapshotTypeDefault = 0,//default
+    TYSnapshotTypeSplice,
+};
+
 @interface TYSnapshotManager : NSObject
 
 // max count of snapshot,default is 50
@@ -20,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // delay time,default is 0.3s, unit is second
 @property (nonatomic, assign) CGFloat delayTime;
+
+@property (nonatomic, assign) TYSnapshotType snapshotType;
 
 + (TYSnapshotManager *)defaultManager;
 

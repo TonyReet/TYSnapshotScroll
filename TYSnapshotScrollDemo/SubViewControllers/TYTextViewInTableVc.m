@@ -11,7 +11,7 @@
 
 @interface TYTextViewInTableVc ()
 <
-UITableViewDataSource
+    UITableViewDataSource
 >
 
 @property (strong, nonatomic) UITableView *tableView;
@@ -33,11 +33,18 @@ UITableViewDataSource
     [self.view addSubview:self.tableView];
     
     self.snapView = self.tableView;
+    
+    [TYSnapshotManager defaultManager].snapshotType = TYSnapshotTypeSplice;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [TYSnapshotManager defaultManager].snapshotType = TYSnapshotTypeDefault;
 }
 
 #pragma mark - tableview delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 100;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -48,10 +55,10 @@ UITableViewDataSource
     if (!cell) {
         cell = [[TYTextViewInTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    NSString *tvText = [NSString stringWithFormat:@"测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，index:%@",@(indexPath.row)];
+    NSString *tvText = [NSString stringWithFormat:@"测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，测试测试0，测试测试1，测试测试2，测试测试3，测试测试4，测试测试5，测试测试6，测试测试7，测试测试8，测试测试9，index:%@",@(indexPath.row)];
     
     cell.textView.text = tvText;
-
+    cell.textView.backgroundColor = [UIColor colorWithHue:drand48() saturation:1.0 brightness:1.0 alpha:1.0];
     return cell;
 }
 

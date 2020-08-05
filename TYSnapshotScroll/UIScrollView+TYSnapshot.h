@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef void(^TYSnapshotFinishBlock)(UIImage *snapshotImage);
+#import "UIScrollView+TYSplice.h"
 
 @interface UIScrollView (TYSnapshot)
 
