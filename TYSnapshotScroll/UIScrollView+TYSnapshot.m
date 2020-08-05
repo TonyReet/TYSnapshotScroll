@@ -19,7 +19,7 @@
     
     UIView *snapshotMaskView;
     if (needMask){
-//        snapshotMaskView = [self addSnapshotMaskView];
+        snapshotMaskView = [self addSnapshotMaskView];
         addMaskAfterBlock?addMaskAfterBlock():nil;
     }
     
