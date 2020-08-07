@@ -35,7 +35,8 @@
         UIGraphicsEndImageContext();
 
         weakSelf.contentOffset = oldContentOffset;
-
+        weakSelf.contentSize = contentSize;
+        
         !finishBlock?:finishBlock(snapshotImage);
     }];
 }

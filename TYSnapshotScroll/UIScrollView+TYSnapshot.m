@@ -25,25 +25,32 @@
     
     //保存原始信息
     __block CGPoint oldContentOffset;
-    __block CGSize contentSize;
+    __block CGSize oldContentSize;
     
     onMainThreadSync(^{
         oldContentOffset = self.contentOffset;
-        contentSize = self.contentSize;
+        oldContentSize = self.contentSize;
     });
-    
-    if ([self isBigImageWith:contentSize]){
-        [self snapshotBigImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+
+    // 异常判断，因为需要根据contentSize截取图片，如果width为0，取自身控件的宽度，结束后还原
+    if (!self.contentSize.width){
+        NSLog(@"width is zero");
+        
+        self.contentSize = CGSizeMake(self.bounds.size.width, self.contentSize.height);
+    }
+
+    if ([self isBigImageWith:oldContentSize]){
+        [self snapshotBigImageWith:snapshotMaskView contentSize:oldContentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
         return ;
     }
     
     // 使用拼接方案
     if ([TYSnapshotManager defaultManager].snapshotType == TYSnapshotTypeSplice){
-        [self snapshotSpliceImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+        [self snapshotSpliceImageWith:snapshotMaskView contentSize:oldContentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
         return;
     }
     
-    [self snapshotNormalImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+    [self snapshotNormalImageWith:snapshotMaskView contentSize:oldContentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
 }
 
 - (BOOL )isBigImageWith:(CGSize )contentSize{
@@ -75,6 +82,7 @@
         }
         
         weakSelf.contentOffset = oldContentOffset;
+        weakSelf.contentSize = contentSize;
         
         !finishBlock?:finishBlock(snapshotImage);
     }];
@@ -113,7 +121,8 @@
         //还原
         self.layer.frame = oldFrame;
         self.contentOffset = oldContentOffset;
-
+        self.contentSize = contentSize;
+        
         if (snapshotMaskView.layer){
             [snapshotMaskView.layer removeFromSuperlayer];
         }

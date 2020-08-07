@@ -24,15 +24,14 @@
     
     //保存原始信息
     __block CGPoint oldContentOffset;
-    __block CGSize contentSize;
+    __block CGSize oldContentSize;
     
     onMainThreadSync(^{
         oldContentOffset = self.contentOffset;
-        contentSize = self.contentSize;
+        oldContentSize = self.contentSize;
     });
     
-
-    [self snapshotNormalImageWith:snapshotMaskView contentSize:contentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
+    [self snapshotNormalImageWith:snapshotMaskView contentSize:oldContentSize oldContentOffset:oldContentOffset finishBlock:finishBlock];
 }
 
 - (BOOL )isBigImageWith:(CGSize )contentSize{
