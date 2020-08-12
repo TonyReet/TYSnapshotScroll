@@ -25,17 +25,17 @@
     
     //保存原始信息
     __block CGPoint oldContentOffset;
+    __block CGSize oldContentSize;
     __block CGSize contentSize;
-    
     __block UIScrollView *scrollView;
     
     onMainThreadSync(^{
         scrollView = self.scrollView;
         
         oldContentOffset = scrollView.contentOffset;
-        contentSize = scrollView.contentSize;
+        oldContentSize = scrollView.contentSize;
+        contentSize = oldContentSize;
         contentSize.height += scrollView.contentInset.top + scrollView.contentInset.bottom;
-        scrollView.contentOffset = CGPointZero;
     });
     
     if ([scrollView isBigImageWith:contentSize]){

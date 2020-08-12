@@ -12,6 +12,15 @@
 @implementation UIScrollView (TYSplice)
 
 - (void )snapshotSpliceImageWith:(UIView *)snapshotMaskView contentSize:(CGSize )contentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
+    
+    [self snapshotSpliceImageWith:snapshotMaskView
+                      contentSize:contentSize
+                   oldContentSize:contentSize
+                 oldContentOffset:oldContentOffset
+                      finishBlock:finishBlock];
+}
+
+- (void )snapshotSpliceImageWith:(UIView *)snapshotMaskView contentSize:(CGSize )contentSize oldContentSize:(CGSize )oldContentSize oldContentOffset:(CGPoint )oldContentOffset finishBlock:(TYSnapshotFinishBlock )finishBlock{
 
     __block CGRect scrollViewBounds;
     onMainThreadSync(^{
@@ -35,7 +44,7 @@
         UIGraphicsEndImageContext();
 
         weakSelf.contentOffset = oldContentOffset;
-        weakSelf.contentSize = contentSize;
+        weakSelf.contentSize = oldContentSize;
         
         !finishBlock?:finishBlock(snapshotImage);
     }];
