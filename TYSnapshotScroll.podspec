@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TYSnapshotScroll"
-  s.version      = "0.3.1"
+  s.version      = "0.3.2"
   s.summary      = "A snapshot library."
 
   # This description is used to generate tags and improve search results.
@@ -92,11 +92,10 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "TYSnapshotScroll/**/*.{h,m}"
+  s.public_header_files = "TYSnapshotScroll/*.framework/*.{h,m}"
+  s.vendored_frameworks = "TYSnapshotScroll/*.framework"
   s.vendored_frameworks = 'TYSnapshotScroll/*.framework'
   # s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
-
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
