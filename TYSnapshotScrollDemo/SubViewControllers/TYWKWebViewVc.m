@@ -21,7 +21,7 @@
 @implementation TYWKWebViewVc
 
 - (void)subClassInit {
-    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    self.webView = [[WKWebView alloc] initWithFrame:[self getViewFrame]];
     
     self.webView.navigationDelegate = self;
     self.webView.scrollView.bounces = NO;

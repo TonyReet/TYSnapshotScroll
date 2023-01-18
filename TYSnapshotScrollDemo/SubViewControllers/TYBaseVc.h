@@ -44,4 +44,9 @@
 截完图的跳转
 */
 - (void)pushToPreVcWithImage:(UIImage *)snapshotImage;
+
+/**
+获取view的frame
+*/
+- (CGRect )getViewFrame;
 @end

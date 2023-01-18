@@ -100,4 +100,9 @@
     }
 }
 
+- (CGRect )getViewFrame{
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    CGFloat navigationOffsetY = navigationBar.frame.origin.y + navigationBar.frame.size.height;
+    return CGRectMake(0, navigationOffsetY, self.view.frame.size.width, self.view.frame.size.height - navigationOffsetY);
+}
 @end

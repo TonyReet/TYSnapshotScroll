@@ -22,22 +22,20 @@
 
 - (void)subClassInit {
     self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];
-    
+
     self.webView.navigationDelegate = self;
     self.webView.scrollView.bounces = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     self.webView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.webView];
-    
-    NSString *vertical = @"V:|[webView]|";
-    NSString *horizontal = @"H:|[webView]|";
-    NSDictionary *views = @{@"webView" : self.webView};
-    
-    NSArray *verticalLayout = [NSLayoutConstraint constraintsWithVisualFormat:vertical options:0 metrics:nil views:views];
-    NSArray *horizontalLayout = [NSLayoutConstraint constraintsWithVisualFormat:horizontal options:0 metrics:nil views:views];
 
-    [self.view addConstraints:verticalLayout];
-    [self.view addConstraints:horizontalLayout];
+    self.webView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint* leftConstraint = [NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0.0f];
+    NSLayoutConstraint* rightConstraint = [NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:0.0f];
+    NSLayoutConstraint* topConstraint = [NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:[self getViewFrame].origin.y];
+    NSLayoutConstraint* bottomConstraint = [NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f];
+    [self.view addConstraints:@[leftConstraint, rightConstraint, topConstraint, bottomConstraint]];
 
     NSString *urlStr = self.isLongImage?@"https://worlds-highest-website.com/zh/":@"https://www.meituan.com";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];//超时时间10秒

@@ -17,10 +17,7 @@
 @implementation TYViewVc
 
 - (void)subClassInit {
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-
-    self.normalView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.normalView = [[UIView alloc] initWithFrame:[self getViewFrame]];
 
     [self.view addSubview:self.normalView];
     self.normalView.backgroundColor = [UIColor redColor];
