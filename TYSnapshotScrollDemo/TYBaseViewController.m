@@ -23,11 +23,12 @@
     
     self.dataSourceArr = @[
         @{@"TYTableViewVc":@"UITableView_截图"},
+        @{@"TYTableViewVc":@"UITableView_分组截图"},
         @{@"TYWKWebViewVc":@"WKWebView_截图"},
         @{@"TYScrollViewVc":@"UIScrollView_截图"},
         @{@"TYCollectionViewVc":@"UICollectionView_截图"},
         @{@"TYLayoutScrollViewVc":@"Layout_UIScrollView_截图"},
-        @{@"SB_TYScrollEmbedVc":@"SB_ScrollView嵌套TableView_截图"},
+        @{@"StoryBoard_TYScrollEmbedVc":@"StoryBoard_ScrollView嵌套TableView_截图"},
         @{@"TYVFLWKWebViewVc":@"Layout_WKWebView_截图"},
         @{@"TYViewVc":@"UIView_截图"},
         @{@"TYTextViewVc":@"UITextView_截图"},
@@ -91,10 +92,10 @@
     
     NSDictionary *model = (NSDictionary *)self.dataSourceArr[indexPath.row];
     NSString *key = [model.allKeys firstObject];
-    if ([key containsString:@"SB_"]){
+    if ([key containsString:@"StoryBoard_"]){
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        nextVc = [storyboard instantiateViewControllerWithIdentifier:[key stringByReplacingOccurrencesOfString:@"SB_" withString:@""]];
+        nextVc = [storyboard instantiateViewControllerWithIdentifier:[key stringByReplacingOccurrencesOfString:@"StoryBoard_" withString:@""]];
     }else{
         nextVc = [NSClassFromString(key) new];
     }
@@ -105,6 +106,10 @@
         nextVc.title = [model.allValues firstObject];
         nextVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:nextVc animated:YES];
+        
+        if ([nextVc.title containsString:@"分组"] && [nextVc valueForKey:@"isGroup"]){
+            [nextVc setValue:@(YES) forKey:@"isGroup"];
+        }
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

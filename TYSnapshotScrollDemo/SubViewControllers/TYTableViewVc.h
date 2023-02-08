@@ -10,4 +10,6 @@
 
 @interface TYTableViewVc : TYBaseVc
 
+@property (nonatomic, assign) BOOL isGroup;
+
 @end
