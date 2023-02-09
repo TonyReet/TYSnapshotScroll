@@ -87,7 +87,6 @@
 		6A68832523BF391A00486773 /* TYViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewVc.m; sourceTree = "<group>"; };
 		6A6BC5E71FC7BCF1006608B1 /* TYPreviewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYPreviewVc.h; sourceTree = "<group>"; };
 		6A6BC5E81FC7BCF1006608B1 /* TYPreviewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYPreviewVc.m; sourceTree = "<group>"; };
-		6A7EF9B324777FF2008A6A53 /* libTYSnapshotScroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTYSnapshotScroll.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A7EF9B52477C270008A6A53 /* TYTextViewVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYTextViewVc.h; sourceTree = "<group>"; };
 		6A7EF9B62477C270008A6A53 /* TYTextViewVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYTextViewVc.m; sourceTree = "<group>"; };
 		6A895EBC1FC575B100D0C91D /* TYBaseVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBaseVc.h; sourceTree = "<group>"; };
@@ -238,7 +237,6 @@
 		4235895B1797C69E42159303 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A7EF9B324777FF2008A6A53 /* libTYSnapshotScroll.a */,
 				8135180C4FCDC473B881A133 /* libPods-TYSnapshotScrollDemo.a */,
 			);
 			name = Frameworks;

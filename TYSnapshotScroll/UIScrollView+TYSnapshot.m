@@ -10,7 +10,7 @@
 #import "TYGCDTools.h"
 #import "UIView+TYSnapshot.h"
 #import "TYSnapshotManager.h"
-#import <TYSnapshotAuxiliary/UIScrollView+TYSnapshotAuxiliary.h>
+#import "UIScrollView+TYSnapshotAuxiliary.h"
 
 @implementation UIScrollView (TYSnapshot)
 

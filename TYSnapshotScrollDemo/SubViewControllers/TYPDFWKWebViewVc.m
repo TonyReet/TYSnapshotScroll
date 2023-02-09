@@ -8,7 +8,7 @@
 
 #import "TYPDFWKWebViewVc.h"
 #import <WebKit/WebKit.h>
-#import <TYSnapshotAuxiliary/WKWebView+TYSnapshotAuxiliary.h>
+#import "WKWebView+TYSnapshotAuxiliary.h"
 
 @interface TYPDFWKWebViewVc ()
 <
