@@ -82,14 +82,18 @@
  
             UIImage *image;
             if (!CGRectEqualToRect(rect, CGRectNull)) {
-                UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-                CGAffineTransform drawingTransform = CGPDFPageGetDrawingTransform(page, kCGPDFCropBox, rect, 0, true);
-                CGContextRef ctx = UIGraphicsGetCurrentContext();
-                CGContextConcatCTM(ctx, drawingTransform);
-                CGContextDrawPDFPage(ctx, page);
-                image = UIGraphicsGetImageFromCurrentImageContext();
-                image = [UIImage imageWithCGImage:image.CGImage scale:1.0f orientation:UIImageOrientationDownMirrored];
-                UIGraphicsEndImageContext();
+                if (rect.size.width <= 0.0 || rect.size.height <= 0.0) {
+                    image = nil;
+                } else {
+                    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+                    CGAffineTransform drawingTransform = CGPDFPageGetDrawingTransform(page, kCGPDFCropBox, rect, 0, true);
+                    CGContextRef ctx = UIGraphicsGetCurrentContext();
+                    CGContextConcatCTM(ctx, drawingTransform);
+                    CGContextDrawPDFPage(ctx, page);
+                    image = UIGraphicsGetImageFromCurrentImageContext();
+                    image = [UIImage imageWithCGImage:image.CGImage scale:1.0f orientation:UIImageOrientationDownMirrored];
+                    UIGraphicsEndImageContext();
+                }
             }
             
 

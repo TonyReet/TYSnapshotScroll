@@ -17,6 +17,10 @@
     UIImage *image;
     @autoreleasepool{
         CGSize imageTotalSize = [self getImageTotalSizeFromImagesArray:imagesArr];
+        if (imageTotalSize.width <= 0.0 || imageTotalSize.height <= 0.0) {
+            return nil;
+        }
+
         UIGraphicsBeginImageContextWithOptions(imageTotalSize, NO, [UIScreen mainScreen].scale);
         
         //拼接图片
