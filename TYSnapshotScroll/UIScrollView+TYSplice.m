@@ -27,6 +27,11 @@
        self.contentOffset = CGPointZero;
        scrollViewBounds = self.bounds;
     });
+    
+    if (contentSize.width <= 0.0 || contentSize.height <= 0.0) {
+        !finishBlock?:finishBlock(nil);
+        return;
+    }
 
     //计算快照屏幕数
     NSUInteger snapshotScreenCount = floorf(contentSize.height / scrollViewBounds.size.height);

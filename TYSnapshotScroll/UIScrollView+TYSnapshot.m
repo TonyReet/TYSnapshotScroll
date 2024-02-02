@@ -104,6 +104,11 @@
 
     CGFloat delayTime = [TYSnapshotManager defaultManager].delayTime;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.layer.frame.size.width <= 0.0 || self.layer.frame.size.height <= 0.0) {
+            if (finishBlock) finishBlock(nil);
+            return;
+            
+        }
         UIImage* snapshotImage = nil;
 
         self.contentOffset = CGPointZero;

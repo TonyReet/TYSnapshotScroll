@@ -104,6 +104,10 @@ static NSString * const kTYSnapshotAuxiliaryCacheImageNameKey = @"TYSnapshotImag
 
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
+            if (snapshotSize.width <= 0.0 || snapshotSize.height <= 0.0) {
+                !finishBlock?:finishBlock();
+                return;
+            }
             UIGraphicsBeginImageContextWithOptions(snapshotSize, NO, [UIScreen mainScreen].scale);
             
             [snapshotView drawViewHierarchyInRect:snapshotBounds afterScreenUpdates:YES];

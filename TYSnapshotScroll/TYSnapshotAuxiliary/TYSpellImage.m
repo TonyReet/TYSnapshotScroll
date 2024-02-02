@@ -11,6 +11,10 @@
 @implementation TYSpellImage
 
 + (UIImage *)tya_spellImageOf:(CGSize )imageSize paths:(NSArray <NSString *> *)paths{
+    if (imageSize.width <= 0.0 || imageSize.height <= 0.0) {
+        return nil;
+    }
+
     UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0.0);
     
     CGFloat drawHeight = 0;
